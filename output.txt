@@ -1,0 +1,557 @@
+[
+    {
+        "@id": "e746c235-25c4-452b-b73e-c5feac94439f",
+        "name": "CGI Scanning Consolidation",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:36:54Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:36:54Z",
+        "host": {
+            "asset": {
+                "@asset_id": "203c7e3b-f9c9-4529-93f0-69e4ee8c3a07"
+            },
+            "hostname": "csp1.zte.com.cn",
+            "#text": "192.168.1.1"
+        },
+        "port": "443/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.111038",
+            "type": "nvt",
+            "name": "CGI Scanning Consolidation",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2015-09-14T05:00:00Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script consolidates various information for CGI scanning.\n\n  This information is based on the following scripts / settings:\n\n  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)\n\n  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)\n\n  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)\n\n  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)\n\n  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use\n\n  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and\n    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the\n    'Global variable settings' of the scan config in use\n\n  If you think any of this information is wrong please report it to the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-06-30T05:18:54Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The Hostname/IP \"csp1.zte.com.cn\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.3)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttps://csp1.zte.com.cn/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards\n\nThe following directories were excluded from CGI scanning because the \"Regex pattern to exclude directories from CGI scanning\" setting of the NVT \"Global variable settings\" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: \"/(index\\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)\"\n\nhttps://csp1.zte.com.cn/css\nhttps://csp1.zte.com.cn/js\nhttps://csp1.zte.com.cn/skin/priorgreen/css",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "eae7a7b5-da5e-4b2f-b0c5-cc82f77acb55",
+        "name": "CGI Scanning Consolidation",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:34:00Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:34:00Z",
+        "host": {
+            "asset": {
+                "@asset_id": "0bf85744-5636-43fa-b25f-efe22b2d5c52"
+            },
+            "hostname": "192.168.1.3",
+            "#text": "192.168.1.3"
+        },
+        "port": "5357/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.111038",
+            "type": "nvt",
+            "name": "CGI Scanning Consolidation",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2015-09-14T05:00:00Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script consolidates various information for CGI scanning.\n\n  This information is based on the following scripts / settings:\n\n  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)\n\n  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)\n\n  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)\n\n  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)\n\n  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use\n\n  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and\n    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the\n    'Global variable settings' of the scan config in use\n\n  If you think any of this information is wrong please report it to the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-06-30T05:18:54Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The Hostname/IP \"192.168.1.3\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.3)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://192.168.1.3:5357/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "49e9f5e6-c566-45d2-bf1b-f836b69c3d38",
+        "name": "CGI Scanning Consolidation",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:36:54Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:36:54Z",
+        "host": {
+            "asset": {
+                "@asset_id": "203c7e3b-f9c9-4529-93f0-69e4ee8c3a07"
+            },
+            "hostname": "csp1.zte.com.cn",
+            "#text": "192.168.1.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.111038",
+            "type": "nvt",
+            "name": "CGI Scanning Consolidation",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2015-09-14T05:00:00Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script consolidates various information for CGI scanning.\n\n  This information is based on the following scripts / settings:\n\n  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)\n\n  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)\n\n  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)\n\n  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)\n\n  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use\n\n  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and\n    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the\n    'Global variable settings' of the scan config in use\n\n  If you think any of this information is wrong please report it to the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-06-30T05:18:54Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The Hostname/IP \"csp1.zte.com.cn\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.3)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://csp1.zte.com.cn/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards\n\nThe following directories were excluded from CGI scanning because the \"Regex pattern to exclude directories from CGI scanning\" setting of the NVT \"Global variable settings\" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: \"/(index\\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)\"\n\nhttp://csp1.zte.com.cn/css\nhttp://csp1.zte.com.cn/js\nhttp://csp1.zte.com.cn/skin/priorgreen/css",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "5e064e28-9b0d-40f6-8451-750091b65519",
+        "name": "CGI Scanning Consolidation",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:25:43Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:25:43Z",
+        "host": {
+            "asset": {
+                "@asset_id": "2914472f-dc83-4f67-8dca-1a5d4f9625f6"
+            },
+            "hostname": "sampaloc-trg",
+            "#text": "192.168.1.4"
+        },
+        "port": "5357/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.111038",
+            "type": "nvt",
+            "name": "CGI Scanning Consolidation",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2015-09-14T05:00:00Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script consolidates various information for CGI scanning.\n\n  This information is based on the following scripts / settings:\n\n  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)\n\n  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)\n\n  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)\n\n  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)\n\n  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use\n\n  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and\n    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the\n    'Global variable settings' of the scan config in use\n\n  If you think any of this information is wrong please report it to the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-06-30T05:18:54Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The Hostname/IP \"sampaloc-trg\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.3)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://sampaloc-trg:5357/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "b451bc88-17ee-4a16-852b-37fe77bafbfb",
+        "name": "Cleartext Transmission of Sensitive Information via HTTP",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:36:59Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:36:59Z",
+        "host": {
+            "asset": {
+                "@asset_id": "203c7e3b-f9c9-4529-93f0-69e4ee8c3a07"
+            },
+            "hostname": "csp1.zte.com.cn",
+            "#text": "192.168.1.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108440",
+            "type": "nvt",
+            "name": "Cleartext Transmission of Sensitive Information via HTTP",
+            "family": "Web application abuses",
+            "cvss_base": "4.8",
+            "severities": {
+                "@score": "4.8",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-04-16T13:31:23Z",
+                    "score": "4.8",
+                    "value": "AV:A/AC:L/Au:N/C:P/I:P/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:A/AC:L/Au:N/C:P/I:P/A:N|summary=The host / application transmits sensitive information (username, passwords) in\n  cleartext via HTTP.|insight=|affected=Hosts / applications which doesn't enforce the transmission of sensitive data via an\n  encrypted SSL/TLS connection.|impact=An attacker could use this situation to compromise or eavesdrop on the\n  HTTP communication between the client and the server using a man-in-the-middle attack to get access to\n  sensitive data like usernames or passwords.|solution=Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.\n  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before\n  allowing to input sensitive data into the mentioned functions.|vuldetect=Evaluate previous collected information and check if the host / application is not\n  enforcing the transmission of sensitive data via an encrypted SSL/TLS connection.\n\n  The script is currently checking the following:\n\n  - HTTP Basic Authentication (Basic Auth)\n\n  - HTTP Forms (e.g. Login) with input field of type 'password'|solution_type=Workaround",
+            "solution": {
+                "@type": "Workaround",
+                "#text": "Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.\n  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before\n  allowing to input sensitive data into the mentioned functions."
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "url",
+                        "@id": "https://www.owasp.org/index.php/Top_10_2013-A2-Broken_Authentication_and_Session_Management"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://cwe.mitre.org/data/definitions/319.html"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2020-08-24T15:18:35Z",
+        "threat": "Medium",
+        "severity": "4.8",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The following input fields where identified (URL:input name):\n\nhttp://csp1.zte.com.cn/:Password",
+        "original_threat": "Medium",
+        "original_severity": "4.8"
+    },
+    {
+        "@id": "0c00d507-46f0-47d8-9df8-33499ea358d9",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:23:35Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:23:35Z",
+        "host": {
+            "asset": {
+                "@asset_id": "d3146163-fb06-49bb-a4b7-123a142d2cc6"
+            },
+            "hostname": null,
+            "#text": "192.168.1.11"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.1.11|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "7fa0c55a-15e7-4c96-9f31-d7f65722ebe1",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:51:08Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:51:08Z",
+        "host": {
+            "asset": {
+                "@asset_id": "203c7e3b-f9c9-4529-93f0-69e4ee8c3a07"
+            },
+            "hostname": "csp1.zte.com.cn",
+            "#text": "192.168.1.1"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.1.1|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "1ba8bb74-0031-4e77-837a-10b5fabeb9d3",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:28:55Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:28:55Z",
+        "host": {
+            "asset": {
+                "@asset_id": "2914472f-dc83-4f67-8dca-1a5d4f9625f6"
+            },
+            "hostname": "sampaloc-trg",
+            "#text": "192.168.1.4"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.1.4|cpe:/o:microsoft:windows",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "1d1a53a1-7919-488c-98aa-51ac83c517a4",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:35:57Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:35:57Z",
+        "host": {
+            "asset": {
+                "@asset_id": "0bf85744-5636-43fa-b25f-efe22b2d5c52"
+            },
+            "hostname": "192.168.1.3",
+            "#text": "192.168.1.3"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.1.3|cpe:/o:microsoft:windows",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "c23aca06-36b0-475c-9870-5f30fde67a12",
+        "name": "Hostname Determination Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2021-11-30T10:23:35Z",
+        "comment": null,
+        "creation_time": "2021-11-30T10:23:35Z",
+        "host": {
+            "asset": {
+                "@asset_id": "d3146163-fb06-49bb-a4b7-123a142d2cc6"
+            },
+            "hostname": null,
+            "#text": "192.168.1.11"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108449",
+            "type": "nvt",
+            "name": "Hostname Determination Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-07-05T06:03:26Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script reports information on how the hostname\n  of the target was determined.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2018-11-19T11:11:31Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Hostname determination for IP 192.168.1.11:\n\nHostname|Source\n192.168.1.11|IP-address",
+        "original_threat": "Log",
+        "original_severity": "0"
+    }
+]
