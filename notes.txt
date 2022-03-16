@@ -1,0 +1,18 @@
+OpenVas Credentials
+
+UN: admin
+old: 8d1e90c0-488f-4028-b683-bb2d7d8bb5a3
+new: kali
+
+Git Token for ICS SP Folder:
+ghp_IPTPahPdkIvDMutx1mZq3z7eUGaqWE4E6uLs
+
+Git Token for SP Folder:
+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
+
+Setup: 
+
+# Commnds for Updating GVM Feeds, SCAP, and CERT Data
+greenbone-feed-sync --type GVMD_DATA
+greenbone-feed-sync --type SCAP
+greenbone-feed-sync --type CERT
