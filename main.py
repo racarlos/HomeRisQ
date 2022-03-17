@@ -92,6 +92,8 @@ with Gmp(connection) as gmp:
 			'solution': vuln['nvt']['solution'],
 			'qod': float(vuln['qod']['value'])
 		}
+
+		
 		vulnList.append(entry)
 
 
