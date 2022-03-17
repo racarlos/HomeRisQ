@@ -1,35 +1,13 @@
 from itertools import combinations
 
-# Given a CVSS Vector and QOD, calculate and return the CVE's risk factor
-def getVulnerabilityRisk(vector,qod):
-
-    probability = 0 
-    impact = 0
+def getProbability(vectorList):
 
     # Exploitability Metrics
     accessVector = 0
     accessComplexity = 0
     authentication = 0
 
-    # Impact Metrics
-    confidentiality = 0
-    integrity = 0
-    availability = 0 
-
-    # Adjust Report confidence from Quality of Detection
-    if qod >= 90:
-        qod = 1
-    elif qod < 90 and qod >= 80:
-        qod = 0.95
-    elif qod < 80 and qod >= 70:
-        qod = 0.90
-
-    vector = vector.split("/")
-
-    for i in range(len(vector)):
-        vector[i] = vector[i].split(":")
-
-    for metric in vector:			
+    for metric in vectorList:			
         if metric[0] == 'AV':
 
             if metric[1] == "L":  	            # Local
@@ -52,7 +30,19 @@ def getVulnerabilityRisk(vector,qod):
                 authentication = 0.55
             elif metric[1] == "N":	            # None
                 authentication = 1
-        elif metric[0] == 'C':
+    
+    probability = accessVector * accessComplexity * authentication
+    return probability
+
+def getImpact(vectorList):
+
+    # Impact Metrics
+    confidentiality = 0
+    integrity = 0
+    availability = 0 
+
+    for metric in vectorList:	
+        if metric[0] == 'C':
             if metric[1] == "N":	            # None
                 confidentiality = 0
             elif metric[1] == "P":	            # Partial
@@ -66,7 +56,7 @@ def getVulnerabilityRisk(vector,qod):
                 integrity = 0.5 				
             elif metric[1] == "C": 	            # Complete
                 integrity = 1	
-        elif metric[0] == 'A':
+        elif metric[0] == 'A': 
             if metric[1] == "N":	            # None
                 availability = 0 
             elif metric[1] == "P":	            # Partial
@@ -74,11 +64,28 @@ def getVulnerabilityRisk(vector,qod):
             elif metric[1] == "C": 	            # Complete
                 availability = 1
 
-    probability = accessVector * accessComplexity * authentication * (qod)
-    impact = (confidentiality*100 + integrity*100  + availability*100 )/3
+    impact = ((confidentiality+integrity+availability)*100)/3
+    return impact
 
-    print(accessVector,accessComplexity,authentication,qod)
-    print(confidentiality,integrity,availability)
+
+# Given a CVSS Vector and QOD, calculate and return the CVE's risk factor
+def getVulnerabilityRisk(vector,qod):
+
+    # Adjust Report confidence from Quality of Detection
+    if qod >= 90:
+        qod = 1
+    elif qod < 90 and qod >= 80:
+        qod = 0.95
+    elif qod < 80 and qod >= 70:
+        qod = 0.90
+
+    vector = vector.split("/")
+
+    for i in range(len(vector)):
+        vector[i] = vector[i].split(":")
+
+    probability = getProbability(vector) * qod
+    impact = getImpact(vector)
 
     risk = probability * impact
 
@@ -142,22 +149,48 @@ def getVulnerabilitySubsets(vulnListPerHost):
 # Get the consolidated Risk per Host, returns [ipAddress,numHosts,consolidatedRisk]
 def getConsolidatedRiskPerHost(perHost):
 
-    for host in perHost:                            # For every machine in the list
+    for host in perHost:                                            # For every machine in the list
 
+        print(f"Host: {perHost.index(host)} \n ")
+        print(host)
+        idList = []                                                 # ID list of every vuln in a host
+        for vuln in host: idList.append(vuln['id'])
+    
         vulnSubsetList = getVulnerabilitySubsets(host)
 
         consolidatedProbability = 0
         consolidatedImpact = 0
         consolidatedRisk = 0 
         
-        for subset in vulnSubsetList:                 # For each vulnerability in the host
-            for vuln in subset:
-                print("ID: ",vuln['id'])
-            print("==================\n")
+        for subset in vulnSubsetList:                               # For each vulnerability in the subset
+
+            subsetProbability = 1 
+            
+            subsetIdList = []
+            for vuln in subset: subsetIdList.append(vuln['id'])     # Get their IDs and compare with list of all vulns in the host
+
+
+            # for i in range(len(idList)):                            # Check if ID of vuln is in subset of exploited CVEs
+                
+            #     if idList[i] in subsetIdList:                       # IF CVE was exploited in this subset    
+            #         #print(f"[{i}+]",end=" ")
+            #         subsetProbability *=  
+
+            #     else:                                               # IF CVE was not exploited in this subset 
+                    #print(f"[{i}-]",end=" ")
+
+            #print("\n")
+
+        #print("=================")
+
+
         
-        
+    
         exit(1)
 
+
+
+    # product of the probability of all exploited CVEs * product of 1 - probability of all non exploited CVEs
 
 
 

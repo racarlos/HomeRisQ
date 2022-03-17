@@ -77,7 +77,9 @@ with Gmp(connection) as gmp:
 	print(f"Total Vulnerabilities: {totalVulnerabilities}")					
 	print("==================== \n")
 
-	# Store all Vulnerabilities 
+
+
+	# Store all Vulnerabilities and add their Impact, PRobability, and Risk Values
 	for vuln in reportJSON:
 		entry = {
 			'id':vuln['@id'],
