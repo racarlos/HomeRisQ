@@ -78,7 +78,6 @@ with Gmp(connection) as gmp:
 	print("==================== \n")
 
 
-
 	# Store all Vulnerabilities and add their Impact, PRobability, and Risk Values
 	for vuln in reportJSON:
 		entry = {
@@ -102,8 +101,8 @@ with Gmp(connection) as gmp:
 	getConsolidatedRiskPerHost(perHostVulnList)
 
 	# # Sample values for Testing
-	# sampleQOD = 90.0
-	# sampleVector0 = "AV:A/AC:L/Au:N/C:P/I:P/A:N"				# HTTP Cleartext transmission vector
+	sampleQOD = 90.0
+	sampleVector0 = "AV:A/AC:L/Au:N/C:P/I:P/A:N"				# HTTP Cleartext transmission vector
 	# sampleVector1 = "AV:N/AC:M/Au:N/C:C/I:C/A:C"				# Log4j vector
 	# sampleVector2  = "AV:N/AC:L/Au:N/C:C/I:C/A:C"				# Bluekeep Denial of Service 
 	

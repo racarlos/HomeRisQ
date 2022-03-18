@@ -49,8 +49,8 @@ def getProbability(vectorList,qod):
             elif metric[1] == "N":	            # None
                 authentication = 1
     
-    probability = (accessVector * accessComplexity * authentication)*qod
-    return probability
+    probability = accessVector * accessComplexity * authentication*qod
+    return round(probability,4)
 
 def getImpact(vectorList):
 
@@ -83,7 +83,7 @@ def getImpact(vectorList):
                 availability = 1
 
     impact = ((confidentiality+integrity+availability)*100)/3
-    return impact
+    return round(impact,4)
 
 
 # Given a CVSS Vector and QOD, calculate and return the CVE's risk factor
@@ -151,40 +151,33 @@ def getVulnerabilityIDSubset(vulnIdList):
 
     return vulnSubsetList
 
-# Return probability of a subset given a subset of IDS and all vulnerabilities in a host
-def getSubsetProbability(isExploited,host):
-    
+# Return probability and impact of a subset given a subset of IDS and all vulnerabilities in a host
+def getSubsetProbabilityAndImpact(isExploited,host):
+
+    impactMax = 100 
+    subsetImpact = 0
     subsetProbability = 1
+
     for i in range(len(host)):
 
         vectorList = splitVector(host[i]['vector'])
         qod = host[i]['qod']
 
         vulnProbability = getProbability(vectorList,qod)
-
-        if isExploited[i] is True:
-            subsetProbability *= vulnProbability
-        else:
-            subsetProbability *= (1-vulnProbability)
-
-    return subsetProbability
-
-# Return impact of a subset 
-def getSubsetImpact(isExploited,host):
-
-    subsetImpact = 0
-
-    for i in range(len(host)):
-
-        vectorList = splitVector(host[i]['vector'])
-        
         vulnImpact = getImpact(vectorList)
 
-        if isExploited[i] is True:
+        # Disregard LOG intensity and impactless vulnerabilities
+        if isExploited[i] is True and vulnImpact > 0:
+            subsetProbability *= vulnProbability
             subsetImpact += vulnImpact
-    
-    return subsetImpact
+        elif isExploited[i] is False and vulnImpact > 0:
+            subsetProbability *= (1-vulnProbability)
 
+    # Max of 100 impact per subset     
+    if(subsetImpact < impactMax):
+        return [subsetProbability,subsetImpact]
+    else :
+        return [subsetProbability,impactMax]
 
 # Get the consolidated Risk per Host, returns [ipAddress,numHosts,consolidatedRisk]
 def getConsolidatedRiskPerHost(hostList):
@@ -205,7 +198,6 @@ def getConsolidatedRiskPerHost(hostList):
             
             isExploited = []                                           # Determines whether CVE is exploited or not 
 
-
             for i in range(len(idList)):                               # For each ID in subset check if ID of vuln is in subset of exploited CVEs
                 
 
@@ -214,18 +206,20 @@ def getConsolidatedRiskPerHost(hostList):
                 else:                                                  # IF CVE was not exploited in this subset 
                     isExploited.append(False)
 
-            subsetProbabilityList.append(getSubsetProbability(isExploited,host))
-            subsetImpactList.append(getSubsetImpact(isExploited,host))
+            subsetResult = getSubsetProbabilityAndImpact(isExploited,host)
+            subsetProbabilityList.append(subsetResult[0])
+            subsetImpactList.append(subsetResult[1])
+
 
         # Calculate for Consolidated Risk here
-
         for i in range(len(subset)):
-            subsetRisk = subsetProbabilityList[i] * subsetImpactList[i]
-            consolidatedRisk += subsetRisk
 
-
-        print(f"Host: {hostList.index(host)} Consolidated Risk: {consolidatedRisk}\n ")
-        print("=================")
+            if(subsetImpactList[i] > 0):
+                subsetRisk = subsetProbabilityList[i] * subsetImpactList[i]
+                consolidatedRisk += subsetRisk
+                
+        print(f"Host: {hostList.index(host)} Consolidated Risk: {consolidatedRisk}")
+        print("===========================")
 
 
         
