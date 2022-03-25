@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 import json,xmltodict
 
@@ -19,6 +21,12 @@ password = 'kali'
 # Task ID's
 networkFullAndFastScanId = 'ad0736a6-ab8d-4e3b-b1f4-410f753cb822'
 networkDiscoveryScanId = '7c9f814f-2367-4dbf-9d3b-4589a4f6e0f3'
+
+#Report IDs
+mediumReport = '6beae7f0-d4da-49f8-a4db-c5765bf9401a'
+severeReport = '84c900e0-400e-4d03-94c5-33946b0cca37'
+metaSploitable = '56f60645-c515-4739-b88b-2d8717c7a1f9'
+
 
 # Computation Variables
 vulnList = []
@@ -42,44 +50,38 @@ with Gmp(connection) as gmp:
 	# Retrieve GMP version supported by the remote daemon
 	versionResponse = gmp.get_version()
 	version = json.loads(json.dumps(xmltodict.parse(versionResponse)))				# Convert XML to Dictionary and parse to JSON String
-
+	
 	# Login 
 	gmp.authenticate(username,password)
 
 	# Get all reports
 	reportsListResponse = gmp.get_reports()
-
+	
 	# Convert XML to JSON String
 	reportsListResponse = json.dumps(XMLtoJSON(reportsListResponse)['get_reports_response']['report'],indent=4)
-
-	# Convert JSON String to dict
-	#reportsJSON = json.loads(reportsListResponse)																
-
+													
 	# Print reports list to a file
 	print(reportsListResponse,file=open("reports.txt","w"))
 	
-	# Get Single Report
-	reportResponse = gmp.get_report('84c900e0-400e-4d03-94c5-33946b0cca37')
+	# Get Single Report for actual, ignore pagination to get all vuln entries
+	reportResponse = gmp.get_report(mediumReport,ignore_pagination=True)
+	#reportResponse = gmp.get_report(severeReport)
 	reportString = json.dumps(XMLtoJSON(reportResponse)['get_reports_response']['report']['report']['results']['result'],indent=4)
+
+	print(reportString,file=open("output.txt","w"))
+	
+	# Get Single Report for testing
+	# reportString = json.dumps(XMLtoJSON(reportResponse)['get_reports_response']['report']['report'],indent=4)
+	# print(reportString,file=open("output.txt","w"))
+	
 
 	# Convert report to List of Dictionaries, each dictionary contains vulnerability details
 	reportJSON = json.loads(reportString)	
 	totalVulnerabilities = len(reportJSON)
 
-	# Print contents of individual report to output file
-	print(reportString,file=open("output.txt","w"))
-
-
-	print(f"Current GVM Version: {version['get_version_response']['version']}")
-	print("====================")
-
-	
-	print(f"Total Vulnerabilities: {totalVulnerabilities}")					
-	print("==================== \n")
-
-
-	# Store all Vulnerabilities and add their Impact, PRobability, and Risk Values
+	# Store all Vulnerabilities and add their Impact, Probability, and Risk Values
 	for vuln in reportJSON:
+		
 		entry = {
 			'id':vuln['@id'],
 			'name':vuln['name'],
@@ -91,45 +93,44 @@ with Gmp(connection) as gmp:
 			'solution': vuln['nvt']['solution'],
 			'qod': float(vuln['qod']['value'])
 		}
-
 		
-		vulnList.append(entry)
+		if entry['cvss'] > 0: vulnList.append(entry)
+	
 
+	print(f"Current GVM Version: {version['get_version_response']['version']}")
+	print("====================")
+	
+	print(f"Total Vulnerabilities: {len(vulnList)}")					
+	print("==================== \n")
 
+	# for vuln in vulnList:
+	# 	print("ID: ",vuln['id'])
+	# 	print("Name: ",vuln['name'])
+	# 	print("IP Adress: ",vuln['ipAddress'])
+	# 	print("Hostname: ",vuln['hostName'])
+	# 	print("Vector: ",vuln['vector'])
+	# 	print("Threat Family: ",vuln['threatFamily'])
+	# 	print("CVSS: ",vuln['cvss'])
+	# 	print("Solution: ",vuln['solution'])
+	# 	print("QOD: ",vuln['qod'])
+	# 	print(vulnList.index(vuln),'\n')
+
+	# print("===================")
+	
 	# Sort Vulnerabilities By host 
 	perHostVulnList = sortVulnsByHost(vulnList)
-	getConsolidatedRiskPerHost(perHostVulnList)
+	print("Finished Sorting Vulns per Host")
 
-	# # Sample values for Testing
-	sampleQOD = 90.0
-	sampleVector0 = "AV:A/AC:L/Au:N/C:P/I:P/A:N"				# HTTP Cleartext transmission vector
-	# sampleVector1 = "AV:N/AC:M/Au:N/C:C/I:C/A:C"				# Log4j vector
-	# sampleVector2  = "AV:N/AC:L/Au:N/C:C/I:C/A:C"				# Bluekeep Denial of Service 
-	
-	# print(f"Number of Hosts: {len(perHost)}")
-	# print("==================== \n")
+	# Phase 2 - Get the Consolidated Risk Per Host
+	perHostData = getConsolidatedRiskPerHost(perHostVulnList)
+	print("Finished Getting Consolidated Risk Per Host")
 
-	# for row in perHost:
-	# 	for vuln in row:
-	# 		print("ID: ",vuln['id'])
-	# 		print("Name: ",vuln['name'])
-	# 		print("IP Adress: ",vuln['ipAddress'])
-	# 		print("Hostname: ",vuln['hostName'])
-	# 		print("Vector: ",vuln['vector'])
-	# 		print("Threat Family: ",vuln['threatFamily'])
-	# 		print("CVSS: ",vuln['cvss'])
-	# 		print("Solution: ",vuln['solution'])
-	# 		print("QOD: ",vuln['qod'])
-	# 		print('\n')
+	# Phase 3 - Get the Aggregated Risk Score of the Network
+	aggregatedRisk = getAggregatedRiskScore(perHostData)
+	print("Finished Getting Aggregated Risk Score")
 
-	# 	print("===================")
+	for entry in perHostData:
+		print(entry)
+		print("================ \n")
 
-    
-
-
-
-
-	# # Stop Task 
-	# stopResponse =  gmp.stop_task("7c9f814f-2367-4dbf-9d3b-4589a4f6e0f3")
-	# print(stopResponse)
-
+	print(f"Aggregated Risk: {aggregatedRisk}")

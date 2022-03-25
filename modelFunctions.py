@@ -1,4 +1,6 @@
+from ipaddress import ip_address
 from itertools import combinations
+from textwrap import indent
 
 #Converts CVSS Vector to Vector String
 def splitVector(vector):
@@ -158,20 +160,25 @@ def getSubsetProbabilityAndImpact(isExploited,host):
     subsetImpact = 0
     subsetProbability = 1
 
-    for i in range(len(host)):
+    for i in range(len(host)):                                  # Go through all vulnerabilities in the per-host vuln list 
 
         vectorList = splitVector(host[i]['vector'])
         qod = host[i]['qod']
 
         vulnProbability = getProbability(vectorList,qod)
         vulnImpact = getImpact(vectorList)
-
+        
         # Disregard LOG intensity and impactless vulnerabilities
         if isExploited[i] is True and vulnImpact > 0:
             subsetProbability *= vulnProbability
-            subsetImpact += vulnImpact
+            subsetImpact += vulnImpact            
+        # Product of the probability of all exploited CVEs * product of 1 - probability of all non exploited CVEs
         elif isExploited[i] is False and vulnImpact > 0:
             subsetProbability *= (1-vulnProbability)
+            
+
+    subsetProbability = round(subsetProbability,4)
+    subsetImpact = round(subsetImpact,4)
 
     # Max of 100 impact per subset     
     if(subsetImpact < impactMax):
@@ -179,18 +186,40 @@ def getSubsetProbabilityAndImpact(isExploited,host):
     else :
         return [subsetProbability,impactMax]
 
-# Get the consolidated Risk per Host, returns [ipAddress,numHosts,consolidatedRisk]
+# Get the number of Vulnerabilities whose Impact is greater than 0 per host 
+def getImpactfulVulnCount(host):
+    
+    vulnCount = 0
+
+    for i in range(len(host)):
+        vectorList = splitVector(host[i]['vector'])
+        vulnImpact = getImpact(vectorList)
+
+        if(vulnImpact > 0):
+            vulnCount +=1 
+
+    return vulnCount 
+
+
+
+# Get the consolidated Risk per Host, returns [hostName,ipAddress,numVulns,consolidatedRisk]
 def getConsolidatedRiskPerHost(hostList):
 
+    data = [] 
+
     for host in hostList:                                              # For every machine in the list
-
+ 
         consolidatedRisk = 0
-
+    
         idList = []                                                    # ID list of every vuln in a host
         for vuln in host: idList.append(vuln['id'])
     
         vulnIdSubsetList = getVulnerabilityIDSubset(idList)            # Returns ID of vuln subsets
-        
+
+        print(f"IP Address: {host[0]['ipAddress']} Length of Subset: {len(vulnIdSubsetList)} \n")
+        print("================================= \n")
+
+
         subsetProbabilityList = []
         subsetImpactList = []
 
@@ -200,7 +229,6 @@ def getConsolidatedRiskPerHost(hostList):
 
             for i in range(len(idList)):                               # For each ID in subset check if ID of vuln is in subset of exploited CVEs
                 
-
                 if idList[i] in subset:                                # IF CVE was exploited in this subset    
                     isExploited.append(True)
                 else:                                                  # IF CVE was not exploited in this subset 
@@ -210,30 +238,43 @@ def getConsolidatedRiskPerHost(hostList):
             subsetProbabilityList.append(subsetResult[0])
             subsetImpactList.append(subsetResult[1])
 
+        print("Subset Probabiltiy List: ")
+        print(subsetProbabilityList)
+        print("Subset Impact List: ")
+        print(subsetImpactList)
 
         # Calculate for Consolidated Risk here
-        for i in range(len(subset)):
+        for i in range(len(subsetImpactList)):
 
             if(subsetImpactList[i] > 0):
                 subsetRisk = subsetProbabilityList[i] * subsetImpactList[i]
                 consolidatedRisk += subsetRisk
-                
-        print(f"Host: {hostList.index(host)} Consolidated Risk: {consolidatedRisk}")
-        print("===========================")
-
-
         
+        # Number of impactful vulnerabilty per host
+        vulnCount = getImpactfulVulnCount(host)
+    
+        entry = {
+            "ipAddress": host[0]['ipAddress'],
+            "hostName": host[0]['hostName'],
+            "vulnCount": vulnCount,
+            "consolidatedRisk": round(consolidatedRisk,4)
+        }
+        
+        data.append(entry)
+    
+    return data
 
 
-    # product of the probability of all exploited CVEs * product of 1 - probability of all non exploited CVEs
+def getAggregatedRiskScore(perHostData):
+    
+    aggregatedScore = 1
 
+    for i in range(len(perHostData)):
 
+        hostScore = perHostData[i]['consolidatedRisk']                  # Extract Score
+        hostScore = 1 - (hostScore/100)                                 # Convert score to Value from 0-1
 
+        aggregatedScore *= hostScore                                    # Multiply all converted scores to aggregated score
 
-
-
-
-
-
-
-
+    aggregatedScore = 100 - (aggregatedScore*100)   
+    return aggregatedScore
