@@ -140,18 +140,6 @@ def sortVulnsByHost(vulnList):
 
     return perHost
 
-# Returns a subset of vulnerabiliy ID based on combination 
-def getVulnerabilityIDSubset(vulnIdList):
-    vulnSubsetList = []           
-    
-    for i in range(0,len(vulnIdList)+1):
-
-        # combinations() function returns a list of subset given length
-        for subset in combinations(vulnIdList,i):
-            if(len(subset) !=0 ):
-                vulnSubsetList.append(list(subset))
-
-    return vulnSubsetList
 
 # Return probability and impact of a subset given a subset of IDS and all vulnerabilities in a host
 def getSubsetProbabilityAndImpact(isExploited,host):
@@ -191,16 +179,26 @@ def getImpactfulVulnCount(host):
     
     vulnCount = 0
 
-    for i in range(len(host)):
-        vectorList = splitVector(host[i]['vector'])
-        vulnImpact = getImpact(vectorList)
+    for i in range(0,len(host)):
+        vulnImpact = host[i]['cvss']
 
-        if(vulnImpact > 0):
-            vulnCount +=1 
+        if(vulnImpact > 0): vulnCount +=1 
 
     return vulnCount 
 
 
+# Returns a subset of vulnerabiliy ID based on combination 
+def getVulnerabilityIDSubset(vulnIdList):
+    vulnSubsetList = []           
+    
+    for i in range(0,len(vulnIdList)+1):
+
+        # combinations() function returns a list of subset given length
+        for subset in combinations(vulnIdList,i):
+            if(len(subset) !=0 ):
+                vulnSubsetList.append(list(subset))
+
+    return vulnSubsetList
 
 # Get the consolidated Risk per Host, returns [hostName,ipAddress,numVulns,consolidatedRisk]
 def getConsolidatedRiskPerHost(hostList):
@@ -213,35 +211,39 @@ def getConsolidatedRiskPerHost(hostList):
     
         idList = []                                                    # ID list of every vuln in a host
         for vuln in host: idList.append(vuln['id'])
-    
-        vulnIdSubsetList = getVulnerabilityIDSubset(idList)            # Returns ID of vuln subsets
-
-        print(f"IP Address: {host[0]['ipAddress']} Length of Subset: {len(vulnIdSubsetList)} \n")
-        print("================================= \n")
-
 
         subsetProbabilityList = []
         subsetImpactList = []
 
-        for subset in vulnIdSubsetList:                                # For each subset calculate their Probability and Impact 
-            
-            isExploited = []                                           # Determines whether CVE is exploited or not 
+        # Generate ID Subsets
+        for i in range(1,len(idList)+1):
 
-            for i in range(len(idList)):                               # For each ID in subset check if ID of vuln is in subset of exploited CVEs
+            vulnSubsetList = []                                         # List is refilled every iteration to prevent memory overflow
+
+            for subset in combinations(idList,i):                       # refill list with new subset based on length i 
+                if(len(subset) != 0 ):
+                    vulnSubsetList.append(list(subset))
+
+            print(f"Subset Length: {len(vulnSubsetList)} Iteration: {i}")
+
+
+            # For each subset calculate their Probability and Impact 
+            for subset in vulnSubsetList:                                
                 
-                if idList[i] in subset:                                # IF CVE was exploited in this subset    
-                    isExploited.append(True)
-                else:                                                  # IF CVE was not exploited in this subset 
-                    isExploited.append(False)
+                isExploited = []                                           # Determines whether CVE is exploited or not 
 
-            subsetResult = getSubsetProbabilityAndImpact(isExploited,host)
-            subsetProbabilityList.append(subsetResult[0])
-            subsetImpactList.append(subsetResult[1])
+                for i in range(len(idList)):                               # For each ID in subset check if ID of vuln is in subset of exploited CVEs
+                    
+                    if idList[i] in subset:                                # IF CVE was exploited in this subset    
+                        isExploited.append(True)
+                    else:                                                  # IF CVE was not exploited in this subset 
+                        isExploited.append(False)
 
-        print("Subset Probabiltiy List: ")
-        print(subsetProbabilityList)
-        print("Subset Impact List: ")
-        print(subsetImpactList)
+                subsetResult = getSubsetProbabilityAndImpact(isExploited,host)
+                subsetProbabilityList.append(subsetResult[0])
+                subsetImpactList.append(subsetResult[1])
+
+        print("Finished calculating subsets")
 
         # Calculate for Consolidated Risk here
         for i in range(len(subsetImpactList)):
@@ -257,14 +259,14 @@ def getConsolidatedRiskPerHost(hostList):
             "ipAddress": host[0]['ipAddress'],
             "hostName": host[0]['hostName'],
             "vulnCount": vulnCount,
-            "consolidatedRisk": round(consolidatedRisk,4)
+            "consolidatedRisk": round(consolidatedRisk,2)
         }
         
         data.append(entry)
     
     return data
 
-
+# Get the Aggregated Risk Score of the Network given the Consolidated Risk Scores per Host 
 def getAggregatedRiskScore(perHostData):
     
     aggregatedScore = 1
@@ -277,4 +279,4 @@ def getAggregatedRiskScore(perHostData):
         aggregatedScore *= hostScore                                    # Multiply all converted scores to aggregated score
 
     aggregatedScore = 100 - (aggregatedScore*100)   
-    return aggregatedScore
+    return round(aggregatedScore,2)

@@ -64,7 +64,7 @@ with Gmp(connection) as gmp:
 	print(reportsListResponse,file=open("reports.txt","w"))
 	
 	# Get Single Report for actual, ignore pagination to get all vuln entries
-	reportResponse = gmp.get_report(mediumReport,ignore_pagination=True)
+	reportResponse = gmp.get_report(severeReport,ignore_pagination=True)
 	#reportResponse = gmp.get_report(severeReport)
 	reportString = json.dumps(XMLtoJSON(reportResponse)['get_reports_response']['report']['report']['results']['result'],indent=4)
 
@@ -103,19 +103,19 @@ with Gmp(connection) as gmp:
 	print(f"Total Vulnerabilities: {len(vulnList)}")					
 	print("==================== \n")
 
-	# for vuln in vulnList:
-	# 	print("ID: ",vuln['id'])
-	# 	print("Name: ",vuln['name'])
-	# 	print("IP Adress: ",vuln['ipAddress'])
-	# 	print("Hostname: ",vuln['hostName'])
-	# 	print("Vector: ",vuln['vector'])
-	# 	print("Threat Family: ",vuln['threatFamily'])
-	# 	print("CVSS: ",vuln['cvss'])
-	# 	print("Solution: ",vuln['solution'])
-	# 	print("QOD: ",vuln['qod'])
-	# 	print(vulnList.index(vuln),'\n')
+	for vuln in vulnList:
+		print("ID: ",vuln['id'])
+		print("Name: ",vuln['name'])
+		print("IP Adress: ",vuln['ipAddress'])
+		print("Hostname: ",vuln['hostName'])
+		print("Vector: ",vuln['vector'])
+		print("Threat Family: ",vuln['threatFamily'])
+		print("CVSS: ",vuln['cvss'])
+		print("Solution: ",vuln['solution'])
+		print("QOD: ",vuln['qod'])
+		print(vulnList.index(vuln),'\n')
 
-	# print("===================")
+	print("===================")
 	
 	# Sort Vulnerabilities By host 
 	perHostVulnList = sortVulnsByHost(vulnList)
