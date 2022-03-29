@@ -1,6 +1,6 @@
 from ipaddress import ip_address
 from itertools import combinations
-from textwrap import indent
+from multiprocessing import Pool
 
 #Converts CVSS Vector to Vector String
 def splitVector(vector):
@@ -245,7 +245,7 @@ def getConsolidatedRiskPerHost(hostList):
 
         print("Finished calculating subsets")
 
-        # Calculate for Consolidated Risk here
+        # Calculate for Consolidated Risk here - Possibly move this to thread process
         for i in range(len(subsetImpactList)):
 
             if(subsetImpactList[i] > 0):
