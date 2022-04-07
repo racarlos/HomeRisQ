@@ -1,0 +1,79 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:set rail_bg_color get_color_from_hex("#fffcf4")
+#:set fab_button_bg_color get_color_from_hex("#b0f0d6")
+#:set selected_item_bg_color get_color_from_hex("#e7e4c0")
+
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "Title ng SP KO"
+        left_action_items: [["menu", lambda x: app.openRail()]]
+
+
+    MDBoxLayout:
+
+        MDNavigationRail:
+            id: rail
+            use_resizeable: True
+            use_hover_behavior: True
+            hover_bg: 0, 0, 0, .2
+            color_normal: get_color_from_hex("#718089")
+            color_active: get_color_from_hex("#f3ab44")
+
+            MDNavigationRailItem:
+                icon: 'view-dashboard'
+                text: 'Dashboard'
+                on_release:
+                    screenManager.current = "dashboardScreen"
+
+            MDNavigationRailItem:
+                icon: 'cube-scan'
+                text: 'Scan'
+                on_release:
+                    screenManager.current = "scanScreen"
+
+            MDNavigationRailItem:
+                icon: 'clipboard-clock-outline'
+                text: 'History'
+                on_release:
+                    screenManager.current = "historyScreen"
+            
+            MDNavigationRailItem:
+                icon: 'calculator-variant'
+                text: 'Risk Calculator'
+                on_release:
+                    screenManager.current = "calculatorScreen"
+
+            MDNavigationRailItem:
+                icon: 'exit-to-app'
+                text: 'Exit'
+                on_release:
+                    app.stop()
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            ScreenManager:
+                id: screenManager
+
+                MDScreen:
+                    name: "dashboardScreen"
+                    MDLabel:
+                        text: "dashboard"
+
+                MDScreen:
+                    name: "scanScreen"
+                    MDLabel:
+                        text: "scan"
+
+                MDScreen:
+                    name: "historyScreen"
+                    MDLabel:
+                        text: "history"
+
+                MDScreen:
+                    name: "calculatorScreen"
+                    MDLabel:
+                        text: "calculator"

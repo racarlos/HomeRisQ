@@ -64,7 +64,7 @@ with Gmp(connection) as gmp:
 	print(reportsListResponse,file=open("reports.txt","w"))
 	
 	# Get Single Report for actual, ignore pagination to get all vuln entries
-	reportResponse = gmp.get_report(metaSploitable,ignore_pagination=True)
+	reportResponse = gmp.get_report(mediumReport,ignore_pagination=True)
 	#reportResponse = gmp.get_report(severeReport)
 	reportString = json.dumps(XMLtoJSON(reportResponse)['get_reports_response']['report']['report']['results']['result'],indent=4)
 
