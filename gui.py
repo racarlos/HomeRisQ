@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.core.window import Window
 
-
+Window.size = (1280,720)
 
 class MainApp(MDApp):
 

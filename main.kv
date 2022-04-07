@@ -1,54 +1,63 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition
-#:set rail_bg_color get_color_from_hex("#fffcf4")
-#:set fab_button_bg_color get_color_from_hex("#b0f0d6")
-#:set selected_item_bg_color get_color_from_hex("#e7e4c0")
+
+# Set colors
+#:set darkGray get_color_from_hex("#113448")
+#:set lighterGray get_color_from_hex("#718089")
+#:set darkBlue get_color_from_hex("#155075") 
+#:set lightBlue get_color_from_hex("#2b96d4")
+#:set orange get_color_from_hex("#F7C14C")
+#:set white get_color_from_hex("#FFFFFF")
+
 
 MDBoxLayout:
     orientation: 'vertical'
 
     MDToolbar:
         title: "Title ng SP KO"
+        md_bg_color: darkBlue
         left_action_items: [["menu", lambda x: app.openRail()]]
-
 
     MDBoxLayout:
 
         MDNavigationRail:
             id: rail
             use_resizeable: True
+
+            color_normal: lighterGray
+            color_active: orange
+
             use_hover_behavior: True
-            hover_bg: 0, 0, 0, .2
-            color_normal: get_color_from_hex("#718089")
-            color_active: get_color_from_hex("#f3ab44")
+            hover_bg: 0, 0, 0, .3
 
             MDNavigationRailItem:
                 icon: 'view-dashboard'
-                text: 'Dashboard'
+                text: '[b]Dashboard[/b]'
                 on_release:
                     screenManager.current = "dashboardScreen"
 
             MDNavigationRailItem:
                 icon: 'cube-scan'
-                text: 'Scan'
+                text: '[b]Scan[/b]'
+                size_hint_x: None
                 on_release:
                     screenManager.current = "scanScreen"
 
             MDNavigationRailItem:
                 icon: 'clipboard-clock-outline'
-                text: 'History'
+                text: '[b]History[/b]'
                 on_release:
                     screenManager.current = "historyScreen"
             
             MDNavigationRailItem:
                 icon: 'calculator-variant'
-                text: 'Risk Calculator'
+                text: '[b]Risk Calculator[/b]'
                 on_release:
                     screenManager.current = "calculatorScreen"
 
             MDNavigationRailItem:
                 icon: 'exit-to-app'
-                text: 'Exit'
+                text: '[b]Exit[/b]'
                 on_release:
                     app.stop()
 
@@ -58,21 +67,25 @@ MDBoxLayout:
             ScreenManager:
                 id: screenManager
 
+                # Screen for Dashboard
                 MDScreen:
                     name: "dashboardScreen"
                     MDLabel:
                         text: "dashboard"
 
+                # Screen for Scan
                 MDScreen:
                     name: "scanScreen"
                     MDLabel:
                         text: "scan"
 
+                # Screen for History
                 MDScreen:
                     name: "historyScreen"
                     MDLabel:
                         text: "history"
 
+                # Screen for CVE Risk Calculator 
                 MDScreen:
                     name: "calculatorScreen"
                     MDLabel:
