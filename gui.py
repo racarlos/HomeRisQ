@@ -1,4 +1,3 @@
-from kivy.uix.image import Image
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.core.window import Window
@@ -14,12 +13,14 @@ class MainApp(MDApp):
         screen = Builder.load_file('main.kv')
         return screen
 
+    # For Opening and closing navigation Rail 
     def openRail(self):
         if self.root.ids.rail.rail_state == "open":
             self.root.ids.rail.rail_state = "close"
         else:
             self.root.ids.rail.rail_state = "open"
 
+    def generateHistoryEntries(self):
 
 
 

@@ -77,13 +77,44 @@ MDBoxLayout:
                 MDScreen:
                     name: "scanScreen"
                     MDLabel:
-                        text: "scan"
+             df           text: "scan"
 
                 # Screen for History
                 MDScreen:
                     name: "historyScreen"
-                    MDLabel:
-                        text: "history"
+
+                    # For scroling through history entries
+                    ScrollView:
+                        do_scroll_y: True   
+
+                        MDGridLayout:
+                            id: historyGrid
+                            adaptive_height: True
+                            size_hint_x: 1.0     
+                            size_hint_y: None    
+                            cols: 1
+                            padding: 50
+                            spacing: 30
+
+                            MDBoxLayout:
+                                md_bg_color: darkBlue
+                                size_hint_y: None    
+                                height: 125
+
+                            MDBoxLayout:
+                                md_bg_color: darkBlue
+                                height: 125
+                                size_hint_y: None    
+
+                            MDBoxLayout:
+                                md_bg_color: darkBlue
+                                size_hint_y: None    
+                                height: 125
+
+                            MDBoxLayout:
+                                md_bg_color: darkBlue
+                                height: 125
+                                size_hint_y: None    
 
                 # Screen for CVE Risk Calculator 
                 MDScreen:
