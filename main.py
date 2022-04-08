@@ -121,26 +121,26 @@ for entry in perHostData:
 print(f"Aggregated Risk: {aggregatedRisk}")
 
 
-# Window.size = (1280,720)
+Window.size = (1280,720)
 
-# class MainApp(MDApp):
+class MainApp(MDApp):
 
-#     # Builder Method
-#     def build(self):
-#         self.theme_cls.theme_style = "Dark"
-#         self.theme_cls.primary_palette = "BlueGray"
-#         screen = Builder.load_file('main.kv')
-#         return screen
+	# Builder Method
+	def build(self):
+		self.theme_cls.theme_style = "Dark"
+		self.theme_cls.primary_palette = "BlueGray"
+		screen = Builder.load_file('main.kv')
+		return screen
 
-#     # For Opening and closing navigation Rail 
-#     def openRail(self):
-#         if self.root.ids.rail.rail_state == "open":
-#             self.root.ids.rail.rail_state = "close"
-#         else:
-#             self.root.ids.rail.rail_state = "open"
+	# For Opening and closing navigation Rail 
+	def openRail(self):
+		if self.root.ids.rail.rail_state == "open":
+			self.root.ids.rail.rail_state = "close"
+		else:
+			self.root.ids.rail.rail_state = "open"
 
-# 	def generateHistoryEntries(self):
-# 		pass
+	def generateHistoryEntries(self):
+		pass
 
-# # Run the App
-# MainApp().run()
+# Run the App
+MainApp().run()
