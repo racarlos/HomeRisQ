@@ -1,6 +1,4 @@
-from ipaddress import ip_address
-from itertools import combinations
-from multiprocessing import Pool
+from itertools import combinations          # Itertools for producing combinations
 
 #Converts CVSS Vector to Vector String
 def splitVector(vector):

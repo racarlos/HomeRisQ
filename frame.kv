@@ -2,12 +2,97 @@
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 # Set colors
-#:set darkGray get_color_from_hex("#113448")
-#:set lighterGray get_color_from_hex("#718089")
+#:set darkGray get_color_from_hex("#212121")
+#:set lightGray get_color_from_hex("#718089")
 #:set darkBlue get_color_from_hex("#155075") 
 #:set lightBlue get_color_from_hex("#2b96d4")
 #:set orange get_color_from_hex("#F7C14C")
 #:set white get_color_from_hex("#FFFFFF")
+#:set black get_color_from_hex("#000000")
+
+
+<HistoryEntry>:
+    md_bg_color: darkBlue
+    size_hint_y: None    
+    height: 125
+
+    # Box for Content
+    MDBoxLayout:
+
+        orientation: 'vertical'
+        size_hint_x: 0.8
+
+        # Box for ID
+        MDBoxLayout:
+            size_hint_y: 0.25
+            md_bg_color: darkBlue
+            padding: [15,5]
+            
+            MDLabel:
+                font_style: 'Button'
+                text: 'Report ID: ' + str(root.data.id)
+
+        # Box for Additional Details
+        MDBoxLayout:
+            size_hint_y: 0.75
+            md_bg_color: darkGray
+
+            MDBoxLayout:
+                size_hint_x: 0.7
+                orientation: 'vertical'
+                md_bg_color: darkGray
+                
+                padding: [15,5]
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Name: ' + str(root.data.name)
+                
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Timestamp: ' + str(root.data.date)
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Progress: ' + str(root.data.progress)
+            
+            MDBoxLayout:
+                size_hint_x: 0.3
+                orientation: 'vertical'
+                md_bg_color: darkGray
+
+                padding: [15,5]
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Host Count: ' + str(root.data.hostCount)
+                
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Vuln Count: ' +  str(root.data.vulnCount)
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'CVSS Base: ' +  str(root.data.severity)
+
+            # Box for Button                            
+            MDBoxLayout:
+                md_bg_color: darkGray     
+                size_hint_x: 0.2
+
+                AnchorLayout:
+                    # Button for Scanning
+                    MDRectangleFlatIconButton:
+                        icon: 'skull-scan-outline'
+                        theme_text_color: "Custom"
+                        text_color: orange
+                        line_color: orange
+                        theme_icon_color: "Custom"
+                        icon_color: orange
+                        text: '[b]View Report[/b]'
+                        line_width: 1.5
+                        on_release: root.viewReport()
+
 
 
 MDBoxLayout:
@@ -24,7 +109,7 @@ MDBoxLayout:
             id: rail
             use_resizeable: True
 
-            color_normal: lighterGray
+            color_normal: lightGray
             color_active: orange
 
             use_hover_behavior: True
@@ -39,7 +124,6 @@ MDBoxLayout:
             MDNavigationRailItem:
                 icon: 'cube-scan'
                 text: '[b]Scan[/b]'
-                size_hint_x: None
                 on_release:
                     screenManager.current = "scanScreen"
 
@@ -48,13 +132,15 @@ MDBoxLayout:
                 text: '[b]History[/b]'
                 on_release:
                     screenManager.current = "historyScreen"
+                    app.generateHistoryEntries()
             
             MDNavigationRailItem:
                 icon: 'calculator-variant'
                 text: '[b]Risk Calculator[/b]'
                 on_release:
                     screenManager.current = "calculatorScreen"
-
+  
+                    
             MDNavigationRailItem:
                 icon: 'exit-to-app'
                 text: '[b]Exit[/b]'
@@ -75,6 +161,7 @@ MDBoxLayout:
 
                 # Screen for Scan
                 MDScreen:
+                    id: scanScreen
                     name: "scanScreen"
                     MDLabel:
                         text: "scan"
@@ -85,8 +172,9 @@ MDBoxLayout:
 
                     # For scroling through history entries
                     ScrollView:
-                        do_scroll_y: True   
-
+                        do_scroll_y: True
+                        
+                        # Grid Containing History Entries 
                         MDGridLayout:
                             id: historyGrid
                             adaptive_height: True
@@ -95,26 +183,6 @@ MDBoxLayout:
                             cols: 1
                             padding: 50
                             spacing: 30
-
-                            MDBoxLayout:
-                                md_bg_color: darkBlue
-                                size_hint_y: None    
-                                height: 125
-
-                            MDBoxLayout:
-                                md_bg_color: darkBlue
-                                height: 125
-                                size_hint_y: None    
-
-                            MDBoxLayout:
-                                md_bg_color: darkBlue
-                                size_hint_y: None    
-                                height: 125
-
-                            MDBoxLayout:
-                                md_bg_color: darkBlue
-                                height: 125
-                                size_hint_y: None    
 
                 # Screen for CVE Risk Calculator 
                 MDScreen:

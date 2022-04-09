@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Imports from GVM Libraries
+from unicodedata import name
 from gvm.connections import UnixSocketConnection			# Unix Domain Socket Connection 
 from gvm.protocols.gmp import Gmp							# Greenbone Management Protocol 
 from gvm.transforms import EtreeTransform
@@ -9,10 +10,14 @@ from gvm.transforms import EtreeTransform
 # Imports from Own Libraries
 from modelFunctions import *
 from gmpFunctions import *
+from extraFunctions import *
+
 
 # Kivy Imports
 from kivy.lang import Builder
 from kivymd.app import MDApp
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivy.properties import DictProperty
 from kivy.core.window import Window
 
 connection = UnixSocketConnection()
@@ -36,14 +41,9 @@ reportsList = []
 
 totalVulnerabilities = 0
 
-
 version = getVersion()
+# Get Reports and Store them reports in reportsList
 reportsListJSON = getReports()
-
-print(f"Current GVM Version: {version}")
-print("====================")
-
-# Store reportsList in 
 for report in reportsListJSON:
 
 	entry = {
@@ -58,9 +58,8 @@ for report in reportsListJSON:
 
 	# Avoid Discovery Scans 
 	if entry['name'] != 'Discovery': reportsList.append(entry)
-
-print(reportsList)				
-
+	
+printReports(reportsList)
 
 # getSingleReport(lowReport)
 # getSingleReport(mediumReport)
@@ -88,21 +87,8 @@ for vuln in reportJSON:
 print(f"Total Vulnerabilities: {len(vulnList)}")					
 print("==================== \n")
 
-for vuln in vulnList:
-	print("ID: ",vuln['id'])
-	print("Name: ",vuln['name'])
-	print("IP Adress: ",vuln['ipAddress'])
-	print("Hostname: ",vuln['hostName'])
-	print("Vector: ",vuln['vector'])
-	print("Threat Family: ",vuln['threatFamily'])
-	print("CVSS: ",vuln['cvss'])
-	print("Solution: ",vuln['solution'])
-	print("QOD: ",vuln['qod'])
-	print(vulnList.index(vuln),'\n')
 
-print("===================")
-
-# Sort Vulnerabilities By host 
+# Phase 0 - Sort Vulnerabilities By host 
 perHostVulnList = sortVulnsByHost(vulnList)
 print("Finished Sorting Vulns per Host")
 
@@ -114,14 +100,24 @@ print("Finished Getting Consolidated Risk Per Host")
 aggregatedRisk = getAggregatedRiskScore(perHostData)
 print("Finished Getting Aggregated Risk Score")
 
-for entry in perHostData:
-	print(entry)
-	print("================ \n")
-
 print(f"Aggregated Risk: {aggregatedRisk}")
 
+# GUI Variables
+hasGeneratedEntries = False
+Window.size = (1280,720)							# Set Window size to 1280x720
 
-Window.size = (1280,720)
+
+class HistoryEntry(MDBoxLayout):	
+
+	data = DictProperty({})																# Dictionary Containing Values 
+
+	# Function for generating report to be called by Button 
+	def viewReport(self):
+		MainApp.get_running_app().root.ids.screenManager.current = "dashboardScreen"	# Switch to dashboard screen
+
+		#self.root.ids.screenManager.current = "dashboardScreen"			
+																		# Change highlighted to dashboard
+		print(f"Generating Report for: {self.data.id}")
 
 class MainApp(MDApp):
 
@@ -129,7 +125,8 @@ class MainApp(MDApp):
 	def build(self):
 		self.theme_cls.theme_style = "Dark"
 		self.theme_cls.primary_palette = "BlueGray"
-		screen = Builder.load_file('main.kv')
+		screen = Builder.load_file('frame.kv')
+
 		return screen
 
 	# For Opening and closing navigation Rail 
@@ -139,7 +136,23 @@ class MainApp(MDApp):
 		else:
 			self.root.ids.rail.rail_state = "open"
 
+	# For Generating History Entries in History Screen
 	def generateHistoryEntries(self):
+
+		# Use global variable flag 
+		global hasGeneratedEntries
+		print(f"Generating History Entries, Length of Reports: {len(reportsList)}")
+		
+		# Add entries to History Grid if not Previously generated Entries
+		if(hasGeneratedEntries == False):
+			for i in range(len(reportsList)):
+				historyEntry = HistoryEntry(data=reportsList[i])		# Generate New Entry
+				self.root.ids.historyGrid.add_widget(historyEntry)		
+
+			hasGeneratedEntries = True
+
+	# For Removing history Entries once user exited the history screen
+	def removeHistoryEntries(self):
 		pass
 
 # Run the App
