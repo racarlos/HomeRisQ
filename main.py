@@ -77,11 +77,12 @@ class HistoryEntry(MDBoxLayout):
 		print(f"Generating Report for: {self.data.id}")
 		reportResults = startCalculation(str(self.data.id))
 
+
 class MainApp(MDApp):
 
 	# Builder Method
 	def build(self):
-		self.theme_cls.theme_style = "Dark"
+		#self.theme_cls.theme_style = "Dark"
 		self.theme_cls.primary_palette = "BlueGray"
 		screen = Builder.load_file('frame.kv')
 
@@ -99,7 +100,7 @@ class MainApp(MDApp):
 
 		# Use global variable flag 
 		global hasGeneratedEntries
-		print(f"Generating History Entries, Length of Reports: {len(reportsList)}")
+		#print(f"Generating History Entries, Length of Reports: {len(reportsList)}")
 		
 		# Add entries to History Grid if not Previously generated Entries
 		if(hasGeneratedEntries == False):

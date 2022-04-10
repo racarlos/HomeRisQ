@@ -10,6 +10,10 @@
 #:set white get_color_from_hex("#FFFFFF")
 #:set black get_color_from_hex("#000000")
 
+# Set Variables
+#: set card_elevation 40
+#: set abstract1 './assets/abstract1.jpg' 
+
 
 <HistoryEntry>:
     md_bg_color: darkBlue
@@ -31,6 +35,8 @@
             MDLabel:
                 font_style: 'Button'
                 text: 'Report ID: ' + str(root.data.id)
+                color: white
+
 
         # Box for Additional Details
         MDBoxLayout:
@@ -47,15 +53,19 @@
                 MDLabel:
                     font_style: 'Button'
                     text: 'Name: ' + str(root.data.name)
+                    color: white
                 
                 MDLabel:
                     font_style: 'Button'
                     text: 'Timestamp: ' + str(root.data.date)
+                    color: white
 
                 MDLabel:
                     font_style: 'Button'
                     text: 'Progress: ' + str(root.data.progress)
-            
+                    color: white
+
+
             MDBoxLayout:
                 size_hint_x: 0.3
                 orientation: 'vertical'
@@ -66,14 +76,17 @@
                 MDLabel:
                     font_style: 'Button'
                     text: 'Host Count: ' + str(root.data.hostCount)
+                    color: white
                 
                 MDLabel:
                     font_style: 'Button'
                     text: 'Vuln Count: ' +  str(root.data.vulnCount)
+                    color: white
 
                 MDLabel:
                     font_style: 'Button'
                     text: 'CVSS Base: ' +  str(root.data.severity)
+                    color: white
 
             # Box for Button                            
             MDBoxLayout:
@@ -108,6 +121,7 @@ MDBoxLayout:
         MDNavigationRail:
             id: rail
             use_resizeable: True
+            md_bg_color: darkGray
 
             color_normal: lightGray
             color_active: orange
@@ -156,9 +170,60 @@ MDBoxLayout:
                 # Screen for Dashboard
                 MDScreen:
                     name: "dashboardScreen"
-                    MDLabel:
-                        text: "dashboard"
 
+                    # For scroling through history entries
+                    ScrollView:
+                        do_scroll_y: True
+
+                        MDBoxLayout:
+                            orientation: "vertical"
+
+                            # Upper Box for Displaying 3 Cards of Top 3 Metrics
+                            MDBoxLayout:      
+                                md_bg_color: lightGray
+                                padding: 35
+                                spacing: 35
+                                                        
+                                # Card for Count of Severe Vulnerabilities
+                                MDCard:
+                                    elevation: card_elevation
+                                    orientation: "vertical"
+                                    background: abstract1
+
+
+                                    MDLabel:
+                                        halign: 'center'
+                                        text: 'Severe vulnerabilities'
+
+                                # Card Aggregated Network Score
+                                MDCard:
+                                    elevation: card_elevation
+                                    orientation: "vertical"
+                                    background: abstract1
+
+
+                                    MDLabel:
+                                        halign: 'center'
+                                        text: 'Aggregated Network Score'
+                                        # Card for Count of Severe Vulnerabilities
+
+                                # Card for Most Compromised Host 
+                                MDCard:
+                                    elevation: card_elevation
+                                    orientation: "vertical"
+                                    background: abstract1
+
+                                    MDLabel:
+                                        halign: 'center'
+                                        text: 'Most Compromised Host'
+
+                            # Lower Box for Additional Data
+                            MDBoxLayout:
+                                md_bg_color: lightBlue
+
+                                MDLabel:
+                                    text: 'Additional Data here'
+                                
                 # Screen for Scan
                 MDScreen:
                     id: scanScreen
@@ -169,6 +234,7 @@ MDBoxLayout:
                 # Screen for History
                 MDScreen:
                     name: "historyScreen"
+                    md_bg_color: black
 
                     # For scroling through history entries
                     ScrollView:
@@ -183,6 +249,7 @@ MDBoxLayout:
                             cols: 1
                             padding: 50
                             spacing: 30
+                            
 
                 # Screen for CVE Risk Calculator 
                 MDScreen:
