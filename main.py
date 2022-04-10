@@ -61,23 +61,42 @@ printReports(reportsList)
 
 # GUI Variables
 hasGeneratedEntries = False
+hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
 
 
+# Class for the whole data in Dashboard Screen
+
+class ReportDashboard(MDBoxLayout):
+	data = DictProperty({})
+
+
+# Class for Individual Boxes in History Screen
 class HistoryEntry(MDBoxLayout):	
 
 	data = DictProperty({})																# Dictionary Containing Values 
 
 	# Function for generating report to be called by Button 
 	def viewReport(self):
-		MainApp.get_running_app().root.ids.screenManager.current = "dashboardScreen"	# Switch to dashboard screen
 
-		#self.root.ids.screenManager.current = "dashboardScreen"			
-																		# Change highlighted to dashboard
+		# Use global variable flag
+		global hasGeneratedReport
+
+		MainApp.get_running_app().root.ids.screenManager.current = "dashboardScreen"	# Switch to dashboard screen
+		# [MINOR FIX] Change highlighted to dashboard
 		print(f"Generating Report for: {self.data.id}")
 		reportResults = startCalculation(str(self.data.id))
+		newReportDashboard = ReportDashboard(data=reportResults)
+
+		# Clear Child Widgets before adding report dashboard
+		MainApp.get_running_app().root.ids.reportBox.clear_widgets()
+		MainApp.get_running_app().root.ids.reportBox.add_widget(newReportDashboard)
+
+		hasGeneratedReport = True
 
 
+
+# Main Application Class
 class MainApp(MDApp):
 
 	# Builder Method

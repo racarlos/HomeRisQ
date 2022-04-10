@@ -12,6 +12,8 @@
 
 # Set Variables
 #: set card_elevation 40
+#: set topMetrics 50
+#: set subtext_height 0.2
 #: set abstract1 './assets/abstract1.jpg' 
 
 
@@ -106,6 +108,90 @@
                         line_width: 1.5
                         on_release: root.viewReport()
 
+<ReportDashboard>:
+    orientation: "vertical"
+
+    # Upper Box for Displaying 3 Cards of Top 3 Metrics
+    MDBoxLayout:      
+        md_bg_color: lightGray
+        padding: 35
+        spacing: 35
+                                
+        # Card for Count of Severe Vulnerabilities
+        MDCard:
+            elevation: card_elevation
+            orientation: "vertical"
+
+            MDLabel:
+                halign: 'center'
+                font_size: topMetrics
+                text: str(root.data.totalVulnerabilities)
+            
+            MDBoxLayout:
+                size_hint_y: subtext_height
+                md_bg_color: lightBlue
+
+                MDIconButton:
+                    icon: 'biohazard'
+
+                MDLabel:
+                    halign: 'center'
+                    font_style: 'Button'
+
+                    text: 'Severe vulnerabilities Count'
+
+        # Card for Aggregated Network Score
+        MDCard:
+            elevation: card_elevation
+            orientation: "vertical"
+
+            MDLabel:
+                halign: 'center'
+                font_size: topMetrics
+                text:  str(root.data.aggregatedRisk)
+
+            MDBoxLayout:
+                size_hint_y: subtext_height
+                md_bg_color: lightBlue
+
+                MDIconButton:
+                    icon: 'security'
+
+                MDLabel:
+                    halign: 'center'
+                    font_style: 'Button'
+                    text: 'Aggregated Network Score'
+
+        # Card for Most Compromised Host 
+        MDCard:
+            elevation: card_elevation
+            orientation: "vertical"
+
+            MDLabel:
+                halign: 'center'
+                font_size: topMetrics
+                text: str(root.data.mostVulnerableHost)
+
+            MDBoxLayout:
+                size_hint_y: subtext_height
+                md_bg_color: lightBlue
+
+                MDIconButton:
+                    icon: 'ip-network'
+
+                MDLabel:
+                    halign: 'center'
+                    font_style: 'Button'
+                    text: 'Most Compromised Host'
+                
+    # Lower Box for Additional Data
+    MDBoxLayout:
+        md_bg_color: lightBlue
+
+        MDLabel:
+            halign: 'center'
+            text: 'Additional Data here'
+
 
 
 MDBoxLayout:
@@ -175,61 +261,34 @@ MDBoxLayout:
                     ScrollView:
                         do_scroll_y: True
 
+                        # Box Containing Report Data, attach ReportDashboard here
                         MDBoxLayout:
-                            orientation: "vertical"
+                            id: reportBox
+                            md_bg_color: black
+                            
+                            # No report prompt 
+                            AnchorLayout:
+                                MDRectangleFlatIconButton:
+                                    font_size: 50
+                                    icon_size: 50
+                                    icon: 'alert-octagon'
+                                    theme_text_color: "Custom"
+                                    text_color: orange
+                                    line_color: orange
+                                    theme_icon_color: "Custom"
+                                    icon_color: orange
+                                    text: '[b]No Report Generated Yet[/b]'
+                                    line_width: 1.5
 
-                            # Upper Box for Displaying 3 Cards of Top 3 Metrics
-                            MDBoxLayout:      
-                                md_bg_color: lightGray
-                                padding: 35
-                                spacing: 35
+
                                                         
-                                # Card for Count of Severe Vulnerabilities
-                                MDCard:
-                                    elevation: card_elevation
-                                    orientation: "vertical"
-                                    background: abstract1
-
-
-                                    MDLabel:
-                                        halign: 'center'
-                                        text: 'Severe vulnerabilities'
-
-                                # Card Aggregated Network Score
-                                MDCard:
-                                    elevation: card_elevation
-                                    orientation: "vertical"
-                                    background: abstract1
-
-
-                                    MDLabel:
-                                        halign: 'center'
-                                        text: 'Aggregated Network Score'
-                                        # Card for Count of Severe Vulnerabilities
-
-                                # Card for Most Compromised Host 
-                                MDCard:
-                                    elevation: card_elevation
-                                    orientation: "vertical"
-                                    background: abstract1
-
-                                    MDLabel:
-                                        halign: 'center'
-                                        text: 'Most Compromised Host'
-
-                            # Lower Box for Additional Data
-                            MDBoxLayout:
-                                md_bg_color: lightBlue
-
-                                MDLabel:
-                                    text: 'Additional Data here'
-                                
                 # Screen for Scan
                 MDScreen:
                     id: scanScreen
                     name: "scanScreen"
                     MDLabel:
-                        text: "scan"
+                        halign: 'center'
+                        text: "Scan Screen here"
 
                 # Screen for History
                 MDScreen:
@@ -255,4 +314,5 @@ MDBoxLayout:
                 MDScreen:
                     name: "calculatorScreen"
                     MDLabel:
-                        text: "calculator"
+                        halign: 'center'
+                        text: "CVE Risk Calculator Here"
