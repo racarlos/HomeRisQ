@@ -1,4 +1,6 @@
 from itertools import combinations          # Itertools for producing combinations
+from gmpFunctions import getSingleReport
+
 
 #Converts CVSS Vector to Vector String
 def splitVector(vector):
@@ -94,11 +96,6 @@ def getVulnerabilityRisk(vector,qod):
     impact = getImpact(vectorList)
 
     risk = probability * impact
-
-    print(f"Probability: {probability}")
-    print(f"Impact: {impact}")
-    print(f"Risk: {risk}")
-
     return round(risk,4)
 
 # Returns a 2D array of vulnerabilities per host
@@ -278,3 +275,93 @@ def getAggregatedRiskScore(perHostData):
 
     aggregatedScore = 100 - (aggregatedScore*100)   
     return round(aggregatedScore,2)
+
+
+def getHighRiskVulnCount(vulnList):
+    count = 0 
+    threshold = 5.0
+    
+    for vuln in vulnList:
+        vulnRisk = getVulnerabilityRisk(vuln['vector'],vuln['qod'])
+
+        if(vulnRisk) >= threshold:
+            count += 1
+    return count
+
+def getMostVulnerableHost(consolidatedRiskPerHost):
+
+    maxRisk = 0 
+    ipAddress = ''
+
+    # In case the network is very safe
+    if len(consolidatedRiskPerHost) == 0:
+        return None
+
+    for hostData in consolidatedRiskPerHost:
+        if hostData['consolidatedRisk'] > maxRisk:
+            ipAddress = hostData['ipAddress']
+
+    return ipAddress
+
+
+def startCalculation(reportID):
+
+    print(f"Generating Report for: {reportID}")
+
+    # Computation Variables
+    vulnList = []
+    totalVulnerabilities = 0
+    reportJSON =  getSingleReport(reportID)
+
+    # Store all Vulnerabilities and add their Impact, Probability, and Risk Values
+    for vuln in reportJSON:
+        
+        entry = {
+            'id':vuln['@id'],
+            'name':vuln['name'],
+            'ipAddress':vuln['host']['#text'],
+            'hostName':vuln['host']['hostname'],
+            'vector': vuln['nvt']['severities']['severity']['value'],
+            'threatFamily': vuln['nvt']['family'],
+            'cvss': float(vuln['nvt']['cvss_base']),
+            'solution': vuln['nvt']['solution'],
+            'qod': float(vuln['qod']['value'])
+        }
+        
+        if entry['cvss'] > 0: vulnList.append(entry)
+
+    totalVulnerabilities = len(vulnList)
+
+    print(f"Total Vulnerabilities: {totalVulnerabilities}")					
+    print("==================== \n")
+
+    # Phase 0 - Sort Vulnerabilities By host 
+    perHostVulnList = sortVulnsByHost(vulnList)
+    print(perHostVulnList)
+    print("Finished Sorting Vulns per Host. \n")
+
+    # Phase 2 - Get the Consolidated Risk Per Host
+    consolidatedRiskPerHost = getConsolidatedRiskPerHost(perHostVulnList)
+    print(consolidatedRiskPerHost)
+    print("Finished Getting Consolidated Risk Per Host. \n")
+
+    # Phase 3 - Get the Aggregated Risk Score of the Network
+    aggregatedRisk = getAggregatedRiskScore(consolidatedRiskPerHost)
+    print(aggregatedRisk)
+    print("Finished Getting Aggregated Risk Score. \n")
+    print(f"Aggregated Risk: {aggregatedRisk}")
+
+    # Get Additional Metrics
+    highRiskVulnCount = getHighRiskVulnCount(vulnList)
+    mostVulnerableHost = getMostVulnerableHost(consolidatedRiskPerHost)
+
+    data = {
+        'totalVulnerabilities': totalVulnerabilities,
+        'perHostVulnList' : perHostVulnList,
+        'consolidatedRiskPerHost' : consolidatedRiskPerHost,
+        'aggregatedRisk' : aggregatedRisk,
+        'highRiskVulnCount' : highRiskVulnCount,
+        'mostVulnerableHost' : mostVulnerableHost
+    }
+
+    return data

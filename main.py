@@ -35,13 +35,10 @@ severeReport = '84c900e0-400e-4d03-94c5-33946b0cca37'
 metaSploitable = '56f60645-c515-4739-b88b-2d8717c7a1f9'
 
 
-# Computation Variables
-vulnList = []
+# Main Global Variables
+version = getVersion()
 reportsList = []
 
-totalVulnerabilities = 0
-
-version = getVersion()
 # Get Reports and Store them reports in reportsList
 reportsListJSON = getReports()
 for report in reportsListJSON:
@@ -61,46 +58,6 @@ for report in reportsListJSON:
 	
 printReports(reportsList)
 
-# getSingleReport(lowReport)
-# getSingleReport(mediumReport)
-reportJSON =  getSingleReport(severeReport)
-totalVulnerabilities = len(reportJSON)
-
-# Store all Vulnerabilities and add their Impact, Probability, and Risk Values
-for vuln in reportJSON:
-	
-	entry = {
-		'id':vuln['@id'],
-		'name':vuln['name'],
-		'ipAddress':vuln['host']['#text'],
-		'hostName':vuln['host']['hostname'],
-		'vector': vuln['nvt']['severities']['severity']['value'],
-		'threatFamily': vuln['nvt']['family'],
-		'cvss': float(vuln['nvt']['cvss_base']),
-		'solution': vuln['nvt']['solution'],
-		'qod': float(vuln['qod']['value'])
-	}
-	
-	if entry['cvss'] > 0: vulnList.append(entry)
-
-
-print(f"Total Vulnerabilities: {len(vulnList)}")					
-print("==================== \n")
-
-
-# Phase 0 - Sort Vulnerabilities By host 
-perHostVulnList = sortVulnsByHost(vulnList)
-print("Finished Sorting Vulns per Host")
-
-# Phase 2 - Get the Consolidated Risk Per Host
-perHostData = getConsolidatedRiskPerHost(perHostVulnList)
-print("Finished Getting Consolidated Risk Per Host")
-
-# Phase 3 - Get the Aggregated Risk Score of the Network
-aggregatedRisk = getAggregatedRiskScore(perHostData)
-print("Finished Getting Aggregated Risk Score")
-
-print(f"Aggregated Risk: {aggregatedRisk}")
 
 # GUI Variables
 hasGeneratedEntries = False
@@ -118,6 +75,7 @@ class HistoryEntry(MDBoxLayout):
 		#self.root.ids.screenManager.current = "dashboardScreen"			
 																		# Change highlighted to dashboard
 		print(f"Generating Report for: {self.data.id}")
+		reportResults = startCalculation(str(self.data.id))
 
 class MainApp(MDApp):
 
