@@ -219,7 +219,7 @@ def getConsolidatedRiskPerHost(hostList):
                 if(len(subset) != 0 ):
                     vulnSubsetList.append(list(subset))
 
-            print(f"Subset Length: {len(vulnSubsetList)} Iteration: {i}")
+            #print(f"Subset Length: {len(vulnSubsetList)} Iteration: {i}")
 
 
             # For each subset calculate their Probability and Impact 

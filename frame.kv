@@ -39,7 +39,6 @@
                 text: 'Report ID: ' + str(root.data.id)
                 color: white
 
-
         # Box for Additional Details
         MDBoxLayout:
             size_hint_y: 0.75
@@ -268,20 +267,24 @@ MDBoxLayout:
                             
                             # No report prompt 
                             AnchorLayout:
-                                MDRectangleFlatIconButton:
-                                    font_size: 50
-                                    icon_size: 50
-                                    icon: 'alert-octagon'
-                                    theme_text_color: "Custom"
-                                    text_color: orange
-                                    line_color: orange
-                                    theme_icon_color: "Custom"
-                                    icon_color: orange
-                                    text: '[b]No Report Generated Yet[/b]'
-                                    line_width: 1.5
 
+                                MDBoxLayout:
+                                    size_hint: (0.5,0.2)
+                                    orientation: 'vertical'
+                                    MDIcon:
+                                        icon: 'alert-octagon'
+                                        halign: 'center'
+                                        theme_text_color: "Custom"
+                                        text_color: orange
+                                        font_size: 70
+                                    MDLabel:
+                                        markup: True
+                                        font_size: 50
+                                        text: '[b]No Report Generated Yet[/b]'
+                                        halign: 'center'
+                                        theme_text_color: 'Custom'
+                                        text_color: orange
 
-                                                        
                 # Screen for Scan
                 MDScreen:
                     id: scanScreen
