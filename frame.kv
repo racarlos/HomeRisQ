@@ -11,11 +11,13 @@
 #:set black get_color_from_hex("#000000")
 
 # Set Variables
-#: set card_elevation 40
+#: set card_elevation 20
 #: set topMetrics 50
 #: set subtext_height 0.2
+#: set topIconSize 30
 #: set abstract1 './assets/abstract1.jpg' 
 
+#===================== HISTORY ENTRY RULE
 
 <HistoryEntry>:
     md_bg_color: darkBlue
@@ -107,91 +109,132 @@
                         line_width: 1.5
                         on_release: root.viewReport()
 
-<ReportDashboard>:
+
+
+#===================== Host Panel
+<VulnPanel>:
     orientation: "vertical"
+    MDLabel:
+        text: str(root.data.name)
+    MDLabel:
+        text: str(root.data.vector)
+    MDLabel:
+        text: str(root.data.threatFamily)
+    MDLabel:
+        text: str(root.data.solution)
 
-    # Upper Box for Displaying 3 Cards of Top 3 Metrics
-    MDBoxLayout:      
-        md_bg_color: lightGray
-        padding: 35
-        spacing: 35
-                                
-        # Card for Count of Severe Vulnerabilities
-        MDCard:
-            elevation: card_elevation
-            orientation: "vertical"
 
-            MDLabel:
-                halign: 'center'
-                font_size: topMetrics
-                text: str(root.data.totalVulnerabilities)
-            
-            MDBoxLayout:
-                size_hint_y: subtext_height
-                md_bg_color: lightBlue
+#===================== REPORT DASHBOARD ENTRY RULE
 
-                MDIconButton:
-                    icon: 'biohazard'
+<ReportDashboard>:
 
-                MDLabel:
-                    halign: 'center'
-                    font_style: 'Button'
+    ScrollView:
+        do_scroll_y: True
 
-                    text: 'Severe vulnerabilities Count'
+        MDGridLayout:
+            adaptive_height: True
+            rows: 2
+            cols: 1 
+            size_hint_x: 1.0
+            size_hint_y: None
 
-        # Card for Aggregated Network Score
-        MDCard:
-            elevation: card_elevation
-            orientation: "vertical"
+            # Upper Box for Displaying 3 Cards of Top 3 Metrics
+            MDGridLayout:
+                rows: 1
+                cols: 3
+                md_bg_color: lightGray
+                size_hint_y: None
+                height: root.height*0.6
+                padding: 35
+                spacing: 35
+                                        
+                # Card for Count of Severe Vulnerabilities
+                MDCard:
+                    elevation: card_elevation
+                    orientation: "vertical"
 
-            MDLabel:
-                halign: 'center'
-                font_size: topMetrics
-                text:  str(root.data.aggregatedRisk)
+                    MDLabel:
+                        halign: 'center'
+                        font_size: topMetrics
+                        text: str(root.data.totalVulnerabilities)
+                    
+                    MDBoxLayout:
+                        size_hint_y: subtext_height
+                        md_bg_color: lightBlue
 
-            MDBoxLayout:
-                size_hint_y: subtext_height
-                md_bg_color: lightBlue
+                        MDIcon:
+                            size_hint_x: 0.2
+                            font_size: topIconSize
+                            halign: 'center'
+                            icon: 'biohazard'
 
-                MDIconButton:
-                    icon: 'security'
+                        MDLabel:
+                            size_hint_x: 0.8
+                            halign: 'center'
+                            font_style: 'Button'
+                            text: 'Severe vulnerabilities Count'
 
-                MDLabel:
-                    halign: 'center'
-                    font_style: 'Button'
-                    text: 'Aggregated Network Score'
+                # Card for Aggregated Network Score
+                MDCard:
+                    elevation: card_elevation
+                    orientation: "vertical"
 
-        # Card for Most Compromised Host 
-        MDCard:
-            elevation: card_elevation
-            orientation: "vertical"
+                    MDLabel:
+                        halign: 'center'
+                        font_size: topMetrics
+                        text:  str(root.data.aggregatedRisk)
 
-            MDLabel:
-                halign: 'center'
-                font_size: topMetrics
-                text: str(root.data.mostVulnerableHost)
+                    MDBoxLayout:
+                        size_hint_y: subtext_height
+                        md_bg_color: lightBlue
 
-            MDBoxLayout:
-                size_hint_y: subtext_height
-                md_bg_color: lightBlue
+                        MDIcon:
+                            size_hint_x: 0.2
+                            font_size: topIconSize
+                            halign: 'center'
+                            icon: 'security'
 
-                MDIconButton:
-                    icon: 'ip-network'
+                        MDLabel:
+                            size_hint_x: 0.8
+                            halign: 'center'
+                            font_style: 'Button'
+                            text: 'Aggregated Network Score'
 
-                MDLabel:
-                    halign: 'center'
-                    font_style: 'Button'
-                    text: 'Most Compromised Host'
+                # Card for Most Compromised Host 
+                MDCard:
+                    elevation: card_elevation
+                    orientation: "vertical"
+
+                    MDLabel:
+                        halign: 'center'
+                        font_size: topMetrics
+                        text: str(root.data.mostVulnerableHost)
+
+                    MDBoxLayout:
+                        size_hint_y: subtext_height
+                        md_bg_color: lightBlue
+
+                        MDIcon:
+                            size_hint_x: 0.2
+                            font_size: topIconSize
+                            halign: 'center'
+                            icon: 'ip-network'
+
+                        MDLabel:
+                            size_hint_x: 0.8
+                            halign: 'center'
+                            font_style: 'Button'
+                            text: 'Most Compromised Host'
                 
-    # Lower Box for Additional Data
-    MDBoxLayout:
-        md_bg_color: lightBlue
+            # Lower Box for Additional Data
+            MDGridLayout:
+                cols: 1
+                adaptive_height: True
+                id: additionalData
+                md_bg_color: lightBlue
 
-        MDLabel:
-            halign: 'center'
-            text: 'Additional Data here'
 
-
+#===================== MAIN RULE
 
 MDBoxLayout:
     orientation: 'vertical'
@@ -255,35 +298,32 @@ MDBoxLayout:
                 # Screen for Dashboard
                 MDScreen:
                     name: "dashboardScreen"
+                    md_bg_color: black
 
-                    # For scroling through history entries
-                    ScrollView:
-                        do_scroll_y: True
+                    # Box Containing Report Data, attach ReportDashboard here
+                    MDBoxLayout:
+                        id: reportBox
+                        md_bg_color: black
 
-                        # Box Containing Report Data, attach ReportDashboard here
-                        MDBoxLayout:
-                            id: reportBox
-                            md_bg_color: black
-                            
-                            # No report prompt 
-                            AnchorLayout:
-
-                                MDBoxLayout:
-                                    size_hint: (0.5,0.2)
-                                    orientation: 'vertical'
-                                    MDIcon:
-                                        icon: 'alert-octagon'
-                                        halign: 'center'
-                                        theme_text_color: "Custom"
-                                        text_color: orange
-                                        font_size: 70
-                                    MDLabel:
-                                        markup: True
-                                        font_size: 50
-                                        text: '[b]No Report Generated Yet[/b]'
-                                        halign: 'center'
-                                        theme_text_color: 'Custom'
-                                        text_color: orange
+                        AnchorLayout:
+                            MDBoxLayout:
+                                size_hint_y: 0.25
+                                orientation: 'vertical'
+                                spacing: 20
+                                
+                                MDIcon:
+                                    icon: 'alert-octagon'
+                                    halign: 'center'
+                                    theme_text_color: "Custom"
+                                    text_color: orange
+                                    font_size: 70
+                                MDLabel:
+                                    markup: True
+                                    font_size: 50
+                                    text: '[b]No Report Generated Yet[/b]'
+                                    halign: 'center'
+                                    theme_text_color: 'Custom'
+                                    text_color: orange
 
                 # Screen for Scan
                 MDScreen:

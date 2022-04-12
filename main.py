@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Imports from GVM Libraries
+from curses import panel
 from unicodedata import name
 from gvm.connections import UnixSocketConnection			# Unix Domain Socket Connection 
 from gvm.protocols.gmp import Gmp							# Greenbone Management Protocol 
@@ -17,6 +18,9 @@ from extraFunctions import *
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
+from kivy.animation import Animation
+from kivymd.uix.card import MDCard
+from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine
 from kivy.properties import DictProperty
 from kivy.core.window import Window
 
@@ -58,18 +62,20 @@ for report in reportsListJSON:
 	
 printReports(reportsList)
 
-
 # GUI Variables
 hasGeneratedEntries = False
 hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
 
 
-# Class for the whole data in Dashboard Screen
-
-class ReportDashboard(MDBoxLayout):
+# Class for containing contents of Host Panel
+class VulnPanel(MDBoxLayout): 
 	data = DictProperty({})
 
+
+# Class for the whole data in Dashboard Screen
+class ReportDashboard(MDBoxLayout):
+	data = DictProperty({})
 
 # Class for Individual Boxes in History Screen
 class HistoryEntry(MDBoxLayout):	
@@ -87,6 +93,46 @@ class HistoryEntry(MDBoxLayout):
 		print(f"Generating Report for: {self.data.id}")
 		reportResults = startCalculation(str(self.data.id))
 		newReportDashboard = ReportDashboard(data=reportResults)
+		
+		# Create Host Panels 
+		print("Per Host Vuln List: ")
+		for i in range(len(reportResults['perHostVulnList'])):
+			print(reportResults['perHostVulnList'][i])
+
+		print("Consolidated Risk PerHost: ")
+		for i in range(len(reportResults['consolidatedRiskPerHost'])):
+			print(reportResults['consolidatedRiskPerHost'][i])
+
+		for hostIndex in range(len(reportResults['consolidatedRiskPerHost'])):
+
+			# Make small data structure where perHostData is matched with consolidatedRiskperHost
+
+			# Container for all vulnerabilities in a single host
+			vulnContainer = MDBoxLayout()						
+
+			# For every vulnerability in the host, create own panel and add to container
+			for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
+				print(reportResults['perHostVulnList'][hostIndex][vulnIndex])
+				vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
+				vulnContainer.add_widget(vulnPanel)
+
+
+			# Instantiate Host Panel
+			hostPanel = MDExpansionPanel(
+				icon="laptop",
+				content=vulnContainer,
+				panel_cls=MDExpansionPanelThreeLine(
+                        text=str(reportResults['consolidatedRiskPerHost'][hostIndex]['ipAddress']),
+                        secondary_text=str(reportResults['consolidatedRiskPerHost'][hostIndex]['hostName']),
+                        tertiary_text= str(reportResults['consolidatedRiskPerHost'][hostIndex]['consolidatedRisk']),
+                )
+			)
+
+			# Add Host Panel to additional data boxes
+			newReportDashboard.ids.additionalData.add_widget(hostPanel)
+
+		print(f"Length of Per Host Vuln List: {len(reportResults['perHostVulnList'])}")
+		print(f"Length of Consolidated Risk Per Host: {len(reportResults['consolidatedRiskPerHost'])}")
 
 		# Clear Child Widgets before adding report dashboard
 		MainApp.get_running_app().root.ids.reportBox.clear_widgets()
