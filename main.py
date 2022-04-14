@@ -21,6 +21,8 @@ from kivymd.uix.card import MDCard
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine
 from kivy.properties import DictProperty
 from kivy.core.window import Window
+from kivymd.uix.list import IconLeftWidget
+
 
 connection = UnixSocketConnection()
 transform = EtreeTransform()								# Element Tree transform for storing XML 
@@ -83,7 +85,6 @@ class HistoryEntry(MDBoxLayout):
 
 	data = DictProperty({})																# Dictionary Containing Values 
 
-
 	def panel_open(self, *args):
 		Animation(
 			height=(self.root.ids.box.height + self.root.ids.content.height)
@@ -102,8 +103,7 @@ class HistoryEntry(MDBoxLayout):
 	# Function for generating report to be called by Button 
 	def viewReport(self):
 
-		# Use global variable flag
-		global hasGeneratedReport
+		global hasGeneratedReport 	# Use global variable flag
 
 		MainApp.get_running_app().root.ids.screenManager.current = "dashboardScreen"	# Switch to dashboard screen
 		
@@ -134,14 +134,14 @@ class HistoryEntry(MDBoxLayout):
 
 			# Instantiate Host Panel
 			hostPanel = MDExpansionPanel(
-				icon="laptop",
+				icon= 'laptop',
 				on_open=self.panel_open,
                 on_close=self.panel_close,
 				content=vulnContainer,
 				panel_cls=MDExpansionPanelThreeLine(
-						text= 'IP Address: ' + ipAddress,
-						secondary_text= 'Host Name: ' + hostName,
-						tertiary_text= 'Consolidated Risk Score: ' + consolidatedRisk,
+					text= '[color=#ffffff]IP Address: [b]' + ipAddress + '[/b][/color]',
+					secondary_text= '[color=#ffffff]Host Name: [b]' + hostName + '[/b][/color]',
+					tertiary_text= '[color=#ffffff]Consolidated Risk Score: [b]' + consolidatedRisk + '[/b][/color]',
 				)
 			)
 
@@ -185,8 +185,6 @@ class MainApp(MDApp):
 			self.root.ids.rail.rail_state = "open"
 			
 
-
-		
 	# For Generating History Entries in History Screen
 	def generateHistoryEntries(self):
 

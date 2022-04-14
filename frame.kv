@@ -2,6 +2,7 @@
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 # Set colors
+#:set metricBackground get_color_from_hex("#0D1117")
 #:set darkGray get_color_from_hex("#212121")
 #:set lightGray get_color_from_hex("#718089")
 #:set darkBlue get_color_from_hex("#155075") 
@@ -15,7 +16,7 @@
 #: set topMetrics 50
 #: set subtext_height 0.2
 #: set topIconSize 30
-#: set supportTextHeight 0.15
+#: set supportTextHeight 0.20
 #: set abstract1 './assets/abstract1.jpg' 
 
 #===================== HISTORY ENTRY RULE
@@ -116,7 +117,7 @@
     orientation: 'vertical'
     size_hint: 1, None
     height: self.minimum_height
-    md_bg_color: white
+    md_bg_color: black
     padding: (5,5)
     spacing: 5
 
@@ -132,7 +133,7 @@
         id: upperBox
         size_hint: 1, None
         height: 60
-        md_bg_color: lightGray
+        md_bg_color: white
     
         # Left Box
         MDBoxLayout:
@@ -156,7 +157,6 @@
             # Box for Threat Family 
             MDBoxLayout:
                 orientation: 'horizontal'
-
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
@@ -208,7 +208,7 @@
         orientation: "vertical"
         size_hint: 1, None
         height: solutionType.height
-        md_bg_color: lightBlue
+        md_bg_color: white
 
         # Solution Type and its Icon 
         MDLabel:
@@ -221,7 +221,7 @@
     MDBoxLayout:
         id: lowerBox
         orientation: "vertical"
-        md_bg_color: orange
+        md_bg_color: white
         size_hint: 1, None
 
         MDLabel:
@@ -250,7 +250,6 @@
             MDGridLayout:
                 rows: 1
                 cols: 3
-                md_bg_color: lightGray
                 size_hint_y: None
                 height: root.height*0.6
                 padding: 35
@@ -260,63 +259,86 @@
                 MDCard:
                     elevation: card_elevation
                     orientation: "vertical"
+                    md_bg_color: darkGray
 
                     MDLabel:
+                        markup: True
                         halign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: orange
                         font_size: topMetrics
-                        text: str(root.data.highRiskVulnCount)
+                        text: '[b]' + str(root.data.highRiskVulnCount) + '[/b]'
 
                     MDLabel:
                         markup: True
                         size_hint_y: supportTextHeight
                         halign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: white
                         text: 'Out of [b]' + str(root.data.totalVulnerabilities) +  '[/b] vulnerabilities found'
 
+
+                    # Footer
                     MDBoxLayout:
                         size_hint_y: subtext_height
-                        md_bg_color: lightBlue
+                        md_bg_color: darkBlue
 
                         MDIcon:
-                            size_hint_x: 0.2
-                            font_size: topIconSize
-                            halign: 'center'
                             icon: 'biohazard'
+                            size_hint_x: 0.3
+                            theme_text_color: 'Custom'
+                            font_size: topIconSize
+                            text_color: white
+                            halign: 'center'
 
                         MDLabel:
-                            size_hint_x: 0.8
-                            halign: 'center'
+                            size_hint_x: 0.7
+                            halign: 'left'
                             font_style: 'Button'
+                            theme_text_color: 'Custom'
+                            text_color: white
                             text: 'Severe vulnerabilities Count'
 
                 # Card for Aggregated Network Score
                 MDCard:
                     elevation: card_elevation
                     orientation: "vertical"
+                    md_bg_color: darkGray
 
                     MDLabel:
+                        markup: True
                         halign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: orange
                         font_size: topMetrics
-                        text:  str(root.data.aggregatedRisk)
+                        text:  '[b]' + str(root.data.aggregatedRisk)  + '[/b]'
 
                     MDLabel:
                         markup: True
                         size_hint_y: supportTextHeight
                         halign: 'center'
-                        text: 'Insert Qualitative Assessment Here'
+                        theme_text_color: 'Custom'
+                        text_color: white
+                        text: 'LMAO your Network is Fucked'
 
+                    # Footer
                     MDBoxLayout:
                         size_hint_y: subtext_height
-                        md_bg_color: lightBlue
+                        md_bg_color: darkBlue
 
                         MDIcon:
-                            size_hint_x: 0.2
-                            font_size: topIconSize
-                            halign: 'center'
                             icon: 'security'
+                            size_hint_x: 0.3
+                            font_size: topIconSize
+                            theme_text_color: 'Custom'
+                            text_color: white
+                            halign: 'center'
 
                         MDLabel:
-                            size_hint_x: 0.8
-                            halign: 'center'
+                            size_hint_x: 0.7
+                            halign: 'left'
+                            theme_text_color: 'Custom'
+                            text_color: white
                             font_style: 'Button'
                             text: 'Aggregated Network Score'
 
@@ -324,40 +346,52 @@
                 MDCard:
                     elevation: card_elevation
                     orientation: "vertical"
-
-                    MDLabel:
-                        halign: 'center'
-                        font_size: topMetrics
-                        text: str(root.data.mostVulnerableHost)
+                    md_bg_color: darkGray
 
                     MDLabel:
                         markup: True
+                        halign: 'center'
+                        theme_text_color: 'Custom'
+                        text_color: orange
+                        font_size: topMetrics
+                        text: '[b]' + str(root.data.mostVulnerableHost) + '[/b]'
+
+                    MDLabel:
+                        markup: True
+                        theme_text_color: 'Custom'
+                        text_color: white
                         size_hint_y: supportTextHeight
                         halign: 'center'
                         text: 'Among the [b]' + str(root.data.hostCount) + '[/b] hosts found'  
 
+                    # Footer
                     MDBoxLayout:
                         size_hint_y: subtext_height
-                        md_bg_color: lightBlue
+                        md_bg_color: darkBlue
 
                         MDIcon:
-                            size_hint_x: 0.2
-                            font_size: topIconSize
-                            halign: 'center'
                             icon: 'ip-network'
+                            size_hint_x: 0.3
+                            font_size: topIconSize
+                            theme_text_color: 'Custom'
+                            text_color: white
+                            halign: 'center'
 
                         MDLabel:
-                            size_hint_x: 0.8
-                            halign: 'center'
+                            size_hint_x: 0.7
+                            markup: True
+                            halign: 'left'
                             font_style: 'Button'
                             text: 'Most Compromised Host'
+                            theme_text_color: 'Custom'
+                            text_color: white
                 
             # Lower Box for Additional Data
             MDGridLayout:
                 cols: 1
                 adaptive_height: True
                 id: additionalData
-                md_bg_color: lightBlue
+                md_bg_color: darkBlue
 
 
 #===================== MAIN RULE
@@ -366,7 +400,7 @@ MDBoxLayout:
     orientation: 'vertical'
 
     MDToolbar:
-        title: "Title ng SP KO"
+        title: "[b]Title ng SP KO[/b]"
         md_bg_color: darkBlue
         left_action_items: [["menu", lambda x: app.openRail()]]
 
