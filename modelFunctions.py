@@ -315,6 +315,7 @@ def startCalculation(reportID):
     # Computation Variables
     vulnList = []
     totalVulnerabilities = 0
+    hosts = []
     reportJSON =  getSingleReport(reportID)
 
     # Store all Vulnerabilities and add their Impact, Probability, and Risk Values
@@ -332,13 +333,18 @@ def startCalculation(reportID):
             'qod': float(vuln['qod']['value'])
         }
         
+        totalVulnerabilities += 1
+        
         if entry['cvss'] > 0: 
             entry['solution']['#text'] = entry['solution']['#text'].replace('\n','') 
             vulnList.append(entry)
         
+        if entry['ipAddress'] in hosts:
+            pass
+        else: 
+            hosts.append(entry['ipAddress'])
 
-    totalVulnerabilities = len(vulnList)
-
+        
     # print(f"Total Vulnerabilities: {totalVulnerabilities}")					
     # print("==================== \n")
 
@@ -363,6 +369,7 @@ def startCalculation(reportID):
     mostVulnerableHost = getMostVulnerableHost(consolidatedRiskPerHost)
 
     data = {
+        'hostCount': len(hosts),
         'totalVulnerabilities': totalVulnerabilities,
         'perHostVulnList' : perHostVulnList,
         'consolidatedRiskPerHost' : consolidatedRiskPerHost,

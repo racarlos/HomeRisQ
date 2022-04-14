@@ -15,6 +15,7 @@
 #: set topMetrics 50
 #: set subtext_height 0.2
 #: set topIconSize 30
+#: set supportTextHeight 0.15
 #: set abstract1 './assets/abstract1.jpg' 
 
 #===================== HISTORY ENTRY RULE
@@ -110,25 +111,33 @@
                         on_release: root.viewReport()
 
 
+# =================== MyContent
+<MyContent>:
+    orientation: 'vertical'
+    size_hint: 1, None
+    height: self.minimum_height
+    md_bg_color: white
+    padding: (5,5)
+    spacing: 5
 
 #===================== Host Panel
 <VulnPanel>:
-    padding: 10
-    spacing: 3
+    size_hint: 1, None
+    #height: self.minimum_height
     height: upperBox.height + midBox.height + lowerBox.height
     orientation: "vertical"
 
     # Upper Box for Primary vulnerability Data
     MDBoxLayout:
         id: upperBox
-        size_hint_y: None
+        size_hint: 1, None
+        height: 60
         md_bg_color: lightGray
     
         # Left Box
         MDBoxLayout:
             orientation: 'vertical'
-
-
+            size_hint_x: 0.6
             # Box for Vuln Description
             MDBoxLayout:
                 orientation: 'horizontal'
@@ -136,7 +145,8 @@
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
-                        text: 'Description: ' 
+                        markup: True
+                        text: '[b]Description: [/b]' 
                 MDBoxLayout:
                     size_hint_x: 0.75
                     MDLabel:
@@ -144,13 +154,14 @@
                         text: str(root.data.name)
 
             # Box for Threat Family 
-            MDBoxLayout
+            MDBoxLayout:
                 orientation: 'horizontal'
 
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
-                        text: 'Threat Family: ' 
+                        markup: True
+                        text: '[b]Threat Family: [/b]' 
                 MDBoxLayout:
                     size_hint_x: 0.75
                     MDLabel:
@@ -160,7 +171,7 @@
         # Right Box
         MDBoxLayout:
             orientation: 'vertical'
-
+            size_hint_x: 0.4
             # Box for Vector
             MDBoxLayout:
                 orientation: 'horizontal'
@@ -168,7 +179,8 @@
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
-                        text: 'Vector: ' 
+                        markup: True
+                        text: '[b]Vector: [/b]' 
                 MDBoxLayout:
 
                     size_hint_x: 0.75
@@ -182,8 +194,8 @@
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
-                        text: 'Reliability: ' 
-
+                        markup: True
+                        text: '[b]Reliability: [/b]' 
                 MDBoxLayout:
                     size_hint_x: 0.75
                     MDLabel:
@@ -194,7 +206,7 @@
     MDBoxLayout:
         id: midBox
         orientation: "vertical"
-        size_hint_y: None
+        size_hint: 1, None
         height: solutionType.height
         md_bg_color: lightBlue
 
@@ -203,15 +215,14 @@
             markup: True
             id: solutionType
             height: self.texture_size[1]
-            text: 'Solution Type: ' + str(root.data.solution['@type']) 
+            text: '[b]Solution Type: [/b]' + str(root.data.solution['@type']) 
 
     # Solution Description
     MDBoxLayout:
         id: lowerBox
         orientation: "vertical"
         md_bg_color: orange
-        size_hint_y: None
-
+        size_hint: 1, None
 
         MDLabel:
             markup: True
@@ -233,6 +244,7 @@
             cols: 1 
             size_hint_x: 1.0
             size_hint_y: None
+            height: self.minimum_height
 
             # Upper Box for Displaying 3 Cards of Top 3 Metrics
             MDGridLayout:
@@ -252,8 +264,14 @@
                     MDLabel:
                         halign: 'center'
                         font_size: topMetrics
-                        text: str(root.data.totalVulnerabilities)
-                    
+                        text: str(root.data.highRiskVulnCount)
+
+                    MDLabel:
+                        markup: True
+                        size_hint_y: supportTextHeight
+                        halign: 'center'
+                        text: 'Out of [b]' + str(root.data.totalVulnerabilities) +  '[/b] vulnerabilities found'
+
                     MDBoxLayout:
                         size_hint_y: subtext_height
                         md_bg_color: lightBlue
@@ -280,6 +298,12 @@
                         font_size: topMetrics
                         text:  str(root.data.aggregatedRisk)
 
+                    MDLabel:
+                        markup: True
+                        size_hint_y: supportTextHeight
+                        halign: 'center'
+                        text: 'Insert Qualitative Assessment Here'
+
                     MDBoxLayout:
                         size_hint_y: subtext_height
                         md_bg_color: lightBlue
@@ -305,6 +329,12 @@
                         halign: 'center'
                         font_size: topMetrics
                         text: str(root.data.mostVulnerableHost)
+
+                    MDLabel:
+                        markup: True
+                        size_hint_y: supportTextHeight
+                        halign: 'center'
+                        text: 'Among the [b]' + str(root.data.hostCount) + '[/b] hosts found'  
 
                     MDBoxLayout:
                         size_hint_y: subtext_height

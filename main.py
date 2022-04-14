@@ -64,6 +64,12 @@ hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
 
 
+
+
+# Class for content
+class MyContent(MDBoxLayout):
+	pass
+
 # Class for containing contents of Host Panel
 class VulnPanel(MDBoxLayout): 
 	data = DictProperty({})
@@ -76,6 +82,22 @@ class ReportDashboard(MDBoxLayout):
 class HistoryEntry(MDBoxLayout):	
 
 	data = DictProperty({})																# Dictionary Containing Values 
+
+
+	def panel_open(self, *args):
+		Animation(
+			height=(self.root.ids.box.height + self.root.ids.content.height)
+			- self.theme_cls.standard_increment * 2,
+			d=0.2,
+		).start(self.root.ids.box)
+
+	def panel_close(self, *args):
+		Animation(
+			height=(self.root.ids.box.height - self.root.ids.content.height)
+			+ self.theme_cls.standard_increment * 2,
+			d=0.2,
+		).start(self.root.ids.box)
+
 
 	# Function for generating report to be called by Button 
 	def viewReport(self):
@@ -108,14 +130,13 @@ class HistoryEntry(MDBoxLayout):
 			if hostName is None: hostName = 'Unknown'
 
 			# Container for all vulnerabilities in a single host
-			vulnContainer = MDBoxLayout(
-				orientation='vertical',
-				md_bg_color=(1,1,1,1)
-			)	
+			vulnContainer = MyContent()
 
 			# Instantiate Host Panel
 			hostPanel = MDExpansionPanel(
 				icon="laptop",
+				on_open=self.panel_open,
+                on_close=self.panel_close,
 				content=vulnContainer,
 				panel_cls=MDExpansionPanelThreeLine(
 						text= 'IP Address: ' + ipAddress,
@@ -162,7 +183,10 @@ class MainApp(MDApp):
 			self.root.ids.rail.rail_state = "close"
 		else:
 			self.root.ids.rail.rail_state = "open"
+			
 
+
+		
 	# For Generating History Entries in History Screen
 	def generateHistoryEntries(self):
 
