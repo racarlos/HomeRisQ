@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # Imports from GVM Libraries
-from curses import panel
-from unicodedata import name
 from gvm.connections import UnixSocketConnection			# Unix Domain Socket Connection 
 from gvm.protocols.gmp import Gmp							# Greenbone Management Protocol 
 from gvm.transforms import EtreeTransform
@@ -60,8 +58,6 @@ for report in reportsListJSON:
 	# Avoid Discovery Scans 
 	if entry['name'] != 'Discovery': reportsList.append(entry)
 	
-printReports(reportsList)
-
 # GUI Variables
 hasGeneratedEntries = False
 hasGeneratedReport = False
@@ -71,7 +67,6 @@ Window.size = (1280,720)							# Set Window size to 1280x720
 # Class for containing contents of Host Panel
 class VulnPanel(MDBoxLayout): 
 	data = DictProperty({})
-
 
 # Class for the whole data in Dashboard Screen
 class ReportDashboard(MDBoxLayout):
@@ -89,44 +84,51 @@ class HistoryEntry(MDBoxLayout):
 		global hasGeneratedReport
 
 		MainApp.get_running_app().root.ids.screenManager.current = "dashboardScreen"	# Switch to dashboard screen
+		
 		# [MINOR FIX] Change highlighted to dashboard
 		print(f"Generating Report for: {self.data.id}")
 		reportResults = startCalculation(str(self.data.id))
 		newReportDashboard = ReportDashboard(data=reportResults)
 		
 		# Create Host Panels 
-		print("Per Host Vuln List: ")
-		for i in range(len(reportResults['perHostVulnList'])):
-			print(reportResults['perHostVulnList'][i])
+		# print("Per Host Vuln List: ")
+		# for i in range(len(reportResults['perHostVulnList'])):
+		# 	print(reportResults['perHostVulnList'][i])
 
-		print("Consolidated Risk PerHost: ")
-		for i in range(len(reportResults['consolidatedRiskPerHost'])):
-			print(reportResults['consolidatedRiskPerHost'][i])
+		# print("Consolidated Risk PerHost: ")
+		# for i in range(len(reportResults['consolidatedRiskPerHost'])):
+		# 	print(reportResults['consolidatedRiskPerHost'][i])
 
 		for hostIndex in range(len(reportResults['consolidatedRiskPerHost'])):
 
 			# Make small data structure where perHostData is matched with consolidatedRiskperHost
+			ipAddress = str(reportResults['consolidatedRiskPerHost'][hostIndex]['ipAddress'])
+			hostName = str(reportResults['consolidatedRiskPerHost'][hostIndex]['hostName'])
+			consolidatedRisk = str(reportResults['consolidatedRiskPerHost'][hostIndex]['consolidatedRisk'])
+			if hostName is None: hostName = 'Unknown'
 
 			# Container for all vulnerabilities in a single host
-			vulnContainer = MDBoxLayout()						
-
-			# For every vulnerability in the host, create own panel and add to container
-			for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
-				print(reportResults['perHostVulnList'][hostIndex][vulnIndex])
-				vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
-				vulnContainer.add_widget(vulnPanel)
-
+			vulnContainer = MDBoxLayout(
+				orientation='vertical',
+				md_bg_color=(1,1,1,1)
+			)	
 
 			# Instantiate Host Panel
 			hostPanel = MDExpansionPanel(
 				icon="laptop",
 				content=vulnContainer,
 				panel_cls=MDExpansionPanelThreeLine(
-                        text=str(reportResults['consolidatedRiskPerHost'][hostIndex]['ipAddress']),
-                        secondary_text=str(reportResults['consolidatedRiskPerHost'][hostIndex]['hostName']),
-                        tertiary_text= str(reportResults['consolidatedRiskPerHost'][hostIndex]['consolidatedRisk']),
-                )
+						text= 'IP Address: ' + ipAddress,
+						secondary_text= 'Host Name: ' + hostName,
+						tertiary_text= 'Consolidated Risk Score: ' + consolidatedRisk,
+				)
 			)
+
+			# For every vulnerability in the host, create own panel and add to container
+			for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
+				vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
+				vulnContainer.add_widget(vulnPanel)
+				hostPanel.content.height += vulnPanel.height	
 
 			# Add Host Panel to additional data boxes
 			newReportDashboard.ids.additionalData.add_widget(hostPanel)

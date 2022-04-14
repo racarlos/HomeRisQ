@@ -114,14 +114,102 @@
 #===================== Host Panel
 <VulnPanel>:
     orientation: "vertical"
-    MDLabel:
-        text: str(root.data.name)
-    MDLabel:
-        text: str(root.data.vector)
-    MDLabel:
-        text: str(root.data.threatFamily)
-    MDLabel:
-        text: str(root.data.solution)
+    padding: 10
+
+    # Upper Box for Primary vulnerability Data
+    MDBoxLayout:
+        md_bg_color: lightGray
+    
+        # Left Box
+        MDBoxLayout:
+            orientation: 'vertical'
+
+
+            # Box for Vuln Description
+            MDBoxLayout:
+                orientation: 'horizontal'
+
+                MDBoxLayout:
+                    size_hint_x: 0.25
+                    MDLabel:
+                        text: 'Description: ' 
+                MDBoxLayout:
+                    size_hint_x: 0.75
+                    MDLabel:
+                        halign: 'left'
+                        text: str(root.data.name)
+
+            # Box for Threat Family 
+            MDBoxLayout
+                orientation: 'horizontal'
+
+                MDBoxLayout:
+                    size_hint_x: 0.25
+                    MDLabel:
+                        text: 'Threat Family: ' 
+                MDBoxLayout:
+                    size_hint_x: 0.75
+                    MDLabel:
+                        halign: 'left'
+                        text: str(root.data.threatFamily)
+
+        # Right Box
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            # Box for Vector
+            MDBoxLayout:
+                orientation: 'horizontal'
+
+                MDBoxLayout:
+                    size_hint_x: 0.25
+                    MDLabel:
+                        text: 'Vector: ' 
+                MDBoxLayout:
+
+                    size_hint_x: 0.75
+                    MDLabel:
+                        halign: 'left'
+                        text: str(root.data.vector)
+
+            # Box for Quality detection
+            MDBoxLayout:
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    size_hint_x: 0.25
+                    MDLabel:
+                        text: 'Reliability: ' 
+
+                MDBoxLayout:
+                    size_hint_x: 0.75
+                    MDLabel:
+                        halign: 'left'  
+                        text: str(root.data.qod)
+
+
+    
+    # Lower Box for Vulnerability Solution Data
+    MDBoxLayout:
+        md_bg_color: lightBlue
+        orientation: "vertical"
+
+        # Solution Type and its Icon 
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDLabel:
+                text: 'Solution Type: ' + str(root.data.solution['@type']) 
+
+        # Solution Description
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint_x: 1.0
+            
+            MDLabel:
+                text: 'Solution Description: ' 
+            
+            MDLabel:
+                halign: 'left'  
+                text: str(root.data.solution['#text'])
 
 
 #===================== REPORT DASHBOARD ENTRY RULE

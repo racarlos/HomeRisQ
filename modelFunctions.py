@@ -126,13 +126,15 @@ def sortVulnsByHost(vulnList):
                     perHost[index].append(vuln)		# Add entry of vulnerabilibity to its host
                     hasAdded = True
                     break							# Early termination
-
         # If IP address of current vulnerability has not been added to the list yet
         if hasAdded != True:
             entry = [ipAddress,len(ipList)]		
             ipList.append(entry)					# Make entry in IP List
             perHost.append([vuln])					# Make sub array for that IP address in perHost List 
 
+    print("+++++++++++++++++++++++++")
+    print(perHost)    
+    print("+++++++++++++++++++++++++")
     return perHost
 
 
@@ -198,6 +200,9 @@ def getVulnerabilityIDSubset(vulnIdList):
 # Get the consolidated Risk per Host, returns [hostName,ipAddress,numVulns,consolidatedRisk]
 def getConsolidatedRiskPerHost(hostList):
 
+    # print("=====================================")
+    # print(hostList)
+    # print("=====================================")
     data = [] 
 
     for host in hostList:                                              # For every machine in the list
@@ -238,7 +243,6 @@ def getConsolidatedRiskPerHost(hostList):
                 subsetProbabilityList.append(subsetResult[0])
                 subsetImpactList.append(subsetResult[1])
 
-        print("Finished calculating subsets")
 
         # Calculate for Consolidated Risk here - Possibly move this to thread process
         for i in range(len(subsetImpactList)):
@@ -328,28 +332,31 @@ def startCalculation(reportID):
             'qod': float(vuln['qod']['value'])
         }
         
-        if entry['cvss'] > 0: vulnList.append(entry)
+        if entry['cvss'] > 0: 
+            entry['solution']['#text'] = entry['solution']['#text'].replace('\n','') 
+            vulnList.append(entry)
+        
 
     totalVulnerabilities = len(vulnList)
 
-    print(f"Total Vulnerabilities: {totalVulnerabilities}")					
-    print("==================== \n")
+    # print(f"Total Vulnerabilities: {totalVulnerabilities}")					
+    # print("==================== \n")
 
     # Phase 0 - Sort Vulnerabilities By host 
     perHostVulnList = sortVulnsByHost(vulnList)
     print(perHostVulnList)
-    print("Finished Sorting Vulns per Host. \n")
+    # print("Finished Sorting Vulns per Host. \n")
 
     # Phase 2 - Get the Consolidated Risk Per Host
     consolidatedRiskPerHost = getConsolidatedRiskPerHost(perHostVulnList)
     print(consolidatedRiskPerHost)
-    print("Finished Getting Consolidated Risk Per Host. \n")
+    # print("Finished Getting Consolidated Risk Per Host. \n")
 
     # Phase 3 - Get the Aggregated Risk Score of the Network
     aggregatedRisk = getAggregatedRiskScore(consolidatedRiskPerHost)
     print(aggregatedRisk)
-    print("Finished Getting Aggregated Risk Score. \n")
-    print(f"Aggregated Risk: {aggregatedRisk}")
+    # print("Finished Getting Aggregated Risk Score. \n")
+    # print(f"Aggregated Risk: {aggregatedRisk}")
 
     # Get Additional Metrics
     highRiskVulnCount = getHighRiskVulnCount(vulnList)
