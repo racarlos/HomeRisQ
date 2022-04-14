@@ -128,8 +128,9 @@ class HistoryEntry(MDBoxLayout):
 			for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
 				vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
 				vulnContainer.add_widget(vulnPanel)
-				hostPanel.content.height += vulnPanel.height	
+				vulnContainer.height += vulnPanel.height	
 
+		
 			# Add Host Panel to additional data boxes
 			newReportDashboard.ids.additionalData.add_widget(hostPanel)
 

@@ -132,9 +132,9 @@ def sortVulnsByHost(vulnList):
             ipList.append(entry)					# Make entry in IP List
             perHost.append([vuln])					# Make sub array for that IP address in perHost List 
 
-    print("+++++++++++++++++++++++++")
-    print(perHost)    
-    print("+++++++++++++++++++++++++")
+    # print("+++++++++++++++++++++++++")
+    # print(perHost)    
+    # print("+++++++++++++++++++++++++")
     return perHost
 
 
@@ -344,17 +344,17 @@ def startCalculation(reportID):
 
     # Phase 0 - Sort Vulnerabilities By host 
     perHostVulnList = sortVulnsByHost(vulnList)
-    print(perHostVulnList)
+    #print(perHostVulnList)
     # print("Finished Sorting Vulns per Host. \n")
 
     # Phase 2 - Get the Consolidated Risk Per Host
     consolidatedRiskPerHost = getConsolidatedRiskPerHost(perHostVulnList)
-    print(consolidatedRiskPerHost)
+    #print(consolidatedRiskPerHost)
     # print("Finished Getting Consolidated Risk Per Host. \n")
 
     # Phase 3 - Get the Aggregated Risk Score of the Network
     aggregatedRisk = getAggregatedRiskScore(consolidatedRiskPerHost)
-    print(aggregatedRisk)
+    #print(aggregatedRisk)
     # print("Finished Getting Aggregated Risk Score. \n")
     # print(f"Aggregated Risk: {aggregatedRisk}")
 

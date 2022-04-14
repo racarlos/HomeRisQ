@@ -113,11 +113,15 @@
 
 #===================== Host Panel
 <VulnPanel>:
-    orientation: "vertical"
     padding: 10
+    spacing: 3
+    height: upperBox.height + midBox.height + lowerBox.height
+    orientation: "vertical"
 
     # Upper Box for Primary vulnerability Data
     MDBoxLayout:
+        id: upperBox
+        size_hint_y: None
         md_bg_color: lightGray
     
         # Left Box
@@ -185,31 +189,35 @@
                     MDLabel:
                         halign: 'left'  
                         text: str(root.data.qod)
-
-
     
     # Lower Box for Vulnerability Solution Data
     MDBoxLayout:
-        md_bg_color: lightBlue
+        id: midBox
         orientation: "vertical"
+        size_hint_y: None
+        height: solutionType.height
+        md_bg_color: lightBlue
 
         # Solution Type and its Icon 
-        MDBoxLayout:
-            orientation: "horizontal"
-            MDLabel:
-                text: 'Solution Type: ' + str(root.data.solution['@type']) 
+        MDLabel:
+            markup: True
+            id: solutionType
+            height: self.texture_size[1]
+            text: 'Solution Type: ' + str(root.data.solution['@type']) 
 
-        # Solution Description
-        MDBoxLayout:
-            orientation: "vertical"
-            size_hint_x: 1.0
-            
-            MDLabel:
-                text: 'Solution Description: ' 
-            
-            MDLabel:
-                halign: 'left'  
-                text: str(root.data.solution['#text'])
+    # Solution Description
+    MDBoxLayout:
+        id: lowerBox
+        orientation: "vertical"
+        md_bg_color: orange
+        size_hint_y: None
+
+
+        MDLabel:
+            markup: True
+            height: self.texture_size[1]
+            id: solutionDescription
+            text: '[b]Solution Description:  [/b]' + str(root.data.solution['#text'])
 
 
 #===================== REPORT DASHBOARD ENTRY RULE
