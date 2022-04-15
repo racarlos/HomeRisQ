@@ -104,6 +104,7 @@ class HistoryEntry(MDBoxLayout):
 		# [MINOR FIX] Change highlighted to dashboard
 		print(f"Generating Report for: {self.data.id}")
 		reportResults = startCalculation(str(self.data.id))
+		reportResults['assessment'] = getQualitativeAssessment(reportResults['aggregatedRisk'])
 		newReportDashboard = ReportDashboard(data=reportResults)
 		
 		# Create Host Panels 
@@ -134,7 +135,9 @@ class HistoryEntry(MDBoxLayout):
 			if reportResults['consolidatedRiskPerHost'][hostIndex]['vulnCount'] > 0:										# If host has vulnerabilities
 				# For every vulnerability in the host, create own panel and add to container
 				for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
-					vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
+					vulnData = reportResults['perHostVulnList'][hostIndex][vulnIndex]
+					vulnData['solutionIcon'] = getSolutionIcon(vulnData['solution']['@type'])
+					vulnPanel = VulnPanel(data=vulnData)
 					vulnContainer.add_widget(vulnPanel)
 					vulnContainer.height += vulnPanel.height	
 			else: 

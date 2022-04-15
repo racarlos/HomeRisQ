@@ -23,4 +23,31 @@ def printVulnerabilities(vulnList):
         print("Index: ",vulnList.index(vuln))
         print("=================== \n")
 
+def getQualitativeAssessment(aggregatedScore):
+    assessment = ''
+    if 0 <= aggregatedScore <= 20:
+        assessment = "Your network is [b]Safe[/b]"
+    elif 0 <= aggregatedScore <= 40:
+        assessment = "Your network is at a [b]Minor Risk[/b]"
+    elif 0 <= aggregatedScore <= 60:
+        assessment = "Your network is at a [b]Moderate Risk[/b]"
+    elif 0 <= aggregatedScore <= 80:
+        assessment = "Your network is at a [b]High Risk[/b]"
+    elif 0 <= aggregatedScore <= 100:
+        assessment = "Your network is at an [b]Extreme Risk[/b]"
+    return assessment
 
+def getSolutionIcon(solutionType):
+    solutionIcon = ''
+    if(solutionType == 'Mitigation'):
+        solutionIcon = 'security'
+    elif(solutionType == 'Workaround'):
+        solutionIcon = 'hammer-wrench'
+    elif(solutionType == 'VendorFix'):
+        solutionIcon = 'store-cog'
+    elif(solutionType == 'WillNotFix'):
+        solutionType = 'thumb-down'
+    else:
+        solutionIcon = 'close-circle'
+    return solutionIcon
+   
