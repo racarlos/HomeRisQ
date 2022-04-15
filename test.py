@@ -1,54 +1,62 @@
-from kivy.lang import Builder
-from kivy.uix.boxlayout import BoxLayout
-from kivy.properties import StringProperty
-from kivymd.app import MDApp
-from kivymd.uix.list import OneLineAvatarIconListItem
-from kivymd.uix.dialog import MDDialog
+import re
 
-KV = '''
-<Item>
-    _txt_left_pad: "40dp"
+#Converts CVSS Vector to Vector String
+def splitVector(vector):
 
-    IconLeftWidget:
-        icon: root.icon
+    vectorList = vector.split("/")
+
+    for i in range(len(vectorList)):
+        vectorList[i] = vectorList[i].split(":")
+
+    return vectorList
+
+def transformVector(vector):
+    vectorList = splitVector(vector)
+    newVector = ""
+    print(vectorList)
+
+    for i in range(len(vectorList)): 
+        metric = vectorList[i]
+    
+        if(metric[0] == 'AV'):
+            if metric[1] == 'P':	                                # Convert P to L
+                newVector += 'AV:L' + '/'
+            else:
+                newVector += 'AV:' + metric[1] + '/'
+
+        elif(metric[0] == 'AC'):                                    # Convert L to either L or M
+
+            if metric[1] == 'L' and vectorList[3][1] == 'N':	   
+                newVector += 'AC:L/'
+            elif metric[1] == 'L' and vectorList[3][1] == 'R':	   
+                newVector += 'AC:M/'
+            else:
+                newVector += 'AC:' + metric[1] + '/'
+
+        elif(metric[0] == 'PR'):                                    # Convert Privileges Required to Authentication
+            
+            if metric[1] == 'H':	                                # High to multiple
+                newVector += 'Au:M/'
+            if metric[1] == 'L':	                                # Low to Single
+                newVector += 'Au:S/'
+            if metric[1] == 'N':	                                # None to None
+                newVector += 'Au:N/'
+        
+        elif metric[0] == 'C' or metric[0] == 'I' or metric[0] == 'A':
+
+            if metric[1] == 'H':	                                # High to Complete
+                newVector += metric[0] + ':C' + '/'
+            if metric[1] == 'L':	                                # Low to Partial
+                newVector += metric[0] + ':P' + '/'
+            if metric[1] == 'N':	                                # None to None
+                newVector += metric[0] + ':N' + '/'
+    
+    newVector = newVector[:-1]
+    print(newVector)
 
 
-<Content>
-    orientation: "vertical"
-    spacing: "12dp"
-    size_hint_y: None
-    height: "400dp"
-
-    ScrollView:
-
-        MDList:
-            id: Mcontainer
-
-MDFloatLayout:
-'''
 
 
-class Item(OneLineAvatarIconListItem):
-    icon = StringProperty()
 
-
-class Content(BoxLayout):
-    pass
-
-
-class Example(MDApp):
-    def on_start(self):
-        Mcontent = Content()
-
-        for x in range(0, 7):
-            items = Item(text="This is a test", icon="lock")
-            Mcontent.ids.Mcontainer.add_widget(items)
-
-        self.MSetFileOptionsdialog = MDDialog(type="custom", content_cls=Mcontent)
-        self.MSetFileOptionsdialog.open()
-
-    def build(self):
-        return Builder.load_string(KV)
-
-
-Example().run()
+vector = "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+transformVector(vector)

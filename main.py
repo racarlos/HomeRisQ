@@ -49,7 +49,6 @@ for report in reportsListJSON:
 		'progress' : int(report['report']['task']['progress']),
 		'severity' : float(report['report']['severity']['full']),
 	}
-
 	# Avoid Discovery Scans 
 	if entry['name'] != 'Discovery': reportsList.append(entry)
 	
