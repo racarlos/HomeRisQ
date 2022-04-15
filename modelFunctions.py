@@ -316,7 +316,8 @@ def startCalculation(reportID):
     # Computation Variables
     vulnList = []
     totalVulnerabilities = 0
-    hosts = []
+    addresses = []
+    hostNames = []
     reportJSON =  getSingleReport(reportID)
 
     # Store all Vulnerabilities and add their Impact, Probability, and Risk Values
@@ -339,38 +340,52 @@ def startCalculation(reportID):
         if entry['cvss'] > 0: 
             entry['solution']['#text'] = entry['solution']['#text'].replace('\n','') 
             vulnList.append(entry)
-        
-        if entry['ipAddress'] in hosts:
+   
+        if entry['ipAddress'] in addresses:
             pass
         else: 
-            hosts.append(entry['ipAddress'])
-
-        
-    # print(f"Total Vulnerabilities: {totalVulnerabilities}")					
-    # print("==================== \n")
+            addresses.append(entry['ipAddress'])
+            hostNames.append(entry['hostName'])
 
     # Phase 0 - Sort Vulnerabilities By host 
     perHostVulnList = sortVulnsByHost(vulnList)
-    print(perHostVulnList)
     # print("Finished Sorting Vulns per Host. \n")
 
     # Phase 2 - Get the Consolidated Risk Per Host
     consolidatedRiskPerHost = getConsolidatedRiskPerHost(perHostVulnList)
-    #print(consolidatedRiskPerHost)
+
     # print("Finished Getting Consolidated Risk Per Host. \n")
 
     # Phase 3 - Get the Aggregated Risk Score of the Network
     aggregatedRisk = getAggregatedRiskScore(consolidatedRiskPerHost)
-    #print(aggregatedRisk)
-    # print("Finished Getting Aggregated Risk Score. \n")
-    # print(f"Aggregated Risk: {aggregatedRisk}")
+    
+    # Add safe hosts for GUI View
+    for i in range(len(addresses)):
+        isStored = False
+        for entry in consolidatedRiskPerHost:
+            if addresses[i] == entry['ipAddress']:
+                isStored = True
+                break         
+
+        if(isStored is False):
+            hostEntry = {
+                'ipAddress': addresses[i],
+                'hostName': hostNames[i],
+                'vulnCount': 0,
+                'consolidatedRisk': 0,
+            }       
+            consolidatedRiskPerHost.append(hostEntry)
 
     # Get Additional Metrics
     highRiskVulnCount = getHighRiskVulnCount(vulnList)
     mostVulnerableHost = getMostVulnerableHost(consolidatedRiskPerHost)
 
+    print("++++++++++++++++")
+    print(consolidatedRiskPerHost)
+    print("++++++++++++++++")
+
     data = {
-        'hostCount': len(hosts),
+        'hostCount': len(hostNames),
         'totalVulnerabilities': totalVulnerabilities,
         'perHostVulnList' : perHostVulnList,
         'consolidatedRiskPerHost' : consolidatedRiskPerHost,

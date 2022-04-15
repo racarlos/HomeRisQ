@@ -111,6 +111,33 @@
                         line_width: 1.5
                         on_release: root.viewReport()
 
+# =================== Safe Content
+<SafePanel>
+    orientation: 'vertical'
+    size_hint: 1, None
+    md_bg_color: black
+    padding: 15
+    spacing: 15
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            MDIcon:
+                icon: 'shield-check'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: orange
+                font_size: 40
+
+        MDBoxLayout:
+            MDLabel:
+                markup: True
+                text: '[b]This Host is Safe [/b]'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: orange
+                font_size: 20
 
 # =================== MyContent
 <MyContent>:

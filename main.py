@@ -58,6 +58,11 @@ hasGeneratedEntries = False
 hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
 
+
+# Class for content of safe Hosts
+class SafePanel(MDBoxLayout):
+	pass
+
 # Class for content
 class MyContent(MDBoxLayout):
 	pass
@@ -103,14 +108,6 @@ class HistoryEntry(MDBoxLayout):
 		newReportDashboard = ReportDashboard(data=reportResults)
 		
 		# Create Host Panels 
-		# print("Per Host Vuln List: ")
-		# for i in range(len(reportResults['perHostVulnList'])):
-		# 	print(reportResults['perHostVulnList'][i])
-
-		# print("Consolidated Risk PerHost: ")
-		# for i in range(len(reportResults['consolidatedRiskPerHost'])):
-		# 	print(reportResults['consolidatedRiskPerHost'][i])
-
 		for hostIndex in range(len(reportResults['consolidatedRiskPerHost'])):
 
 			# Make small data structure where perHostData is matched with consolidatedRiskperHost
@@ -134,14 +131,18 @@ class HistoryEntry(MDBoxLayout):
 					tertiary_text= '[color=#ffffff]Consolidated Risk Score: [b]' + consolidatedRisk + '[/b][/color]',
 				)
 			)
-
-			# For every vulnerability in the host, create own panel and add to container
-			for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
-				vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
+			
+			if reportResults['consolidatedRiskPerHost'][hostIndex]['vulnCount'] > 0:										# If host has vulnerabilities
+				# For every vulnerability in the host, create own panel and add to container
+				for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
+					vulnPanel = VulnPanel(data=reportResults['perHostVulnList'][hostIndex][vulnIndex])
+					vulnContainer.add_widget(vulnPanel)
+					vulnContainer.height += vulnPanel.height	
+			else: 
+				vulnPanel = SafePanel()
 				vulnContainer.add_widget(vulnPanel)
-				vulnContainer.height += vulnPanel.height	
+				vulnContainer.height += vulnPanel.height
 
-		
 			# Add Host Panel to additional data boxes
 			newReportDashboard.ids.additionalData.add_widget(hostPanel)
 
