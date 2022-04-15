@@ -111,6 +111,9 @@ def sortVulnsByHost(vulnList):
         hasAdded = False
         ipAddress =  vuln['ipAddress']				# Extract the ip address of current vulnerability
 
+        # Get Risk Value of Vulnerability
+        vuln['risk'] = round(getVulnerabilityRisk(vuln['vector'],vuln['qod']),2)
+
         if len(ipList) == 0:						# If Empty IP List
             entry = [ipAddress,len(ipList)]			
             ipList.append(entry)					# Add current ip and index 0
@@ -126,15 +129,13 @@ def sortVulnsByHost(vulnList):
                     perHost[index].append(vuln)		# Add entry of vulnerabilibity to its host
                     hasAdded = True
                     break							# Early termination
+
         # If IP address of current vulnerability has not been added to the list yet
         if hasAdded != True:
             entry = [ipAddress,len(ipList)]		
             ipList.append(entry)					# Make entry in IP List
             perHost.append([vuln])					# Make sub array for that IP address in perHost List 
 
-    # print("+++++++++++++++++++++++++")
-    # print(perHost)    
-    # print("+++++++++++++++++++++++++")
     return perHost
 
 
@@ -350,7 +351,7 @@ def startCalculation(reportID):
 
     # Phase 0 - Sort Vulnerabilities By host 
     perHostVulnList = sortVulnsByHost(vulnList)
-    #print(perHostVulnList)
+    print(perHostVulnList)
     # print("Finished Sorting Vulns per Host. \n")
 
     # Phase 2 - Get the Consolidated Risk Per Host
