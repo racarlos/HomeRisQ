@@ -119,116 +119,191 @@
     height: self.minimum_height
     md_bg_color: black
     padding: (5,5)
-    spacing: 5
+    spacing: 10
 
 #===================== Host Panel
 <VulnPanel>:
     size_hint: 1, None
-    #height: self.minimum_height
-    height: upperBox.height + midBox.height + lowerBox.height
+    height: upperBox.height + lowerBox.height
     orientation: "vertical"
 
     # Upper Box for Primary vulnerability Data
     MDBoxLayout:
         id: upperBox
         size_hint: 1, None
-        height: 60
-        md_bg_color: white
-    
+        md_bg_color: darkGray
+
         # Left Box
         MDBoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.6
+            spacing: 5
+            padding: [0,10]
             # Box for Vuln Description
             MDBoxLayout:
                 orientation: 'horizontal'
+                padding: [10,5]
 
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         markup: True
                         text: '[b]Description: [/b]' 
                 MDBoxLayout:
                     size_hint_x: 0.75
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         halign: 'left'
                         text: str(root.data.name)
 
             # Box for Threat Family 
             MDBoxLayout:
                 orientation: 'horizontal'
+                padding: [10,5]
+
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         markup: True
                         text: '[b]Threat Family: [/b]' 
                 MDBoxLayout:
                     size_hint_x: 0.75
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         halign: 'left'
                         text: str(root.data.threatFamily)
+
+            # Box for Solution Type 
+            MDBoxLayout:
+                orientation: 'horizontal'
+                padding: [10,5]
+
+                MDBoxLayout:
+                    size_hint_x: 0.25
+                    MDLabel:
+                        markup: True
+                        text: '[b]Solution Type: [/b]'
+                        theme_text_color: "Custom"
+                        text_color: white
+
+                MDBoxLayout:
+                    size_hint_x: 0.75
+                    
+                    MDIcon:
+                        size_hint_x: None
+                        width: self.texture_size[1]
+                        icon: 'security'
+                        theme_text_color: 'Custom'
+                        text_color: white
+                        halign: 'left'
+                    
+                    MDLabel:
+                        markup: True
+                        id: solutionType
+                        text: str(root.data.solution['@type']) 
+                        theme_text_color: "Custom"
+                        text_color: white
 
         # Right Box
         MDBoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.4
+            spacing: 5
+            padding: [0,10]
+
+
             # Box for Vector
             MDBoxLayout:
                 orientation: 'horizontal'
+                padding: [10,5]
 
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
                         markup: True
                         text: '[b]Vector: [/b]' 
+                        theme_text_color: "Custom"
+                        text_color: white
                 MDBoxLayout:
 
                     size_hint_x: 0.75
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         halign: 'left'
                         text: str(root.data.vector)
 
             # Box for Quality detection
             MDBoxLayout:
                 orientation: 'horizontal'
+                padding: [10,5]
+
                 MDBoxLayout:
                     size_hint_x: 0.25
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         markup: True
                         text: '[b]Reliability: [/b]' 
                 MDBoxLayout:
                     size_hint_x: 0.75
                     MDLabel:
+                        theme_text_color: "Custom"
+                        text_color: white
                         halign: 'left'  
                         text: str(root.data.qod)
+
+            
+            # Box for Risk Score
+            MDBoxLayout:
+                orientation: 'horizontal'
+                padding: [10,5]
+                
+                MDBoxLayout:
+                    size_hint_x: 0.25
+                    MDLabel:
+                        markup: True
+                        text: '[b]Risk Score: [/b]'
+                        theme_text_color: "Custom"
+                        text_color: white
+
+                MDBoxLayout:
+                    size_hint_x: 0.75
+                    MDLabel:
+                        markup: True
+                        id: solutionType
+                        text: 'Insert Risk Here' 
+                        theme_text_color: "Custom"
+                        text_color: white
     
-    # Lower Box for Vulnerability Solution Data
-    MDBoxLayout:
-        id: midBox
-        orientation: "vertical"
-        size_hint: 1, None
-        height: solutionType.height
-        md_bg_color: white
-
-        # Solution Type and its Icon 
-        MDLabel:
-            markup: True
-            id: solutionType
-            height: self.texture_size[1]
-            text: '[b]Solution Type: [/b]' + str(root.data.solution['@type']) 
-
     # Solution Description
     MDBoxLayout:
         id: lowerBox
         orientation: "vertical"
-        md_bg_color: white
+        md_bg_color: darkGray
         size_hint: 1, None
+        padding: [10,5]
+
+        # MDIcon:
+        #     size_hint: None, None
+        #     width: self.texture_size[1]
+        #     icon: 'shield-check'
+        #     theme_text_color: 'Custom'
+        #     text_color: orange
 
         MDLabel:
             markup: True
             height: self.texture_size[1]
             id: solutionDescription
             text: '[b]Solution Description:  [/b]' + str(root.data.solution['#text'])
+            theme_text_color: "Custom"
+            text_color: orange
 
 
 #===================== REPORT DASHBOARD ENTRY RULE

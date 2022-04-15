@@ -32,13 +32,6 @@ transform = EtreeTransform()								# Element Tree transform for storing XML
 networkFullAndFastScanId = 'ad0736a6-ab8d-4e3b-b1f4-410f753cb822'
 networkDiscoveryScanId = '7c9f814f-2367-4dbf-9d3b-4589a4f6e0f3'
 
-#Report IDs
-lowReport = '9cc3359e-cec8-4559-a03f-d7d5cf834dfc'
-mediumReport = '6beae7f0-d4da-49f8-a4db-c5765bf9401a'
-severeReport = '84c900e0-400e-4d03-94c5-33946b0cca37'
-metaSploitable = '56f60645-c515-4739-b88b-2d8717c7a1f9'
-
-
 # Main Global Variables
 version = getVersion()
 reportsList = []
@@ -64,9 +57,6 @@ for report in reportsListJSON:
 hasGeneratedEntries = False
 hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
-
-
-
 
 # Class for content
 class MyContent(MDBoxLayout):
