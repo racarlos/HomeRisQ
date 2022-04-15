@@ -225,7 +225,7 @@
                     MDIcon:
                         size_hint_x: None
                         width: self.texture_size[1]
-                        icon: 'security'
+                        icon: root.data.solutionIcon
                         theme_text_color: 'Custom'
                         text_color: white
                         halign: 'left'
@@ -233,7 +233,7 @@
                     MDLabel:
                         markup: True
                         id: solutionType
-                        text: str(root.data.solution['@type']) 
+                        text: '  ' + str(root.data.solution['@type']) 
                         theme_text_color: "Custom"
                         text_color: white
 
@@ -316,13 +316,6 @@
         md_bg_color: darkGray
         size_hint: 1, None
         padding: [10,5]
-
-        # MDIcon:
-        #     size_hint: None, None
-        #     width: self.texture_size[1]
-        #     icon: 'shield-check'
-        #     theme_text_color: 'Custom'
-        #     text_color: orange
 
         MDLabel:
             markup: True
