@@ -193,6 +193,10 @@ class MainApp(MDApp):
 
 			hasGeneratedEntries = True
 
+	def startScan(self):
+		print("Start my Scan")
+
+
 	# For Removing history Entries once user exited the history screen
 	def removeHistoryEntries(self):
 		pass

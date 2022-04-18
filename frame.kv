@@ -519,7 +519,7 @@ MDBoxLayout:
                     screenManager.current = "dashboardScreen"
 
             MDNavigationRailItem:
-                icon: 'cube-scan'
+                icon: 'radar'
                 text: '[b]Scan[/b]'
                 on_release:
                     screenManager.current = "scanScreen"
@@ -584,9 +584,32 @@ MDBoxLayout:
                 MDScreen:
                     id: scanScreen
                     name: "scanScreen"
-                    MDLabel:
-                        halign: 'center'
-                        text: "Scan Screen here"
+                    md_bg_color: black
+                    
+                    AnchorLayout:
+                        MDBoxLayout:
+                            size_hint_y: 0.3
+                            orientation: 'vertical'
+                            spacing: 20
+
+                            MDIcon:
+                                icon: 'radar'
+                                theme_text_color: "Custom"
+                                text_color: orange
+                                halign: 'center'
+                                font_size: 70
+                            
+                            # Button for Scanning
+                            MDRectangleFlatButton:
+                                pos_hint: {'center_x': 0.5}
+                                theme_text_color: "Custom"
+                                text_color: orange
+                                text: '[b]Scan My Network[/b]'
+                                font_size: 50
+                                line_color: orange
+                                line_width: 1.5
+                                on_release: app.startScan()
+
 
                 # Screen for History
                 MDScreen:
