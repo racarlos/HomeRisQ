@@ -1,390 +1,2626 @@
-{
-    "get_tasks_response": {
-        "@status": "200",
-        "@status_text": "OK",
-        "apply_overrides": "0",
-        "task": [
-            {
-                "@id": "d3046e7a-1577-45f6-b47f-0bcd13a44372",
-                "owner": {
-                    "name": "admin"
-                },
-                "name": "Immediate scan of IP 192.168.100.1-254",
-                "comment": null,
-                "creation_time": "2022-04-04T14:10:55Z",
-                "modification_time": "2022-04-04T14:10:55Z",
-                "writable": "1",
-                "in_use": "0",
-                "permissions": {
-                    "permission": {
-                        "name": "Everything"
-                    }
-                },
-                "alterable": "0",
-                "usage_type": "scan",
-                "config": {
-                    "@id": "daba56c8-73ec-11df-a475-002264764cea",
-                    "name": "Full and fast",
-                    "type": "0",
-                    "trash": "0"
-                },
-                "target": {
-                    "@id": "96e2be69-2d3f-4b64-8f20-c8874ed6eb37",
-                    "name": "Target for immediate scan of IP 192.168.100.1-254 - 2022-04-04 14:10:54",
-                    "trash": "0"
-                },
-                "hosts_ordering": null,
-                "scanner": {
-                    "@id": "08b69003-5fc2-4037-a479-93b440211c73",
-                    "name": "OpenVAS Default",
-                    "type": "2",
-                    "trash": "0"
-                },
-                "status": "Done",
-                "progress": "-1",
-                "report_count": {
-                    "finished": "1",
-                    "#text": "1"
-                },
-                "trend": null,
-                "schedule": {
-                    "@id": "",
-                    "name": null,
-                    "trash": "0"
-                },
-                "schedule_periods": "0",
-                "last_report": {
-                    "report": {
-                        "@id": "9cc3359e-cec8-4559-a03f-d7d5cf834dfc",
-                        "timestamp": "2022-04-04T14:10:55Z",
-                        "scan_start": "2022-04-04T14:11:50Z",
-                        "scan_end": "2022-04-04T15:05:39Z",
-                        "result_count": {
-                            "hole": "0",
-                            "info": "1",
-                            "log": "38",
-                            "warning": "1",
-                            "false_positive": "0"
-                        },
-                        "severity": "4.3"
-                    }
-                },
-                "observers": null,
-                "preferences": {
-                    "preference": [
-                        {
-                            "name": "Maximum concurrently executed NVTs per host",
-                            "scanner_name": "max_checks",
-                            "value": "4"
-                        },
-                        {
-                            "name": "Maximum concurrently scanned hosts",
-                            "scanner_name": "max_hosts",
-                            "value": "20"
-                        },
-                        {
-                            "name": "Network Source Interface",
-                            "scanner_name": "source_iface",
-                            "value": null
-                        },
-                        {
-                            "name": "Add results to Asset Management",
-                            "scanner_name": "in_assets",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "Apply Overrides when adding Assets",
-                            "scanner_name": "assets_apply_overrides",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "Min QOD when adding Assets",
-                            "scanner_name": "assets_min_qod",
-                            "value": "70"
-                        },
-                        {
-                            "name": "Auto Delete Reports",
-                            "scanner_name": "auto_delete",
-                            "value": "0"
-                        },
-                        {
-                            "name": "Auto Delete Reports Data",
-                            "scanner_name": "auto_delete_data",
-                            "value": "0"
-                        }
-                    ]
+[
+    {
+        "@id": "d07d0754-9fb6-44a3-aa2e-ef141aef8c8f",
+        "name": "CGI Scanning Consolidation",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:26:27Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:26:27Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.111038",
+            "type": "nvt",
+            "name": "CGI Scanning Consolidation",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2015-09-14T05:00:00Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
                 }
             },
-            {
-                "@id": "ad0736a6-ab8d-4e3b-b1f4-410f753cb822",
-                "owner": {
-                    "name": "admin"
-                },
-                "name": "Immediate scan of IP 192.168.1.0/24",
-                "comment": null,
-                "creation_time": "2021-11-29T10:11:33Z",
-                "modification_time": "2021-11-29T10:11:33Z",
-                "writable": "1",
-                "in_use": "0",
-                "permissions": {
-                    "permission": {
-                        "name": "Everything"
-                    }
-                },
-                "alterable": "0",
-                "usage_type": "scan",
-                "config": {
-                    "@id": "daba56c8-73ec-11df-a475-002264764cea",
-                    "name": "Full and fast",
-                    "type": "0",
-                    "trash": "0"
-                },
-                "target": {
-                    "@id": "d64afdc4-0df9-4cca-a636-f390cf41160f",
-                    "name": "Target for immediate scan of IP 192.168.1.0/24 - 2021-11-29 10:11:32",
-                    "trash": "0"
-                },
-                "hosts_ordering": null,
-                "scanner": {
-                    "@id": "08b69003-5fc2-4037-a479-93b440211c73",
-                    "name": "OpenVAS Default",
-                    "type": "2",
-                    "trash": "0"
-                },
-                "status": "Done",
-                "progress": "-1",
-                "report_count": {
-                    "finished": "1",
-                    "#text": "1"
-                },
-                "trend": null,
-                "schedule": {
-                    "@id": "",
-                    "name": null,
-                    "trash": "0"
-                },
-                "schedule_periods": "0",
-                "last_report": {
-                    "report": {
-                        "@id": "84c900e0-400e-4d03-94c5-33946b0cca37",
-                        "timestamp": "2021-11-30T10:22:07Z",
-                        "scan_start": "2021-11-30T10:22:25Z",
-                        "scan_end": "2021-11-30T10:51:09Z",
-                        "result_count": {
-                            "hole": "1",
-                            "info": "1",
-                            "log": "49",
-                            "warning": "2",
-                            "false_positive": "0"
-                        },
-                        "severity": "7.5"
-                    }
-                },
-                "observers": null,
-                "preferences": {
-                    "preference": [
-                        {
-                            "name": "Maximum concurrently executed NVTs per host",
-                            "scanner_name": "max_checks",
-                            "value": "4"
-                        },
-                        {
-                            "name": "Maximum concurrently scanned hosts",
-                            "scanner_name": "max_hosts",
-                            "value": "20"
-                        },
-                        {
-                            "name": "Network Source Interface",
-                            "scanner_name": "source_iface",
-                            "value": null
-                        },
-                        {
-                            "name": "Add results to Asset Management",
-                            "scanner_name": "in_assets",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "Apply Overrides when adding Assets",
-                            "scanner_name": "assets_apply_overrides",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "Min QOD when adding Assets",
-                            "scanner_name": "assets_min_qod",
-                            "value": "70"
-                        },
-                        {
-                            "name": "Auto Delete Reports",
-                            "scanner_name": "auto_delete",
-                            "value": "0"
-                        },
-                        {
-                            "name": "Auto Delete Reports Data",
-                            "scanner_name": "auto_delete_data",
-                            "value": "0"
-                        }
-                    ]
-                }
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script consolidates various information for CGI scanning.\n\n  This information is based on the following scripts / settings:\n\n  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)\n\n  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)\n\n  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)\n\n  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)\n\n  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use\n\n  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and\n    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the\n    'Global variable settings' of the scan config in use\n\n  If you think any of this information is wrong please report it to the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
             },
-            {
-                "@id": "1e2d4a23-81a5-448f-912b-a684fe03dd1a",
-                "owner": {
-                    "name": "admin"
-                },
-                "name": "New Quick Task",
-                "comment": "Automatically generated by  wizard",
-                "creation_time": "2022-03-19T07:36:55Z",
-                "modification_time": "2022-03-19T07:36:55Z",
-                "writable": "1",
-                "in_use": "0",
-                "permissions": {
-                    "permission": {
-                        "name": "Everything"
-                    }
-                },
-                "alterable": "0",
-                "usage_type": "scan",
-                "config": {
-                    "@id": "daba56c8-73ec-11df-a475-002264764cea",
-                    "name": "Full and fast",
-                    "type": "0",
-                    "trash": "0"
-                },
-                "target": {
-                    "@id": "b7a578b8-cc48-481a-b17d-eaf65cb394df",
-                    "name": "Target for New Quick Task - 2022-03-19 07:36:54",
-                    "trash": "0"
-                },
-                "hosts_ordering": null,
-                "scanner": {
-                    "@id": "08b69003-5fc2-4037-a479-93b440211c73",
-                    "name": "OpenVAS Default",
-                    "type": "2",
-                    "trash": "0"
-                },
-                "status": "Done",
-                "progress": "-1",
-                "report_count": {
-                    "finished": "1",
-                    "#text": "1"
-                },
-                "trend": null,
-                "schedule": {
-                    "@id": "",
-                    "name": null,
-                    "trash": "0"
-                },
-                "schedule_periods": "0",
-                "last_report": {
-                    "report": {
-                        "@id": "6beae7f0-d4da-49f8-a4db-c5765bf9401a",
-                        "timestamp": "2022-03-19T07:36:54Z",
-                        "scan_start": "2022-03-19T07:37:22Z",
-                        "scan_end": "2022-03-19T07:45:21Z",
-                        "result_count": {
-                            "hole": "0",
-                            "info": "1",
-                            "log": "20",
-                            "warning": "2",
-                            "false_positive": "0"
-                        },
-                        "severity": "4.8"
-                    }
-                },
-                "observers": null,
-                "preferences": {
-                    "preference": [
-                        {
-                            "name": "Maximum concurrently executed NVTs per host",
-                            "scanner_name": "max_checks",
-                            "value": "4"
-                        },
-                        {
-                            "name": "Maximum concurrently scanned hosts",
-                            "scanner_name": "max_hosts",
-                            "value": "20"
-                        },
-                        {
-                            "name": "Network Source Interface",
-                            "scanner_name": "source_iface",
-                            "value": null
-                        },
-                        {
-                            "name": "Add results to Asset Management",
-                            "scanner_name": "in_assets",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "Apply Overrides when adding Assets",
-                            "scanner_name": "assets_apply_overrides",
-                            "value": "yes"
-                        },
-                        {
-                            "name": "Min QOD when adding Assets",
-                            "scanner_name": "assets_min_qod",
-                            "value": "70"
-                        },
-                        {
-                            "name": "Auto Delete Reports",
-                            "scanner_name": "auto_delete",
-                            "value": "0"
-                        },
-                        {
-                            "name": "Auto Delete Reports Data",
-                            "scanner_name": "auto_delete_data",
-                            "value": "0"
-                        }
-                    ]
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
                 }
             }
-        ],
-        "filters": {
-            "@id": "",
-            "term": "apply_overrides=0 min_qod=70 first=1 rows=10 sort=name",
-            "keywords": {
-                "keyword": [
+        },
+        "scan_nvt_version": "2021-06-30T05:18:54Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The Hostname/IP \"192.168.100.1\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe service is responding with a 200 HTTP status code to non-existent files/urls. The following pattern is used to work around possible false detections:\n-----\nWaiting...\n-----\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttps://192.168.100.1/\nhttps://192.168.100.1/asp\nhttps://192.168.100.1/concat?\nhttps://192.168.100.1/html\nhttps://192.168.100.1/portal\nhttps://192.168.100.1/static?\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards\n\nThe following directories were excluded from CGI scanning because the \"Regex pattern to exclude directories from CGI scanning\" setting of the NVT \"Global variable settings\" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: \"/(index\\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)\"\n\nhttps://192.168.100.1/images\n\nThe following cgi scripts were excluded from CGI scanning because of the \"Regex pattern to exclude cgi scripts\" setting of the NVT \"Web mirroring\" (OID: 1.3.6.1.4.1.25623.1.0.10662) for this scan was: \"\\.(js|css)$\"\n\nSyntax : cginame (arguments [default value])\n\nhttps://192.168.100.1/Cuscss/english/frame.css (2019122118122631421553184798 [] )\nhttps://192.168.100.1/Cuscss/login.css (2019122118122631421553184798 [] )\nhttps://192.168.100.1/frameaspdes/english/ssmpdes.js (2019122118122631421553184798 [] )\nhttps://192.168.100.1/resource/common/RndSecurityFormat.js (2019122118122631421553184798 [] )\nhttps://192.168.100.1/resource/common/jquery.min.js (2019122118122631421553184798 [] )\nhttps://192.168.100.1/resource/common/md5.js (2019122118122631421553184798 [] )\nhttps://192.168.100.1/resource/common/safelogin.js (2019122118122631421553184798 [] )",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "f780d8fd-582a-43f0-943a-b70b5ecd2159",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:29Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:29Z",
+        "host": {
+            "asset": {
+                "@asset_id": "a6705bef-bccd-4e74-923f-88d43aae01eb"
+            },
+            "hostname": null,
+            "#text": "192.168.100.20"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.100.20|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "c23edbf8-b5fe-465d-8982-53cb9f4bc614",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T15:05:33Z",
+        "comment": null,
+        "creation_time": "2022-04-04T15:05:33Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.100.1|cpe:/a:jquery:jquery\n192.168.100.1|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "baa5e857-b1f8-453a-a020-4764708ca148",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:19:32Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:19:32Z",
+        "host": {
+            "asset": {
+                "@asset_id": "68709502-ae82-47d6-bdce-a5526ef7f6a2"
+            },
+            "hostname": null,
+            "#text": "192.168.100.18"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.100.18|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "36c24939-0f33-421e-8a61-ff29419aae7c",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:47Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:47Z",
+        "host": {
+            "asset": {
+                "@asset_id": "5af47e74-c625-4f2b-ac8f-48f875bddc8f"
+            },
+            "hostname": null,
+            "#text": "192.168.100.22"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.100.22|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "8c221e77-b499-4f1b-b2d9-c8f98f306a66",
+        "name": "CPE Inventory",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:39Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:39Z",
+        "host": {
+            "asset": {
+                "@asset_id": "fee8f0da-3bad-46b0-861f-f2c1bf27bd7e"
+            },
+            "hostname": null,
+            "#text": "192.168.100.17"
+        },
+        "port": "general/CPE-T",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.810002",
+            "type": "nvt",
+            "name": "CPE Inventory",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-11-18T10:43:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine uses information collected by other routines about\n  CPE identities of operating systems, services and applications detected during the scan.\n\n  Note: Some CPEs for specific products might show up twice or more in the output. Background:\n\n  After a product got renamed or a specific vendor was acquired by another one it might happen that a\n  product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older CPE.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://nvd.nist.gov/products/cpe"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-04-16T10:39:13Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "192.168.100.17|cpe:/o:linux:kernel",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "a0ac62f5-2c9d-49ac-91d5-1e4f97cd26cf",
+        "name": "DNS Server Detection (TCP)",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:17:48Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:17:48Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "53/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108018",
+            "type": "nvt",
+            "name": "DNS Server Detection (TCP)",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2009-03-22T16:08:49Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=A DNS Server is running at this Host.\n  A Name Server translates domain names into IP addresses. This makes it\n  possible for a user to access a website by typing in the domain name instead of\n  the website's actual IP address.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2020-11-10T15:30:28Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": null,
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "0ceeadb1-c0e3-435e-b354-7fd720b9b69d",
+        "name": "Hostname Determination Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:39Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:39Z",
+        "host": {
+            "asset": {
+                "@asset_id": "fee8f0da-3bad-46b0-861f-f2c1bf27bd7e"
+            },
+            "hostname": null,
+            "#text": "192.168.100.17"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108449",
+            "type": "nvt",
+            "name": "Hostname Determination Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-07-05T06:03:26Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script reports information on how the hostname\n  of the target was determined.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2018-11-19T11:11:31Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Hostname determination for IP 192.168.100.17:\n\nHostname|Source\n192.168.100.17|IP-address",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "502f091a-19e3-421a-97d1-648fe220c491",
+        "name": "Hostname Determination Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:19:32Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:19:32Z",
+        "host": {
+            "asset": {
+                "@asset_id": "68709502-ae82-47d6-bdce-a5526ef7f6a2"
+            },
+            "hostname": null,
+            "#text": "192.168.100.18"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108449",
+            "type": "nvt",
+            "name": "Hostname Determination Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-07-05T06:03:26Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script reports information on how the hostname\n  of the target was determined.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2018-11-19T11:11:31Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Hostname determination for IP 192.168.100.18:\n\nHostname|Source\n192.168.100.18|IP-address",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "ed31c69e-9425-4b5d-a42b-6ec5d259b171",
+        "name": "Hostname Determination Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T15:05:33Z",
+        "comment": null,
+        "creation_time": "2022-04-04T15:05:33Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108449",
+            "type": "nvt",
+            "name": "Hostname Determination Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-07-05T06:03:26Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script reports information on how the hostname\n  of the target was determined.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2018-11-19T11:11:31Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Hostname determination for IP 192.168.100.1:\n\nHostname|Source\n192.168.100.1|IP-address",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "46952205-a740-4d35-abea-3286bd75bcbb",
+        "name": "Hostname Determination Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:29Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:29Z",
+        "host": {
+            "asset": {
+                "@asset_id": "a6705bef-bccd-4e74-923f-88d43aae01eb"
+            },
+            "hostname": null,
+            "#text": "192.168.100.20"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108449",
+            "type": "nvt",
+            "name": "Hostname Determination Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-07-05T06:03:26Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script reports information on how the hostname\n  of the target was determined.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2018-11-19T11:11:31Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Hostname determination for IP 192.168.100.20:\n\nHostname|Source\n192.168.100.20|IP-address",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "b5c54626-5752-40da-bd9d-df0ed1a6845b",
+        "name": "Hostname Determination Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:47Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:47Z",
+        "host": {
+            "asset": {
+                "@asset_id": "5af47e74-c625-4f2b-ac8f-48f875bddc8f"
+            },
+            "hostname": null,
+            "#text": "192.168.100.22"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108449",
+            "type": "nvt",
+            "name": "Hostname Determination Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-07-05T06:03:26Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script reports information on how the hostname\n  of the target was determined.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2018-11-19T11:11:31Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Hostname determination for IP 192.168.100.22:\n\nHostname|Source\n192.168.100.22|IP-address",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "da590f0c-a319-4f48-8dba-f7f9118aae8c",
+        "name": "HTTP Security Headers Detection",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:30:08Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:30:08Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.112081",
+            "type": "nvt",
+            "name": "HTTP Security Headers Detection",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2017-10-13T11:12:41Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=All known security headers are being checked on the remote web\n  server.\n\n  On completion a report will hand back whether a specific security header has been implemented\n  (including its value and if it is deprecated) or is missing on the target.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": [
                     {
-                        "column": "apply_overrides",
-                        "relation": "=",
-                        "value": "0"
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/"
                     },
                     {
-                        "column": "min_qod",
-                        "relation": "=",
-                        "value": "70"
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/#div-headers"
                     },
                     {
-                        "column": "first",
-                        "relation": "=",
-                        "value": "1"
-                    },
-                    {
-                        "column": "rows",
-                        "relation": "=",
-                        "value": "10"
-                    },
-                    {
-                        "column": "sort",
-                        "relation": "=",
-                        "value": "name"
+                        "@type": "url",
+                        "@id": "https://securityheaders.com/"
                     }
                 ]
             }
         },
-        "sort": {
-            "field": {
-                "order": "ascending",
-                "#text": "name"
+        "scan_nvt_version": "2021-07-14T06:19:43Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Header Name     | Header Value\n------------------------------\nX-Frame-Options | SAMEORIGIN\n\nMissing Headers                   | More Information\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nContent-Security-Policy           | https://owasp.org/www-project-secure-headers/#content-security-policy\nCross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nDocument-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header\nExpect-CT                         | https://owasp.org/www-project-secure-headers/#expect-ct, Note: This is an upcoming header\nFeature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy\nPermissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field\nPublic-Key-Pins                   | Please check the output of the VTs including 'SSL/TLS:' and 'HPKP' in their name for more information and configuration help. Note: Most major browsers have dropped / deprecated support for this header in 2020.\nReferrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy\nSec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nStrict-Transport-Security         | Please check the output of the VTs including 'SSL/TLS:' and 'HSTS' in their name for more information and configuration help.\nX-Content-Type-Options            | https://owasp.org/www-project-secure-headers/#x-content-type-options\nX-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies\nX-XSS-Protection                  | https://owasp.org/www-project-secure-headers/#x-xss-protection, Note: Most major browsers have dropped / deprecated support for this header in 2020.",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "a776bdd1-dec8-4dce-b0e7-cea67e09ac59",
+        "name": "ICMP Timestamp Detection",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:13:52Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:13:52Z",
+        "host": {
+            "asset": {
+                "@asset_id": "fee8f0da-3bad-46b0-861f-f2c1bf27bd7e"
+            },
+            "hostname": null,
+            "#text": "192.168.100.17"
+        },
+        "port": "general/icmp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.103190",
+            "type": "nvt",
+            "name": "ICMP Timestamp Detection",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2011-07-15T11:32:07Z",
+                    "score": "0.0",
+                    "value": "AV:L/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:L/AC:L/Au:N/C:N/I:N/A:N|summary=The remote host responded to an ICMP timestamp request.\n  The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists\n  of the originating timestamp sent by the sender of the Timestamp as well as a receive\n  timestamp and a transmit timestamp. This information could theoretically be used to\n  exploit weak time-based random number generators in other services.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "cve",
+                        "@id": "CVE-1999-0524"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "http://www.ietf.org/rfc/rfc0792.txt"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/1514"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K14/0632"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2014-0658"
+                    }
+                ]
             }
         },
-        "tasks": {
-            "@start": "1",
-            "@max": "1000"
+        "scan_nvt_version": "2021-03-23T06:51:29Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
         },
-        "task_count": {
-            "filtered": "3",
-            "page": "3",
-            "#text": "3"
-        }
+        "description": null,
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "f60604fa-94e5-46f1-b80d-4fdf905cb2d2",
+        "name": "ICMP Timestamp Detection",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:16:12Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:16:12Z",
+        "host": {
+            "asset": {
+                "@asset_id": "68709502-ae82-47d6-bdce-a5526ef7f6a2"
+            },
+            "hostname": null,
+            "#text": "192.168.100.18"
+        },
+        "port": "general/icmp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.103190",
+            "type": "nvt",
+            "name": "ICMP Timestamp Detection",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2011-07-15T11:32:07Z",
+                    "score": "0.0",
+                    "value": "AV:L/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:L/AC:L/Au:N/C:N/I:N/A:N|summary=The remote host responded to an ICMP timestamp request.\n  The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists\n  of the originating timestamp sent by the sender of the Timestamp as well as a receive\n  timestamp and a transmit timestamp. This information could theoretically be used to\n  exploit weak time-based random number generators in other services.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "cve",
+                        "@id": "CVE-1999-0524"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "http://www.ietf.org/rfc/rfc0792.txt"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/1514"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K14/0632"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2014-0658"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2021-03-23T06:51:29Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": null,
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "135367fa-8e39-4fe7-aaf2-92b7898a1c0c",
+        "name": "jQuery Detection Consolidation",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:30:38Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:30:38Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.150658",
+            "type": "nvt",
+            "name": "jQuery Detection Consolidation",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2021-06-03T14:04:05Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Consolidation of jQuery detections.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://jquery.com/"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-09-21T07:58:23Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Detected jQuery\n\nVersion:       unknown\nLocation:      /resource/common\nCPE:           cpe:/a:jquery:jquery\n\nConcluded from version/product identification location:\nhttps://192.168.100.1/resource/common/jquery.min.js",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "5bc3ff94-5e0b-4c9e-a12c-93ded4f9e1fd",
+        "name": "OS Detection Consolidation and Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:12:49Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:12:49Z",
+        "host": {
+            "asset": {
+                "@asset_id": "fee8f0da-3bad-46b0-861f-f2c1bf27bd7e"
+            },
+            "hostname": null,
+            "#text": "192.168.100.17"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
+            "type": "nvt",
+            "name": "OS Detection Consolidation and Reporting",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-02-19T10:19:54Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "0af6ab65-4844-4860-8fc0-73de061c4b3b",
+        "name": "OS Detection Consolidation and Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:29Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:29Z",
+        "host": {
+            "asset": {
+                "@asset_id": "68709502-ae82-47d6-bdce-a5526ef7f6a2"
+            },
+            "hostname": null,
+            "#text": "192.168.100.18"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
+            "type": "nvt",
+            "name": "OS Detection Consolidation and Reporting",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-02-19T10:19:54Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "8dfc16b2-6042-45e6-b7cf-518eea03f6f8",
+        "name": "OS Detection Consolidation and Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:12:54Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:12:54Z",
+        "host": {
+            "asset": {
+                "@asset_id": "a6705bef-bccd-4e74-923f-88d43aae01eb"
+            },
+            "hostname": null,
+            "#text": "192.168.100.20"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
+            "type": "nvt",
+            "name": "OS Detection Consolidation and Reporting",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-02-19T10:19:54Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "d9f1dc7f-3aa8-4dcb-b083-1af7f7a0ee22",
+        "name": "OS Detection Consolidation and Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:12:44Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:12:44Z",
+        "host": {
+            "asset": {
+                "@asset_id": "5af47e74-c625-4f2b-ac8f-48f875bddc8f"
+            },
+            "hostname": null,
+            "#text": "192.168.100.22"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
+            "type": "nvt",
+            "name": "OS Detection Consolidation and Reporting",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-02-19T10:19:54Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "1f16d6bb-3e3f-464f-b9fc-911ad2eba804",
+        "name": "OS Detection Consolidation and Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:20:03Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:20:03Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
+            "type": "nvt",
+            "name": "OS Detection Consolidation and Reporting",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-02-19T10:19:54Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "e939e873-7c4e-4f84-a876-2ea9e8ddbb07",
+        "name": "Response Time / No 404 Error Code Check",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:16:02Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:16:02Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.10386",
+            "type": "nvt",
+            "name": "Response Time / No 404 Error Code Check",
+            "family": "Web Servers",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2006-03-26T15:55:15Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This VT tests if the remote web server does not reply with a 404\n  error code and checks if it is replying to the scanners requests in a reasonable amount of time.|insight=This web server might show the following issues:\n\n  - it is [mis]configured in that it does not return '404 Not Found' error codes when a non-existent\n  file is requested, perhaps returning a site map, search page, authentication page or redirect instead.\n\n  The Scanner might enabled some counter measures for that, however they might be insufficient. If a\n  great number of security issues are reported for this port, they might not all be accurate.\n\n  - it doesn't response in a reasonable amount of time to various HTTP requests sent by this VT.\n\n  In order to keep the scan total time to a reasonable amount, the remote web server might not be\n  tested. If the remote server should be tested it has to be fixed to have it reply to the scanners\n  requests in a reasonable amount of time.\n\n  Alternatively the 'Maximum response time (in seconds)' preference could be raised to a higher\n  value if longer scan times are accepted.|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2020-11-27T13:32:50Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The service is responding with a 200 HTTP status code to non-existent files/urls. The following pattern is used to work around possible false detections:\n-----\nWaiting...\n-----",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "bd06f657-9240-47f9-a21e-c09c39938f0e",
+        "name": "Services",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:12:49Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:12:49Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.10330",
+            "type": "nvt",
+            "name": "Services",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2011-01-14T09:12:23Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine attempts to guess which service is running on the\n  remote ports. For instance, it searches for a web server which could listen on another port than\n  80 or 443 and makes this information available for other check routines.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-15T10:42:03Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "A web server is running on this port through SSL",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "6bdc147a-bbab-43af-b7b4-0dc27aa7cc02",
+        "name": "Services",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:12:49Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:12:49Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.10330",
+            "type": "nvt",
+            "name": "Services",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2011-01-14T09:12:23Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine attempts to guess which service is running on the\n  remote ports. For instance, it searches for a web server which could listen on another port than\n  80 or 443 and makes this information available for other check routines.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-15T10:42:03Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "A TLScustom server answered on this port",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "6703bdb5-d674-4427-9169-15c32464ddda",
+        "name": "SSL/TLS: Collect and Report Certificate Details",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:16:02Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:16:02Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.103692",
+            "type": "nvt",
+            "name": "SSL/TLS: Collect and Report Certificate Details",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2013-04-09T12:14:14Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script collects and reports the details of all SSL/TLS\n  certificates.\n\n  This data will be used by other tests to verify server certificates.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-10-01T07:04:12Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "The following certificate details of the remote service were collected.\n\nCertificate details:\nalgorithm                       | sha256WithRSAEncryption\nfingerprint (SHA-1)             | FE77ACA4777021EF0C90B04DE8116F7C318EC17B\nfingerprint (SHA-256)           | C0CFC699C7742849483CD430F7480D7B46C3CB2EC75B83D091B3C120D3852DB9\nissued by                       | O=Huawei Technologies Co.\\, Ltd,1.2.840.113549.1.9.1=#737570706F7274406875617765692E636F6D,C=CN,ST=Guangdong,CN=Huawei Technologies Co.\\, Ltd\nserial                          | 05\nsubject                         | OU=ONT,O=Huawei Technologies Co.\\, Ltd,1.2.840.113549.1.9.1=#737570706F7274406875617765692E636F6D,C=CN,ST=Guangdong,CN=Huawei Technologies Co.\\, Ltd\nsubject alternative names (SAN) | None\nvalid from                      | 2017-09-01 07:57:47 UTC\nvalid until                     | 2027-08-30 07:57:47 UTC",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "449e96f3-99a6-4fc1-9fb0-d4a08954fca2",
+        "name": "SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:17Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:17Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.117274",
+            "type": "nvt",
+            "name": "SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection",
+            "family": "SSL and TLS",
+            "cvss_base": "4.3",
+            "severities": {
+                "@score": "4.3",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2021-03-25T10:41:42Z",
+                    "score": "4.3",
+                    "value": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:M/Au:N/C:P/I:N/A:N|summary=It was possible to detect the usage of the deprecated TLSv1.0\n  and/or TLSv1.1 protocol on this system.|insight=The TLSv1.0 and TLSv1.1 protocols contain known cryptographic\n  flaws like:\n\n  - CVE-2011-3389: Browser Exploit Against SSL/TLS (BEAST)\n\n  - CVE-2015-0204: Factoring Attack on RSA-EXPORT Keys Padding Oracle On Downgraded Legacy\n  Encryption (FREAK)|affected=All services providing an encrypted communication using the\n  TLSv1.0 and/or TLSv1.1 protocols.|impact=An attacker might be able to use the known cryptographic flaws\n  to eavesdrop the connection between clients and the service to get access to sensitive data\n  transferred within the secured connection.\n\n  Furthermore newly uncovered vulnerabilities in this protocols won't receive security updates\n  anymore.|solution=It is recommended to disable the deprecated TLSv1.0 and/or\n  TLSv1.1 protocols in favor of the TLSv1.2+ protocols. Please see the references for more\n  information.|vuldetect=Check the used TLS protocols of the services provided by this\n  system.|solution_type=Mitigation",
+            "solution": {
+                "@type": "Mitigation",
+                "#text": "It is recommended to disable the deprecated TLSv1.0 and/or\n  TLSv1.1 protocols in favor of the TLSv1.2+ protocols. Please see the references for more\n  information."
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "cve",
+                        "@id": "CVE-2011-3389"
+                    },
+                    {
+                        "@type": "cve",
+                        "@id": "CVE-2015-0204"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://ssl-config.mozilla.org/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://bettercrypto.org/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://datatracker.ietf.org/doc/rfc8996/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://vnhacker.blogspot.com/2011/09/beast.html"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://web.archive.org/web/20201108095603/https://censys.io/blog/freak"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://www.enisa.europa.eu/publications/algorithms-key-size-and-parameters-report-2014"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K18/0799"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K16/1289"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K16/1096"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/1751"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/1266"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0850"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0764"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0720"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0548"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0526"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0509"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0493"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0384"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0365"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0364"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0302"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0192"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0079"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/0016"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K14/1342"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K14/0231"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K13/0845"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K13/0796"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K13/0790"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2020-0177"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2020-0111"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2019-0068"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2018-1441"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2018-1408"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2016-1372"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2016-1164"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2016-0388"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-1853"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-1332"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0884"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0800"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0758"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0567"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0544"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0530"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0396"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0375"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0374"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0305"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0199"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0079"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2015-0021"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2014-1414"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2013-1847"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2013-1792"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1979"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1829"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1530"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1380"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1377"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1292"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1214"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1213"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1180"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1156"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1155"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-1039"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0956"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0908"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0868"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0867"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0848"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0838"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0776"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0722"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0638"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0627"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0451"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0418"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0354"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0234"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0221"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0177"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0170"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0146"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0142"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0126"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0123"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0095"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0051"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0047"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2012-0021"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1953"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1946"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1844"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1826"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1774"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1743"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1738"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1706"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1628"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1627"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1619"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2011-1482"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2021-07-19T08:11:48Z",
+        "threat": "Medium",
+        "severity": "4.3",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "In addition to TLSv1.2+ the service is also providing the deprecated TLSv1.1 protocol and supports one or more ciphers. Those supported ciphers can be found in the 'SSL/TLS: Report Supported Cipher Suites' (OID: 1.3.6.1.4.1.25623.1.0.802067) VT.",
+        "original_threat": "Medium",
+        "original_severity": "4.3"
+    },
+    {
+        "@id": "8c70c242-1fd5-4afe-b512-92db9b915dba",
+        "name": "SSL/TLS: HTTP Public Key Pinning (HPKP) Missing",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:22Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:22Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108247",
+            "type": "nvt",
+            "name": "SSL/TLS: HTTP Public Key Pinning (HPKP) Missing",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2017-10-09T06:07:41Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The remote web server is not enforcing HPKP.\n\n  Note: Most major browsers have dropped / deprecated support for this header in 2020.|insight=|affected=|impact=|solution=Enable HPKP or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility.|vuldetect=|solution_type=Workaround",
+            "solution": {
+                "@type": "Workaround",
+                "#text": "Enable HPKP or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility."
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/#public-key-pinning-extension-for-http-hpkp"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://tools.ietf.org/html/rfc7469"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://securityheaders.io/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://httpd.apache.org/docs/current/mod/mod_headers.html#header"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2021-01-26T13:20:44Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The remote web server is not enforcing HPKP.\n\nHTTP-Banner:\n\nHTTP/1.1 200 OK\nCache-control:no-cache, no-store, max-age=0\nContent-Type:text/html\nContent-Language:en\nPragma:no-cache\nTransfer-Encoding:chunked\nX-Frame-Options:SAMEORIGIN\nConnection:Keep-Alive",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "7a958801-7b97-44b3-a042-d1be1585f9dd",
+        "name": "SSL/TLS: HTTP Strict Transport Security (HSTS) Missing",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:22Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:22Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105879",
+            "type": "nvt",
+            "name": "SSL/TLS: HTTP Strict Transport Security (HSTS) Missing",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-08-22T11:07:41Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The remote web server is not enforcing HSTS.|insight=|affected=|impact=|solution=Enable HSTS or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility.|vuldetect=|solution_type=Workaround",
+            "solution": {
+                "@type": "Workaround",
+                "#text": "Enable HSTS or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility."
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-cheat-sheets/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/#http-strict-transport-security-hsts"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://tools.ietf.org/html/rfc6797"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://securityheaders.io/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://httpd.apache.org/docs/current/mod/mod_headers.html#header"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2021-01-26T13:20:44Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The remote web server is not enforcing HSTS.\n\nHTTP-Banner:\n\nHTTP/1.1 200 OK\nCache-control:no-cache, no-store, max-age=0\nContent-Type:text/html\nContent-Language:en\nPragma:no-cache\nTransfer-Encoding:chunked\nX-Frame-Options:SAMEORIGIN\nConnection:Keep-Alive",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "cc37b4b8-e8c8-4b07-b06f-cdb54d9ad93b",
+        "name": "SSL/TLS: Report Medium Cipher Suites",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:22Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:22Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.902816",
+            "type": "nvt",
+            "name": "SSL/TLS: Report Medium Cipher Suites",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2012-03-07T08:44:14Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all Medium SSL/TLS cipher suites accepted by a service.|insight=Any cipher suite considered to be secure for only the next 10 years is considered as medium|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-08-06T11:34:45Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "'Medium' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n\n'Medium' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA256\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA256\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "59bdaed6-7d0e-49c4-a720-4716754ae11d",
+        "name": "SSL/TLS: Report Non Weak Cipher Suites",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:22Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:22Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.103441",
+            "type": "nvt",
+            "name": "SSL/TLS: Report Non Weak Cipher Suites",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2012-03-01T16:16:10Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all Non Weak SSL/TLS cipher suites accepted by a service.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2020-03-31T06:57:15Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "'Non Weak' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n\n'Non Weak' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA256\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA256\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "54002fde-a101-4e32-a1e1-fbdc7080f03a",
+        "name": "SSL/TLS: Report Perfect Forward Secrecy (PFS) Cipher Suites",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:22Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:22Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.105018",
+            "type": "nvt",
+            "name": "SSL/TLS: Report Perfect Forward Secrecy (PFS) Cipher Suites",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2014-05-06T13:16:10Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all SSL/TLS cipher suites accepted by a service which are supporting Perfect Forward Secrecy (PFS).|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2020-03-31T06:57:15Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "Cipher suites supporting Perfect Forward Secrecy (PFS) are accepted by this service via the TLSv1.1 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n\nCipher suites supporting Perfect Forward Secrecy (PFS) are accepted by this service via the TLSv1.2 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA256\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA256\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "a72e69f3-9fdd-476b-abca-4c9e78ca0a6e",
+        "name": "SSL/TLS: Report Supported Cipher Suites",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:22Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:22Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.802067",
+            "type": "nvt",
+            "name": "SSL/TLS: Report Supported Cipher Suites",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2014-03-06T11:50:28Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all SSL/TLS cipher suites accepted by a service.\n\n  As the VT 'SSL/TLS: Check Supported Cipher Suites' (OID: 1.3.6.1.4.1.25623.1.0.900234) might run into a\n  timeout the actual reporting of all accepted cipher suites takes place in this VT instead.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-01-21T10:06:42Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "'Strong' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA\n\n'Medium' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\n\nNo 'Weak' cipher suites accepted by this service via the TLSv1.1 protocol.\n\nNo 'Null' cipher suites accepted by this service via the TLSv1.1 protocol.\n\nNo 'Anonymous' cipher suites accepted by this service via the TLSv1.1 protocol.\n\n'Strong' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA\n\n'Medium' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_AES_128_CBC_SHA256\nTLS_DHE_RSA_WITH_AES_256_CBC_SHA256\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHA\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\n\nNo 'Weak' cipher suites accepted by this service via the TLSv1.2 protocol.\n\nNo 'Null' cipher suites accepted by this service via the TLSv1.2 protocol.\n\nNo 'Anonymous' cipher suites accepted by this service via the TLSv1.2 protocol.",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "56a498ad-5962-44ff-9840-dce5ee309fb5",
+        "name": "SSL/TLS: Safe/Secure Renegotiation Support Status",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:28Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:28Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.117757",
+            "type": "nvt",
+            "name": "SSL/TLS: Safe/Secure Renegotiation Support Status",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2021-10-27T11:26:49Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Checks and reports if a remote SSL/TLS service supports\n  safe/secure renegotiation.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "url",
+                        "@id": "https://www.gnutls.org/manual/html_node/Safe-renegotiation.html"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://wiki.openssl.org/index.php/TLS1.3#Renegotiation"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://datatracker.ietf.org/doc/html/rfc5746"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2021-11-12T09:42:39Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "Protocol Version | Safe/Secure Renegotiation Support Status\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nSSLv3            | Unknown, Reason: Scanner failed to negotiate an SSL/TLS connection (Either the scanner or the remote host is probably not supporting / accepting this SSL/TLS protocol version).\nTLSv1.0          | Unknown, Reason: Scanner failed to negotiate an SSL/TLS connection (Either the scanner or the remote host is probably not supporting / accepting this SSL/TLS protocol version).\nTLSv1.1          | Enabled, Note: While the remote service announces the support of safe/secure renegotiation it still might not support / accept renegotiation at all.\nTLSv1.2          | Enabled, Note: While the remote service announces the support of safe/secure renegotiation it still might not support / accept renegotiation at all.\nTLSv1.3          | Unknown, Reason: Scanner failed to negotiate an SSL/TLS connection (Either the scanner or the remote host is probably not supporting / accepting this SSL/TLS protocol version).",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "56c8debb-4290-43cd-9cbb-30595651c4c6",
+        "name": "SSL/TLS: Untrusted Certificate Detection",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:23:33Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:23:33Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "80/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.117764",
+            "type": "nvt",
+            "name": "SSL/TLS: Untrusted Certificate Detection",
+            "family": "SSL and TLS",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2021-11-09T10:22:58Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Checks and reports if a remote SSL/TLS service is using a\n  certificate which is untrusted / the verification against the system wide trust store has failed.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-11-12T09:42:39Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "98",
+            "type": null
+        },
+        "description": "The remote SSL/TLS server is using the following certificate(s) which failed the verification against the system wide trust store (serial:issuer):\n\n05:O=Huawei Technologies Co.\\, Ltd,1.2.840.113549.1.9.1=#737570706F7274406875617765692E636F6D,C=CN,ST=Guangdong,CN=Huawei Technologies Co.\\, Ltd (Server certificate)",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "e055bd68-05cf-4178-90b6-d196c4cf636e",
+        "name": "TCP timestamps",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:21:30Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:21:30Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.80091",
+            "type": "nvt",
+            "name": "TCP timestamps",
+            "family": "General",
+            "cvss_base": "2.6",
+            "severities": {
+                "@score": "2.6",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2008-10-24T21:33:44Z",
+                    "score": "2.6",
+                    "value": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:H/Au:N/C:P/I:N/A:N|summary=The remote host implements TCP timestamps and therefore allows to compute\n  the uptime.|insight=The remote host implements TCP timestamps, as defined by RFC1323/RFC7323.|affected=TCP implementations that implement RFC1323/RFC7323.|impact=A side effect of this feature is that the uptime of the remote\n  host can sometimes be computed.|solution=To disable TCP timestamps on linux add the line 'net.ipv4.tcp_timestamps = 0' to\n  /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at runtime.\n\n  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'\n\n  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.\n\n  The default behavior of the TCP/IP stack on this Systems is to not use the\n  Timestamp options when initiating TCP connections, but use them if the TCP peer\n  that is initiating communication includes them in their synchronize (SYN) segment.\n\n  See the references for more information.|vuldetect=Special IP packets are forged and sent with a little delay in between to the\n  target IP. The responses are searched for a timestamps. If found, the timestamps are reported.|solution_type=Mitigation",
+            "solution": {
+                "@type": "Mitigation",
+                "#text": "To disable TCP timestamps on linux add the line 'net.ipv4.tcp_timestamps = 0' to\n  /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at runtime.\n\n  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'\n\n  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.\n\n  The default behavior of the TCP/IP stack on this Systems is to not use the\n  Timestamp options when initiating TCP connections, but use them if the TCP peer\n  that is initiating communication includes them in their synchronize (SYN) segment.\n\n  See the references for more information."
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "url",
+                        "@id": "http://www.ietf.org/rfc/rfc1323.txt"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "http://www.ietf.org/rfc/rfc7323.txt"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://web.archive.org/web/20151213072445/http://www.microsoft.com/en-us/download/details.aspx?id=9152"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2020-08-24T08:40:10Z",
+        "threat": "Low",
+        "severity": "2.6",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "It was detected that the host implements RFC1323/RFC7323.\n\nThe following timestamps were retrieved with a delay of 1 seconds in-between:\nPacket 1: 3127511\nPacket 2: 3127634",
+        "original_threat": "Low",
+        "original_severity": "2.6"
+    },
+    {
+        "@id": "f9e1037e-ddd8-4aa6-bb4f-d325e8694f0b",
+        "name": "Traceroute",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:21:30Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:21:30Z",
+        "host": {
+            "asset": {
+                "@asset_id": "132e1fbb-c289-4cef-a21b-637fe6fbdb5b"
+            },
+            "hostname": null,
+            "#text": "192.168.100.1"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.51662",
+            "type": "nvt",
+            "name": "Traceroute",
+            "family": "General",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2010-07-08T17:27:45Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Collect information about the network route and\n  network distance between the scanner host and the target host.|insight=For internal networks, the distances are usually\n  small, often less than 4 hosts between scanner and target. For public targets the\n  distance is greater and might be 10 hosts or more.|affected=|impact=|solution=|vuldetect=A combination of the protocols ICMP and TCP is used\n  to determine the route. This method is applicable for IPv4 only and it is also known as\n  'traceroute'.|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-12T14:25:59Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Network route from scanner (192.168.100.22) to target (192.168.100.1):\n\n192.168.100.22\n192.168.100.1\n\nNetwork distance between scanner and target: 2",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "48799cac-1cd3-4bdd-b473-81ba6280959d",
+        "name": "Traceroute",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:15:57Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:15:57Z",
+        "host": {
+            "asset": {
+                "@asset_id": "68709502-ae82-47d6-bdce-a5526ef7f6a2"
+            },
+            "hostname": null,
+            "#text": "192.168.100.18"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.51662",
+            "type": "nvt",
+            "name": "Traceroute",
+            "family": "General",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2010-07-08T17:27:45Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Collect information about the network route and\n  network distance between the scanner host and the target host.|insight=For internal networks, the distances are usually\n  small, often less than 4 hosts between scanner and target. For public targets the\n  distance is greater and might be 10 hosts or more.|affected=|impact=|solution=|vuldetect=A combination of the protocols ICMP and TCP is used\n  to determine the route. This method is applicable for IPv4 only and it is also known as\n  'traceroute'.|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-12T14:25:59Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Network route from scanner (192.168.100.22) to target (192.168.100.18):\n\n192.168.100.22\n192.168.100.18\n\nNetwork distance between scanner and target: 2",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "886e8aa7-737e-4f69-a417-6e5f9fdadec7",
+        "name": "Traceroute",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:13:21Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:13:21Z",
+        "host": {
+            "asset": {
+                "@asset_id": "a6705bef-bccd-4e74-923f-88d43aae01eb"
+            },
+            "hostname": null,
+            "#text": "192.168.100.20"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.51662",
+            "type": "nvt",
+            "name": "Traceroute",
+            "family": "General",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2010-07-08T17:27:45Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Collect information about the network route and\n  network distance between the scanner host and the target host.|insight=For internal networks, the distances are usually\n  small, often less than 4 hosts between scanner and target. For public targets the\n  distance is greater and might be 10 hosts or more.|affected=|impact=|solution=|vuldetect=A combination of the protocols ICMP and TCP is used\n  to determine the route. This method is applicable for IPv4 only and it is also known as\n  'traceroute'.|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-12T14:25:59Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Network route from scanner (192.168.100.22) to target (192.168.100.20):\n\n192.168.100.22\n?\n\nNetwork distance between scanner and target: 2",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "2cccd110-ddb1-4ad3-a9aa-579e174165a8",
+        "name": "Traceroute",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:13:37Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:13:37Z",
+        "host": {
+            "asset": {
+                "@asset_id": "fee8f0da-3bad-46b0-861f-f2c1bf27bd7e"
+            },
+            "hostname": null,
+            "#text": "192.168.100.17"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.51662",
+            "type": "nvt",
+            "name": "Traceroute",
+            "family": "General",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2010-07-08T17:27:45Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Collect information about the network route and\n  network distance between the scanner host and the target host.|insight=For internal networks, the distances are usually\n  small, often less than 4 hosts between scanner and target. For public targets the\n  distance is greater and might be 10 hosts or more.|affected=|impact=|solution=|vuldetect=A combination of the protocols ICMP and TCP is used\n  to determine the route. This method is applicable for IPv4 only and it is also known as\n  'traceroute'.|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-12T14:25:59Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Network route from scanner (192.168.100.22) to target (192.168.100.17):\n\n192.168.100.22\n192.168.100.17\n\nNetwork distance between scanner and target: 2",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "f4beedc5-e2ac-4bfe-aff1-eb1bb160a647",
+        "name": "Traceroute",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-04-04T14:13:26Z",
+        "comment": null,
+        "creation_time": "2022-04-04T14:13:26Z",
+        "host": {
+            "asset": {
+                "@asset_id": "5af47e74-c625-4f2b-ac8f-48f875bddc8f"
+            },
+            "hostname": null,
+            "#text": "192.168.100.22"
+        },
+        "port": "general/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.51662",
+            "type": "nvt",
+            "name": "Traceroute",
+            "family": "General",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2010-07-08T17:27:45Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Collect information about the network route and\n  network distance between the scanner host and the target host.|insight=For internal networks, the distances are usually\n  small, often less than 4 hosts between scanner and target. For public targets the\n  distance is greater and might be 10 hosts or more.|affected=|impact=|solution=|vuldetect=A combination of the protocols ICMP and TCP is used\n  to determine the route. This method is applicable for IPv4 only and it is also known as\n  'traceroute'.|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-12T14:25:59Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Network route from scanner (192.168.100.22) to target (192.168.100.22):\n\n192.168.100.22\n\nNetwork distance between scanner and target: 1",
+        "original_threat": "Log",
+        "original_severity": "0"
     }
-}
+]
