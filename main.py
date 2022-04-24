@@ -28,11 +28,6 @@ from kivymd.uix.list import IconLeftWidget
 connection = UnixSocketConnection()
 transform = EtreeTransform()								# Element Tree transform for storing XML 
 
-
-# Task ID's
-networkFullAndFastScanId = 'ad0736a6-ab8d-4e3b-b1f4-410f753cb822'
-networkDiscoveryScanId = '7c9f814f-2367-4dbf-9d3b-4589a4f6e0f3'
-
 # Main Global Variables
 version = getVersion()
 reportsList = []
@@ -198,8 +193,8 @@ class MainApp(MDApp):
 		reportString = startScan(scanName)	
 
 		reportLabel = MDLabel(
-			md_bg_color = (1,1,1,1),
-			font_size=20,
+			markup = True,
+			font_size=40,
 			padding_y=20,
 			text=str(reportString),
 			halign="center",

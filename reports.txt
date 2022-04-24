@@ -580,5 +580,146 @@
                 "count": "0"
             }
         }
+    },
+    {
+        "@id": "18ed79c4-aa85-4e1e-bf14-a7342e14a2fe",
+        "@format_id": "",
+        "@extension": "",
+        "@content_type": "application/xml",
+        "owner": {
+            "name": "admin"
+        },
+        "name": "2022-04-24T13:27:19Z",
+        "comment": null,
+        "creation_time": "2022-04-24T13:27:19Z",
+        "modification_time": null,
+        "writable": "0",
+        "in_use": "0",
+        "task": {
+            "@id": "458d4e3e-ee43-4080-9bc9-c7db370e7dff",
+            "name": "SP2 Task-Robie's House"
+        },
+        "report": {
+            "@id": "18ed79c4-aa85-4e1e-bf14-a7342e14a2fe",
+            "gmp": {
+                "version": "21.4"
+            },
+            "sort": {
+                "field": {
+                    "order": "ascending",
+                    "#text": "name"
+                }
+            },
+            "filters": {
+                "@id": "",
+                "term": "apply_overrides=0 min_qod=70 first=1 rows=10 sort=name",
+                "filter": [
+                    "High",
+                    "Medium",
+                    "Low",
+                    "Log"
+                ],
+                "keywords": {
+                    "keyword": [
+                        {
+                            "column": "apply_overrides",
+                            "relation": "=",
+                            "value": "0"
+                        },
+                        {
+                            "column": "min_qod",
+                            "relation": "=",
+                            "value": "70"
+                        },
+                        {
+                            "column": "first",
+                            "relation": "=",
+                            "value": "1"
+                        },
+                        {
+                            "column": "rows",
+                            "relation": "=",
+                            "value": "10"
+                        },
+                        {
+                            "column": "sort",
+                            "relation": "=",
+                            "value": "name"
+                        }
+                    ]
+                }
+            },
+            "scan_run_status": "Running",
+            "hosts": {
+                "count": "5"
+            },
+            "closed_cves": {
+                "count": "0"
+            },
+            "vulns": {
+                "count": "6"
+            },
+            "os": {
+                "count": "1"
+            },
+            "apps": {
+                "count": "0"
+            },
+            "ssl_certs": {
+                "count": "0"
+            },
+            "task": {
+                "@id": "458d4e3e-ee43-4080-9bc9-c7db370e7dff",
+                "name": "SP2 Task-Robie's House",
+                "comment": null,
+                "target": {
+                    "@id": "d6123dba-6090-4b6c-b296-cff0c893b7e5",
+                    "trash": "0",
+                    "name": "SP2 Target-Robie's House",
+                    "comment": null
+                },
+                "progress": "20"
+            },
+            "scan": {
+                "task": null
+            },
+            "timestamp": "2022-04-24T13:27:12Z",
+            "scan_start": "2022-04-24T13:27:19Z",
+            "timezone": "UTC",
+            "timezone_abbrev": "UTC",
+            "result_count": {
+                "full": "8",
+                "filtered": "8",
+                "hole": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "info": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "log": {
+                    "full": "8",
+                    "filtered": "8"
+                },
+                "warning": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "false_positive": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "#text": "8"
+            },
+            "severity": {
+                "full": "0.0",
+                "filtered": "0.0"
+            },
+            "scan_end": null,
+            "errors": {
+                "count": "0"
+            }
+        }
     }
 ]
