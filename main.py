@@ -18,6 +18,7 @@ from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.animation import Animation
 from kivymd.uix.card import MDCard
+from kivymd.uix.label import MDLabel
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine
 from kivy.properties import DictProperty
 from kivy.core.window import Window
@@ -164,8 +165,6 @@ class MainApp(MDApp):
 
 	# Builder Method
 	def build(self):
-		#self.theme_cls.theme_style = "Dark"
-		self.theme_cls.primary_palette = "BlueGray"
 		screen = Builder.load_file('frame.kv')
 
 		return screen
@@ -194,7 +193,22 @@ class MainApp(MDApp):
 			hasGeneratedEntries = True
 
 	def startScan(self):
-		print("Start my Scan")
+
+		scanName = self.root.ids.scanName.text
+		reportString = startScan(scanName)	
+
+		reportLabel = MDLabel(
+			md_bg_color = (1,1,1,1),
+			font_size=20,
+			padding_y=20,
+			text=str(reportString),
+			halign="center",
+			theme_text_color="Custom",
+			text_color=(247/255, 193/255, 76/255)
+		)
+
+		# Display Report ID on a label
+		self.root.ids.scanBox.add_widget(reportLabel)
 
 
 	# For Removing history Entries once user exited the history screen

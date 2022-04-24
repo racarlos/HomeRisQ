@@ -82,9 +82,10 @@ def getSingleReport(reportID):
 	return reportJSON
 
 def startScan(scanName):
+	
 	ipAddress  = os.popen("hostname -I | awk '{print $1}'").read()      # Get IP address
 	ipAddress = ipAddress.split('.')
-	addressPattern = "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"
+	addressPattern = "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"					# Match only valid IPv4 addresses 
 	networkAddress = ''
 
 	for i in range(len(ipAddress)-1):                                   # Split to remove last octet
@@ -96,4 +97,41 @@ def startScan(scanName):
 	addresses = re.findall(addressPattern,addresses)                    # get all valid IP addrs
 	addresses = list(dict.fromkeys(addresses))                          # remove duplicates
 
+	print(f"Starting Scan: {scanName}, Found: {len(addresses)} hosts")
 	print(addresses)
+
+	return addresses
+
+	# with Gmp(connection) as gmp:
+	# 	gmp.authenticate(username,password)
+
+	# 	#Create Target for the new Scan
+	# 	createTargetResponse = gmp.create_target(
+	# 		name="SP2 Target-" + str(scanName),
+	# 		hosts=addresses,    
+	# 		port_list_id=tcpPorts
+	# 	)
+	# 	targetID = json.dumps(XMLtoJSON(createTargetResponse)['create_target_response']['@id'])[1:-1]   # Remove quotation marks
+
+	# 	# Create Task with indicated target and configuration
+	# 	createTaskResponse =  gmp.create_task(
+	# 		name="SP2 Task-"+ str(scanName),
+	# 		config_id=emptyScanConfigID,
+	# 		target_id=targetID,
+	# 		scanner_id=openVasScannerID,
+	# 		preferences={
+	# 			"max_checks": 8                         # 8 Concurrent Threads Running
+	# 		}
+	# 	)
+	# 	taskID = json.dumps(XMLtoJSON(createTaskResponse)['create_task_response']['@id'])[1:-1]
+		
+	# 	# Start Task
+	# 	startTaskResponse = gmp.start_task(taskID)
+	# 	reportId = json.dumps(XMLtoJSON(startTaskResponse)['start_task_response']['report_id'])[1:-1]
+		
+	# 	print(f"Target ID: {targetID}")
+	# 	print(f"Task ID: {taskID}")
+	# 	print(f"Report ID: {reportId}")
+
+	# 	answerString = f"Scan: {scanName} will start shortly. Report ID: {reportId}"
+	# 	return answerString

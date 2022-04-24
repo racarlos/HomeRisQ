@@ -587,29 +587,55 @@ MDBoxLayout:
                     md_bg_color: black
                     
                     AnchorLayout:
+
                         MDBoxLayout:
-                            size_hint_y: 0.3
+                            id: scanBox
+                            size_hint_y: 0.4
                             orientation: 'vertical'
                             spacing: 20
-
+                            
                             MDIcon:
                                 icon: 'radar'
                                 theme_text_color: "Custom"
                                 text_color: orange
                                 halign: 'center'
                                 font_size: 70
-                            
-                            # Button for Scanning
-                            MDRectangleFlatButton:
-                                pos_hint: {'center_x': 0.5}
-                                theme_text_color: "Custom"
-                                text_color: orange
-                                text: '[b]Scan My Network[/b]'
-                                font_size: 50
-                                line_color: orange
-                                line_width: 1.5
-                                on_release: app.startScan()
 
+                            MDBoxLayout:
+                                pos_hint: {'center_x': 0.5}
+                                size_hint_x: 0.7
+                                spacing: 40
+
+                                MDBoxLayout:
+                                    size_hint_x: 0.5
+                                    size_hint_y: None
+
+                                    # Input Box for Putting Scan Name 
+                                    MDTextFieldRound:
+                                        id: scanName
+                                        font_size: 30
+                                        icon_left: 'label-variant'
+                                        multiline: False
+                                        hint_text: "Input scan name here"
+                                        normal_color: orange
+                                        color_active: white
+                                        theme_text_color: "Custom"
+                                        text_color: white
+
+                                MDBoxLayout:
+                                    size_hint_x: 0.3
+                                    size_hint_y: None
+                                    height: 20
+
+                                    # Button for Scanning
+                                    MDRectangleFlatButton:
+                                        theme_text_color: "Custom"
+                                        text_color: orange
+                                        text: '[b]Scan my Network[/b]'
+                                        font_size: 20
+                                        line_color: orange
+                                        line_width: 1.5
+                                        on_release: app.startScan()
 
                 # Screen for History
                 MDScreen:
