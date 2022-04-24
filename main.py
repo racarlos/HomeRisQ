@@ -90,7 +90,6 @@ class HistoryEntry(MDBoxLayout):
 			d=0.2,
 		).start(self.root.ids.box)
 
-
 	# Function for generating report to be called by Button 
 	def viewReport(self):
 
@@ -211,14 +210,17 @@ class MainApp(MDApp):
 			self.root.ids.scanName.text = ""
 			reportString = startScan(scanName)	
 
+		# Clear Widgets
+		self.root.ids.labelContainer.clear_widgets()
+
 		reportLabel = MDLabel(									# Instantiate Label 
 			markup = True,
-			font_size=40,
 			padding_y=20,
 			text=str(reportString),
 			halign="center",
 			theme_text_color="Custom",
-			text_color=(247/255, 193/255, 76/255)
+			text_color=(247/255, 193/255, 76/255),
+			font_size=40
 		)
 
 		# Display Report ID on a label
