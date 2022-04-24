@@ -1,4 +1,6 @@
 import json,xmltodict
+import re
+import os
 
 # Imports from GVM Libraries
 from gvm.connections import UnixSocketConnection			# Unix Domain Socket Connection
@@ -11,6 +13,17 @@ transform = EtreeTransform()								# Element Tree transform for storing XML
 # Login Variables
 username = 'admin'
 password = 'kali'
+
+# Scan Config IDs
+spScanConfigID = "12d783d7-0420-4629-9816-c084564815fd"
+fullAndFastConfigID = "daba56c8-73ec-11df-a475-002264764cea"
+emptyScanConfigID = "085569ce-73ed-11df-83c3-002264764cea"
+
+# Scanner IDs
+openVasScannerID = "08b69003-5fc2-4037-a479-93b440211c73"
+
+# Port List IDs
+tcpPorts = "33d0cd82-57c6-11e1-8ed1-406186ea4fc5"
 
 def XMLtoJSON(a):
 	output = json.loads(json.dumps(xmltodict.parse(a)))
@@ -68,3 +81,19 @@ def getSingleReport(reportID):
 
 	return reportJSON
 
+def startScan(scanName):
+	ipAddress  = os.popen("hostname -I | awk '{print $1}'").read()      # Get IP address
+	ipAddress = ipAddress.split('.')
+	addressPattern = "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"
+	networkAddress = ''
+
+	for i in range(len(ipAddress)-1):                                   # Split to remove last octet
+		networkAddress += ipAddress[i] + '.'
+
+	networkAddress += '0/24'                                            # add subnet mask
+
+	addresses = os.popen(f"sudo nmap -sn {networkAddress}").read()      # run nmap to get list of hosts
+	addresses = re.findall(addressPattern,addresses)                    # get all valid IP addrs
+	addresses = list(dict.fromkeys(addresses))                          # remove duplicates
+
+	print(addresses)

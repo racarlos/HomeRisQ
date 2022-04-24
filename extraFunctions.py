@@ -44,7 +44,7 @@ def getSolutionIcon(solutionType):
     elif(solutionType == 'Workaround'):
         solutionIcon = 'hammer-wrench'
     elif(solutionType == 'VendorFix'):
-        solutionIcon = 'store-cog'
+        solutionIcon = 'store'
     elif(solutionType == 'WillNotFix'):
         solutionType = 'thumb-down'
     else:

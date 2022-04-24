@@ -439,5 +439,146 @@
                 }
             }
         }
+    },
+    {
+        "@id": "4c7718ec-339f-44ce-ac66-74d99d04554b",
+        "@format_id": "",
+        "@extension": "",
+        "@content_type": "application/xml",
+        "owner": {
+            "name": "admin"
+        },
+        "name": "2022-04-24T04:29:29Z",
+        "comment": null,
+        "creation_time": "2022-04-24T04:29:29Z",
+        "modification_time": "2022-04-24T05:10:51Z",
+        "writable": "0",
+        "in_use": "0",
+        "task": {
+            "@id": "7b184f8f-13d7-4d36-b9ea-c4222c9aa9aa",
+            "name": "SP2 Task"
+        },
+        "report": {
+            "@id": "4c7718ec-339f-44ce-ac66-74d99d04554b",
+            "gmp": {
+                "version": "21.4"
+            },
+            "sort": {
+                "field": {
+                    "order": "ascending",
+                    "#text": "name"
+                }
+            },
+            "filters": {
+                "@id": "",
+                "term": "apply_overrides=0 min_qod=70 first=1 rows=10 sort=name",
+                "filter": [
+                    "High",
+                    "Medium",
+                    "Low",
+                    "Log"
+                ],
+                "keywords": {
+                    "keyword": [
+                        {
+                            "column": "apply_overrides",
+                            "relation": "=",
+                            "value": "0"
+                        },
+                        {
+                            "column": "min_qod",
+                            "relation": "=",
+                            "value": "70"
+                        },
+                        {
+                            "column": "first",
+                            "relation": "=",
+                            "value": "1"
+                        },
+                        {
+                            "column": "rows",
+                            "relation": "=",
+                            "value": "10"
+                        },
+                        {
+                            "column": "sort",
+                            "relation": "=",
+                            "value": "name"
+                        }
+                    ]
+                }
+            },
+            "scan_run_status": "Done",
+            "hosts": {
+                "count": "4"
+            },
+            "closed_cves": {
+                "count": "0"
+            },
+            "vulns": {
+                "count": "27"
+            },
+            "os": {
+                "count": "2"
+            },
+            "apps": {
+                "count": "0"
+            },
+            "ssl_certs": {
+                "count": "1"
+            },
+            "task": {
+                "@id": "7b184f8f-13d7-4d36-b9ea-c4222c9aa9aa",
+                "name": "SP2 Task",
+                "comment": null,
+                "target": {
+                    "@id": "a3ed1b4d-9f99-44ce-bd9e-3a9a2af8fa0b",
+                    "trash": "0",
+                    "name": "testTarget",
+                    "comment": "Target for current SP2 scan"
+                },
+                "progress": "100"
+            },
+            "scan": {
+                "task": null
+            },
+            "timestamp": "2022-04-24T04:29:13Z",
+            "scan_start": "2022-04-24T04:29:29Z",
+            "timezone": "UTC",
+            "timezone_abbrev": "UTC",
+            "result_count": {
+                "full": "52",
+                "filtered": "50",
+                "hole": {
+                    "full": "1",
+                    "filtered": "1"
+                },
+                "info": {
+                    "full": "1",
+                    "filtered": "1"
+                },
+                "log": {
+                    "full": "45",
+                    "filtered": "45"
+                },
+                "warning": {
+                    "full": "3",
+                    "filtered": "3"
+                },
+                "false_positive": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "#text": "52"
+            },
+            "severity": {
+                "full": "7.5",
+                "filtered": "7.5"
+            },
+            "scan_end": "2022-04-24T05:10:51Z",
+            "errors": {
+                "count": "0"
+            }
+        }
     }
 ]
