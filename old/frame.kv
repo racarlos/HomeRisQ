@@ -17,7 +17,6 @@
 #: set subtext_height 0.2
 #: set topIconSize 30
 #: set supportTextHeight 0.20
-#: set abstract1 './assets/abstract1.jpg' 
 
 #===================== HISTORY ENTRY RULE
 
@@ -112,7 +111,7 @@
                         on_release: root.viewReport()
 
 # =================== Safe Content
-<SafePanel>
+<SafePanel>:
     orientation: 'vertical'
     size_hint: 1, None
     md_bg_color: black
@@ -505,7 +504,6 @@ MDBoxLayout:
             id: rail
             use_resizeable: True
             md_bg_color: darkGray
-
             color_normal: lightGray
             color_active: orange
 

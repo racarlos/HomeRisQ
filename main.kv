@@ -1,0 +1,203 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+# Set colors
+#:set metricBackground get_color_from_hex("#0D1117")
+#:set darkGray get_color_from_hex("#212121")
+#:set lightGray get_color_from_hex("#718089")
+#:set darkBlue get_color_from_hex("#155075") 
+#:set lightBlue get_color_from_hex("#2b96d4")
+#:set orange get_color_from_hex("#F7C14C")
+#:set white get_color_from_hex("#FFFFFF")
+#:set black get_color_from_hex("#000000")
+
+# Set Variables
+#: set card_elevation 20
+#: set topMetrics 50
+#: set subtext_height 0.2
+#: set topIconSize 30
+#: set supportTextHeight 0.20
+
+# Load other KV Files
+#: include frames/historyEntry.kv
+#: include frames/vulnPanel.kv
+#: include frames/safePanel.kv
+#: include frames/reportDashboard.kv
+#: include frames/myContent.kv
+
+
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "[b]Title ng SP KO[/b]"
+        md_bg_color: darkBlue
+        left_action_items: [["menu", lambda x: app.openRail()]]
+
+    MDBoxLayout:
+
+        MDNavigationRail:
+            id: rail
+            use_resizeable: True
+            md_bg_color: darkGray
+            color_normal: lightGray
+            color_active: orange
+
+            use_hover_behavior: True
+            hover_bg: 0, 0, 0, .3
+
+            MDNavigationRailItem:
+                icon: 'view-dashboard'
+                text: '[b]Dashboard[/b]'
+                on_release:
+                    screenManager.current = "dashboardScreen"
+
+            MDNavigationRailItem:
+                icon: 'radar'
+                text: '[b]Scan[/b]'
+                on_release:
+                    screenManager.current = "scanScreen"
+
+            MDNavigationRailItem:
+                icon: 'clipboard-clock-outline'
+                text: '[b]History[/b]'
+                on_release:
+                    screenManager.current = "historyScreen"
+                    app.generateHistoryEntries()
+            
+            MDNavigationRailItem:
+                icon: 'calculator-variant'
+                text: '[b]Risk Calculator[/b]'
+                on_release:
+                    screenManager.current = "calculatorScreen"
+  
+                    
+            MDNavigationRailItem:
+                icon: 'exit-to-app'
+                text: '[b]Exit[/b]'
+                on_release:
+                    app.stop()
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            ScreenManager:
+                id: screenManager
+
+                # Screen for Dashboard
+                MDScreen:
+                    name: "dashboardScreen"
+                    md_bg_color: black
+
+                    # Box Containing Report Data, attach ReportDashboard here
+                    MDBoxLayout:
+                        id: reportBox
+                        md_bg_color: black
+
+                        AnchorLayout:
+                            MDBoxLayout:
+                                size_hint_y: 0.25
+                                orientation: 'vertical'
+                                spacing: 20
+                                
+                                MDIcon:
+                                    icon: 'alert-octagon'
+                                    halign: 'center'
+                                    theme_text_color: "Custom"
+                                    text_color: orange
+                                    font_size: 70
+                                MDLabel:
+                                    markup: True
+                                    font_size: 50
+                                    text: '[b]No Report Generated Yet[/b]'
+                                    halign: 'center'
+                                    theme_text_color: 'Custom'
+                                    text_color: orange
+
+                # Screen for Scan
+                MDScreen:
+                    id: scanScreen
+                    name: "scanScreen"
+                    md_bg_color: black
+                    
+                    AnchorLayout:
+
+                        MDBoxLayout:
+                            size_hint_y: 0.6
+                            orientation: 'vertical'
+                            spacing: 20
+                            
+                            MDIcon:
+                                icon: 'radar'
+                                theme_text_color: "Custom"
+                                text_color: orange
+                                halign: 'center'
+                                font_size: 70
+
+                            MDBoxLayout:
+                                pos_hint: {'center_x': 0.5}
+                                size_hint_x: 0.7
+                                spacing: 40
+
+                                MDBoxLayout:
+                                    size_hint_x: 0.5
+                                    size_hint_y: None
+
+                                    # Input Box for Putting Scan Name 
+                                    MDTextFieldRound:
+                                        id: scanName
+                                        font_size: 30
+                                        icon_left: 'label-variant'
+                                        multiline: False
+                                        hint_text: "Input scan name here, must not be empty!"
+                                        normal_color: orange
+                                        color_active: white
+                                        theme_text_color: "Custom"
+                                        text_color: white
+                                        required: True
+
+                                MDBoxLayout:
+                                    size_hint_x: 0.3
+                                    size_hint_y: None
+                                    height: 20
+
+                                    # Button for Scanning
+                                    MDRectangleFlatButton:
+                                        theme_text_color: "Custom"
+                                        text_color: orange
+                                        text: '[b]Scan my Network[/b]'
+                                        font_size: 20
+                                        line_color: orange
+                                        line_width: 1.5
+                                        on_release: app.startScan()
+                            
+                            MDBoxLayout:
+                                id: labelContainer
+                                size_hint_x: 0.7
+
+                # Screen for History
+                MDScreen:
+                    name: "historyScreen"
+                    md_bg_color: black
+
+                    # For scroling through history entries
+                    ScrollView:
+                        do_scroll_y: True
+                        
+                        # Grid Containing History Entries 
+                        MDGridLayout:
+                            id: historyGrid
+                            adaptive_height: True
+                            size_hint_x: 1.0     
+                            size_hint_y: None    
+                            cols: 1
+                            padding: 50
+                            spacing: 30
+                            
+
+                # Screen for CVE Risk Calculator 
+                MDScreen:
+                    name: "calculatorScreen"
+                    MDLabel:
+                        halign: 'center'
+                        text: "CVE Risk Calculator Here"

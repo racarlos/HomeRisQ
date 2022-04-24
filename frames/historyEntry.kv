@@ -1,0 +1,109 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+# Set colors
+#:set metricBackground get_color_from_hex("#0D1117")
+#:set darkGray get_color_from_hex("#212121")
+#:set lightGray get_color_from_hex("#718089")
+#:set darkBlue get_color_from_hex("#155075") 
+#:set lightBlue get_color_from_hex("#2b96d4")
+#:set orange get_color_from_hex("#F7C14C")
+#:set white get_color_from_hex("#FFFFFF")
+#:set black get_color_from_hex("#000000")
+
+# Set Variables
+#: set card_elevation 20
+#: set topMetrics 50
+#: set subtext_height 0.2
+#: set topIconSize 30
+#: set supportTextHeight 0.20
+
+<HistoryEntry>:
+    md_bg_color: darkBlue
+    size_hint_y: None    
+    height: 125
+
+    # Box for Content
+    MDBoxLayout:
+
+        orientation: 'vertical'
+        size_hint_x: 0.8
+
+        # Box for ID
+        MDBoxLayout:
+            size_hint_y: 0.25
+            md_bg_color: darkBlue
+            padding: [15,5]
+            
+            MDLabel:
+                font_style: 'Button'
+                text: 'Report ID: ' + str(root.data.id)
+                color: white
+
+        # Box for Additional Details
+        MDBoxLayout:
+            size_hint_y: 0.75
+            md_bg_color: darkGray
+
+            MDBoxLayout:
+                size_hint_x: 0.7
+                orientation: 'vertical'
+                md_bg_color: darkGray
+                
+                padding: [15,5]
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Name: ' + str(root.data.name)
+                    color: white
+                
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Timestamp: ' + str(root.data.date)
+                    color: white
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Progress: ' + str(root.data.progress)
+                    color: white
+
+
+            MDBoxLayout:
+                size_hint_x: 0.3
+                orientation: 'vertical'
+                md_bg_color: darkGray
+
+                padding: [15,5]
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Host Count: ' + str(root.data.hostCount)
+                    color: white
+                
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'Vuln Count: ' +  str(root.data.vulnCount)
+                    color: white
+
+                MDLabel:
+                    font_style: 'Button'
+                    text: 'CVSS Base: ' +  str(root.data.severity)
+                    color: white
+
+            # Box for Button                            
+            MDBoxLayout:
+                md_bg_color: darkGray     
+                size_hint_x: 0.2
+
+                AnchorLayout:
+                    # Button for Scanning
+                    MDRectangleFlatIconButton:
+                        icon: 'skull-scan-outline'
+                        theme_text_color: "Custom"
+                        text_color: orange
+                        line_color: orange
+                        theme_icon_color: "Custom"
+                        icon_color: orange
+                        text: '[b]View Report[/b]'
+                        line_width: 1.5
+                        on_release: root.viewReport()

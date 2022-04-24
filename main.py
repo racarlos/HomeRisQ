@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Imports from GVM Libraries
+from os import listdir
 from gvm.connections import UnixSocketConnection			# Unix Domain Socket Connection 
 from gvm.protocols.gmp import Gmp							# Greenbone Management Protocol 
 from gvm.transforms import EtreeTransform
@@ -96,7 +97,7 @@ class HistoryEntry(MDBoxLayout):
 		global hasGeneratedReport 	# Use global variable flag
 
 		MainApp.get_running_app().root.ids.screenManager.current = "dashboardScreen"	# Switch to dashboard screen
-		
+
 		# [MINOR FIX] Change highlighted to dashboard
 		print(f"Generating Report for: {self.data.id}")
 		reportResults = startCalculation(str(self.data.id))
@@ -128,7 +129,8 @@ class HistoryEntry(MDBoxLayout):
 				)
 			)
 			
-			if reportResults['consolidatedRiskPerHost'][hostIndex]['vulnCount'] > 0:										# If host has vulnerabilities
+			# If host has vulnerabilities, create a vuln Panel
+			if reportResults['consolidatedRiskPerHost'][hostIndex]['vulnCount'] > 0:										
 				# For every vulnerability in the host, create own panel and add to container
 				for vulnIndex in range(len(reportResults['perHostVulnList'][hostIndex])):
 					vulnData = reportResults['perHostVulnList'][hostIndex][vulnIndex]
@@ -136,6 +138,7 @@ class HistoryEntry(MDBoxLayout):
 					vulnPanel = VulnPanel(data=vulnData)
 					vulnContainer.add_widget(vulnPanel)
 					vulnContainer.height += vulnPanel.height	
+			# If host is safe, instantiate a safe Panel
 			else: 
 				vulnPanel = SafePanel()
 				vulnContainer.add_widget(vulnPanel)
@@ -154,14 +157,13 @@ class HistoryEntry(MDBoxLayout):
 		hasGeneratedReport = True
 
 
-
 # Main Application Class
 class MainApp(MDApp):
 
 	# Builder Method
 	def build(self):
-		screen = Builder.load_file('frame.kv')
 
+		screen = Builder.load_file('main.kv')
 		return screen
 
 	# For Opening and closing navigation Rail 
@@ -175,24 +177,41 @@ class MainApp(MDApp):
 	# For Generating History Entries in History Screen
 	def generateHistoryEntries(self):
 
-		# Use global variable flag 
-		global hasGeneratedEntries
-		#print(f"Generating History Entries, Length of Reports: {len(reportsList)}")
-		
-		# Add entries to History Grid if not Previously generated Entries
-		if(hasGeneratedEntries == False):
-			for i in range(len(reportsList)):
-				historyEntry = HistoryEntry(data=reportsList[i])		# Generate New Entry
-				self.root.ids.historyGrid.add_widget(historyEntry)		
+		self.root.ids.historyGrid.clear_widgets()		# clear previous entries in UI
+		reportsList = []								# clear previous entries in memory
+		reportsListJSON = getReports()					# get new entries 
 
-			hasGeneratedEntries = True
+		for report in reportsListJSON:
+
+			entry = {
+				'id': report['report']['@id'],
+				'name': report['task']['name'],
+				'date': report['report']['scan_start'],
+				'hostCount': int(report['report']['hosts']['count']),
+				'vulnCount': int(report['report']['vulns']['count']),
+				'progress' : int(report['report']['task']['progress']),
+				'severity' : float(report['report']['severity']['full']),
+			}
+			if entry['name'] != 'Discovery': reportsList.append(entry)
+
+		for i in range(len(reportsList)):
+			historyEntry = HistoryEntry(data=reportsList[i])		# Generate New Entry
+			self.root.ids.historyGrid.add_widget(historyEntry)		
+
 
 	def startScan(self):
 
-		scanName = self.root.ids.scanName.text
-		reportString = startScan(scanName)	
+		scanName = self.root.ids.scanName.text					# Get the text from text input
+		scanName = scanName.strip()								# Remove leading and trailing whitespace
+		reportString = ""
 
-		reportLabel = MDLabel(
+		if(len(scanName) == 0 ):								# if scan name is empty give prompt
+			reportString = "[b]Warning[/b]: Please Input a Scan Name"
+		else:													# if not proceed with scan
+			self.root.ids.scanName.text = ""
+			reportString = startScan(scanName)	
+
+		reportLabel = MDLabel(									# Instantiate Label 
 			markup = True,
 			font_size=40,
 			padding_y=20,
@@ -203,12 +222,7 @@ class MainApp(MDApp):
 		)
 
 		# Display Report ID on a label
-		self.root.ids.scanBox.add_widget(reportLabel)
-
-
-	# For Removing history Entries once user exited the history screen
-	def removeHistoryEntries(self):
-		pass
+		self.root.ids.labelContainer.add_widget(reportLabel)
 
 # Run the App
 MainApp().run()

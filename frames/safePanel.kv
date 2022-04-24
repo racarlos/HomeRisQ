@@ -1,0 +1,46 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+# Set colors
+#:set metricBackground get_color_from_hex("#0D1117")
+#:set darkGray get_color_from_hex("#212121")
+#:set lightGray get_color_from_hex("#718089")
+#:set darkBlue get_color_from_hex("#155075") 
+#:set lightBlue get_color_from_hex("#2b96d4")
+#:set orange get_color_from_hex("#F7C14C")
+#:set white get_color_from_hex("#FFFFFF")
+#:set black get_color_from_hex("#000000")
+
+# Set Variables
+#: set card_elevation 20
+#: set topMetrics 50
+#: set subtext_height 0.2
+#: set topIconSize 30
+#: set supportTextHeight 0.20
+
+<SafePanel>:
+    orientation: 'vertical'
+    size_hint: 1, None
+    md_bg_color: black
+    padding: 15
+    spacing: 15
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            MDIcon:
+                icon: 'shield-check'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: orange
+                font_size: 40
+
+        MDBoxLayout:
+            MDLabel:
+                markup: True
+                text: '[b]This Host is Safe [/b]'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: orange
+                font_size: 20

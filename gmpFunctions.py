@@ -111,7 +111,7 @@ def startScan(scanName):
 		# Create Task with indicated target and configuration
 		createTaskResponse =  gmp.create_task(
 			name="SP2 Task-"+ str(scanName),
-			config_id=spScanConfigID,
+			config_id= emptyScanConfigID,
 			target_id=targetID,
 			scanner_id=openVasScannerID,
 			preferences={
