@@ -194,12 +194,12 @@ class MainApp(MDApp):
 				'severity' : float(report['report']['severity']['full']),
 			}
 			if entry['name'] != 'Discovery': 
-				scanNameList.append(entry['name'])					# Append to list of scan Names for avoiding name duplicates
-				reportsList.append(entry)							# Append to actual list 
+				scanNameList.append(entry['name'].lower())					# Append to list of scan Names for avoiding name duplicates
+				reportsList.append(entry)									# Append to actual list 
 
 		for i in range(len(reportsList)):
-			historyEntry = HistoryEntry(data=reportsList[i])		# Generate New Entry
-			self.root.ids.historyGrid.add_widget(historyEntry)		
+			historyEntry = HistoryEntry(data=reportsList[i])				# Generate New Entry
+			self.root.ids.historyGrid.add_widget(historyEntry)				# Add newly created widget
 
 
 	def startScan(self):
@@ -211,11 +211,11 @@ class MainApp(MDApp):
 
 		if(len(scanName) == 0 ):								# if scan name is empty give prompt
 			reportString = "[b]Warning[/b]: [color=#ffffff]Please Input a Scan Name[color=#ffffff]"
-		elif scanName in scanNameList:
+		elif scanName.lower() in scanNameList:
 			reportString = "[b]Warning[/b]: [color=#ffffff]That scan name is already taken. Please choose another[color=#ffffff]"
 		else:													# if not proceed with scan
 			self.root.ids.scanName.text = ""					# clear input text field
-			scanNameList.append(scanName)						# add to temporary list of scan name's
+			scanNameList.append(scanName.lower())						# add to temporary list of scan name's
 			reportString = startScan(scanName)					# proceeed with scan
 
 		# Clear Widgets

@@ -200,7 +200,94 @@ MDBoxLayout:
                 MDScreen:
                     name: "calculatorScreen"
                     md_bg_color: black
-                    
-                    MDLabel:
-                        halign: 'center'
-                        text: "CVE Risk Calculator Here"
+
+                    MDBoxLayout:
+                        orientation:'vertical'
+
+                        MDBoxLayout:
+                            md_bg_color: darkGray
+                            size_hint_y: 0.15
+
+                            MDLabel:
+                                halign: 'center'
+                                text: 'Vector Here'
+
+                        MDBoxLayout:
+                            size_hint_y: 0.7
+
+                            # Box for Probability Metrics
+                            MDBoxLayout:
+                                orientation: 'vertical'
+
+                                # Label
+                                MDBoxLayout:
+                                    size_hint_y: 0.25
+                                    md_bg_color: orange
+
+                                    MDLabel:
+                                        halign: 'center'
+                                        text: 'Probability Metrics'
+                                
+                                # Metrics
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    md_bg_color: lightBlue
+
+
+                                    MDBoxLayout:
+                                        MDLabel:
+                                            halign: 'center'
+                                            text: 'Access Vector Metric'
+                                    
+                                    MDBoxLayout:
+                                        MDLabel:
+                                            halign: 'center'
+                                            text: 'Access Complexity Metric'
+
+                                    MDBoxLayout:
+                                        MDLabel:
+                                            halign: 'center'
+                                            text: 'Authentication Metric'
+                                        
+
+                            # Box for Impact Metrics
+                            MDBoxLayout:
+                                orientation: 'vertical'
+
+                                # Label
+                                MDBoxLayout:
+                                    size_hint_y: 0.25
+                                    md_bg_color: orange
+
+                                    MDLabel:
+                                        halign: 'center'
+                                        text: 'Impact Metrics'
+                                
+                                # Metrics
+                                MDBoxLayout:
+                                    orientation: 'vertical'
+                                    md_bg_color: lightBlue
+
+                                    MDBoxLayout:
+                                        MDLabel:
+                                            halign: 'center'
+                                            text: 'Confidentiality Impact Metric'
+                                    
+                                    MDBoxLayout:
+                                        MDLabel:
+                                            halign: 'center'
+                                            text: 'Integrity Impact Metric'
+
+                                    MDBoxLayout:
+                                        MDLabel:
+                                            halign: 'center'
+                                            text: 'Accessibility Impact Metric'
+  
+
+                        MDBoxLayout:
+                            md_bg_color: lightGray
+                            size_hint_y: 0.15
+
+                            MDLabel:
+                                halign: 'center'
+                                text: 'CVE Risk Score Here'
