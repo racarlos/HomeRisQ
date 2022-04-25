@@ -123,61 +123,55 @@ MDBoxLayout:
                     AnchorLayout:
 
                         MDBoxLayout:
-                            size_hint_y: 0.6
+                            size_hint_y: 0.5
                             orientation: 'vertical'
-                            spacing: 20
                             
-                            # Scan Icon
-                            MDIcon:
-                                icon: 'radar'
-                                theme_text_color: "Custom"
-                                text_color: orange
-                                halign: 'center'
-                                font_size: 70
+                            MDBoxLayout:
+                                # Scan Icon
+                                MDIcon:
+                                    icon: 'radar'
+                                    theme_text_color: "Custom"
+                                    text_color: orange
+                                    halign: 'center'
+                                    font_size: 90
 
                             # Input Box and Button
                             MDBoxLayout:
                                 pos_hint: {'center_x': 0.5}
                                 orientaion: 'horizontal'
-                                size_hint_x: 0.7
                                 spacing: 40
+                                size_hint_x: 0.7
 
                                 MDBoxLayout:
                                     size_hint_x: 0.7
-                                    size_hint_y: None
-                                    pos_hint: {'center_y': 0.5}
 
                                     # Input Box for Putting Scan Name 
                                     MDTextFieldRound:
+                                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                         id: scanName
                                         font_size: 30
-                                        icon_left: 'label-variant'
                                         multiline: False
                                         hint_text: "Input scan name here"
-                                        normal_color: orange
-                                        color_active: white
+                                        normal_color: white
                                         theme_text_color: "Custom"
-                                        text_color: white
+                                        text_color: lightBlue
                                         required: True
 
                                 MDBoxLayout:
-                                    pos_hint: {'center_y': 0.5}
                                     size_hint_x: 0.3
-                                    size_hint_y: None
 
                                     # Button for Scanning
-                                    MDRectangleFlatButton:
-                                        pos_hint: {'center_x': 0.5}
-                                        theme_text_color: "Custom"
-                                        text_color: orange
-                                        text: '[b]Scan my Network[/b]'
+                                    MDRaisedButton:
+                                        markup: True
+                                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                        md_bg_color: orange
+                                        text: '[color=#000000][b]Scan my Network[/b][/color]'
                                         font_size: 20
-                                        line_color: orange
-                                        line_width: 1.5
                                         on_release: app.startScan()
                             
                             # Box for Prompts
                             MDBoxLayout:
+                                markup: True
                                 id: labelContainer
                                 pos_hint: {'center_x': 0.5}
                                 size_hint_x: 0.7
@@ -205,6 +199,8 @@ MDBoxLayout:
                 # Screen for CVE Risk Calculator 
                 MDScreen:
                     name: "calculatorScreen"
+                    md_bg_color: black
+                    
                     MDLabel:
                         halign: 'center'
                         text: "CVE Risk Calculator Here"

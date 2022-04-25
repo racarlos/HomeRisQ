@@ -1,5 +1,359 @@
 [
     {
+        "@id": "83151524-5758-42ef-9e31-72cf4ba934ba",
+        "@format_id": "",
+        "@extension": "",
+        "@content_type": "application/xml",
+        "owner": {
+            "name": "admin"
+        },
+        "name": null,
+        "comment": null,
+        "creation_time": null,
+        "modification_time": "2022-04-25T14:19:56Z",
+        "writable": "0",
+        "in_use": "0",
+        "task": {
+            "@id": "09be8f7a-1688-42b2-9d8c-c6b3e3856b2e",
+            "name": "test"
+        },
+        "report": {
+            "@id": "83151524-5758-42ef-9e31-72cf4ba934ba",
+            "gmp": {
+                "version": "21.4"
+            },
+            "sort": {
+                "field": {
+                    "order": "ascending",
+                    "#text": "name"
+                }
+            },
+            "filters": {
+                "@id": "",
+                "term": "apply_overrides=0 min_qod=70 first=1 rows=10 sort=name",
+                "filter": [
+                    "High",
+                    "Medium",
+                    "Low",
+                    "Log"
+                ],
+                "keywords": {
+                    "keyword": [
+                        {
+                            "column": "apply_overrides",
+                            "relation": "=",
+                            "value": "0"
+                        },
+                        {
+                            "column": "min_qod",
+                            "relation": "=",
+                            "value": "70"
+                        },
+                        {
+                            "column": "first",
+                            "relation": "=",
+                            "value": "1"
+                        },
+                        {
+                            "column": "rows",
+                            "relation": "=",
+                            "value": "10"
+                        },
+                        {
+                            "column": "sort",
+                            "relation": "=",
+                            "value": "name"
+                        }
+                    ]
+                }
+            },
+            "scan_run_status": "Interrupted",
+            "hosts": {
+                "count": "0"
+            },
+            "closed_cves": {
+                "count": "0"
+            },
+            "vulns": {
+                "count": "0"
+            },
+            "os": {
+                "count": "0"
+            },
+            "apps": {
+                "count": "0"
+            },
+            "ssl_certs": {
+                "count": "0"
+            },
+            "task": {
+                "@id": "09be8f7a-1688-42b2-9d8c-c6b3e3856b2e",
+                "name": "test",
+                "comment": null,
+                "target": {
+                    "@id": "80b883f9-2683-4127-b947-e8643df8959f",
+                    "trash": "0",
+                    "name": "test Targets",
+                    "comment": null
+                },
+                "progress": "0"
+            },
+            "scan": {
+                "task": null
+            },
+            "timestamp": "2022-04-25T14:19:55Z",
+            "scan_start": null,
+            "timezone": "UTC",
+            "timezone_abbrev": "UTC",
+            "result_count": {
+                "full": "0",
+                "filtered": "0",
+                "hole": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "info": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "log": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "warning": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "false_positive": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "#text": "0"
+            },
+            "severity": {
+                "full": "-3.0",
+                "filtered": "-3.0"
+            },
+            "scan_end": "2022-04-25T14:19:56Z",
+            "errors": {
+                "count": "2",
+                "error": [
+                    {
+                        "host": {
+                            "asset": {
+                                "@asset_id": ""
+                            }
+                        },
+                        "port": null,
+                        "description": "VTs list is empty",
+                        "nvt": {
+                            "@oid": "",
+                            "type": "nvt",
+                            "name": null,
+                            "cvss_base": null
+                        },
+                        "scan_nvt_version": null,
+                        "severity": "-3"
+                    },
+                    {
+                        "host": {
+                            "asset": {
+                                "@asset_id": ""
+                            }
+                        },
+                        "port": null,
+                        "description": "Interrupting scan because GVM is exiting.",
+                        "nvt": {
+                            "@oid": "",
+                            "type": "nvt",
+                            "name": null,
+                            "cvss_base": null
+                        },
+                        "scan_nvt_version": null,
+                        "severity": "-3"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "@id": "ba738a42-779f-449f-9ada-9c1f7ddfbd78",
+        "@format_id": "",
+        "@extension": "",
+        "@content_type": "application/xml",
+        "owner": {
+            "name": "admin"
+        },
+        "name": null,
+        "comment": null,
+        "creation_time": null,
+        "modification_time": "2022-04-25T14:21:19Z",
+        "writable": "0",
+        "in_use": "0",
+        "task": {
+            "@id": "7caebdab-4546-4bac-8f88-6a560e3e7e03",
+            "name": "wow"
+        },
+        "report": {
+            "@id": "ba738a42-779f-449f-9ada-9c1f7ddfbd78",
+            "gmp": {
+                "version": "21.4"
+            },
+            "sort": {
+                "field": {
+                    "order": "ascending",
+                    "#text": "name"
+                }
+            },
+            "filters": {
+                "@id": "",
+                "term": "apply_overrides=0 min_qod=70 first=1 rows=10 sort=name",
+                "filter": [
+                    "High",
+                    "Medium",
+                    "Low",
+                    "Log"
+                ],
+                "keywords": {
+                    "keyword": [
+                        {
+                            "column": "apply_overrides",
+                            "relation": "=",
+                            "value": "0"
+                        },
+                        {
+                            "column": "min_qod",
+                            "relation": "=",
+                            "value": "70"
+                        },
+                        {
+                            "column": "first",
+                            "relation": "=",
+                            "value": "1"
+                        },
+                        {
+                            "column": "rows",
+                            "relation": "=",
+                            "value": "10"
+                        },
+                        {
+                            "column": "sort",
+                            "relation": "=",
+                            "value": "name"
+                        }
+                    ]
+                }
+            },
+            "scan_run_status": "Interrupted",
+            "hosts": {
+                "count": "0"
+            },
+            "closed_cves": {
+                "count": "0"
+            },
+            "vulns": {
+                "count": "0"
+            },
+            "os": {
+                "count": "0"
+            },
+            "apps": {
+                "count": "0"
+            },
+            "ssl_certs": {
+                "count": "0"
+            },
+            "task": {
+                "@id": "7caebdab-4546-4bac-8f88-6a560e3e7e03",
+                "name": "wow",
+                "comment": null,
+                "target": {
+                    "@id": "18b9f225-b661-417b-ac5f-d5370954230a",
+                    "trash": "0",
+                    "name": "wow Targets",
+                    "comment": null
+                },
+                "progress": "0"
+            },
+            "scan": {
+                "task": null
+            },
+            "timestamp": "2022-04-25T14:21:17Z",
+            "scan_start": null,
+            "timezone": "UTC",
+            "timezone_abbrev": "UTC",
+            "result_count": {
+                "full": "0",
+                "filtered": "0",
+                "hole": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "info": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "log": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "warning": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "false_positive": {
+                    "full": "0",
+                    "filtered": "0"
+                },
+                "#text": "0"
+            },
+            "severity": {
+                "full": "-3.0",
+                "filtered": "-3.0"
+            },
+            "scan_end": "2022-04-25T14:21:19Z",
+            "errors": {
+                "count": "2",
+                "error": [
+                    {
+                        "host": {
+                            "asset": {
+                                "@asset_id": ""
+                            }
+                        },
+                        "port": null,
+                        "description": "VTs list is empty",
+                        "nvt": {
+                            "@oid": "",
+                            "type": "nvt",
+                            "name": null,
+                            "cvss_base": null
+                        },
+                        "scan_nvt_version": null,
+                        "severity": "-3"
+                    },
+                    {
+                        "host": {
+                            "asset": {
+                                "@asset_id": ""
+                            }
+                        },
+                        "port": null,
+                        "description": "Interrupting scan because GVM is exiting.",
+                        "nvt": {
+                            "@oid": "",
+                            "type": "nvt",
+                            "name": null,
+                            "cvss_base": null
+                        },
+                        "scan_nvt_version": null,
+                        "severity": "-3"
+                    }
+                ]
+            }
+        }
+    },
+    {
         "@id": "84c900e0-400e-4d03-94c5-33946b0cca37",
         "@format_id": "",
         "@extension": "",
@@ -15,7 +369,7 @@
         "in_use": "0",
         "task": {
             "@id": "ad0736a6-ab8d-4e3b-b1f4-410f753cb822",
-            "name": "SP2-My House 1"
+            "name": "My House"
         },
         "report": {
             "@id": "84c900e0-400e-4d03-94c5-33946b0cca37",
@@ -88,12 +442,12 @@
             },
             "task": {
                 "@id": "ad0736a6-ab8d-4e3b-b1f4-410f753cb822",
-                "name": "SP2-My House 1",
+                "name": "My House",
                 "comment": null,
                 "target": {
                     "@id": "d64afdc4-0df9-4cca-a636-f390cf41160f",
                     "trash": "0",
-                    "name": "Target for immediate scan of IP 192.168.1.0/24 - 2021-11-29 10:11:32",
+                    "name": "My House Targets",
                     "comment": null
                 },
                 "progress": "100"
@@ -156,7 +510,7 @@
         "in_use": "0",
         "task": {
             "@id": "1e2d4a23-81a5-448f-912b-a684fe03dd1a",
-            "name": "SP2-Selva's Cafe"
+            "name": "Selva's Cafe"
         },
         "report": {
             "@id": "6beae7f0-d4da-49f8-a4db-c5765bf9401a",
@@ -229,12 +583,12 @@
             },
             "task": {
                 "@id": "1e2d4a23-81a5-448f-912b-a684fe03dd1a",
-                "name": "SP2-Selva's Cafe",
+                "name": "Selva's Cafe",
                 "comment": "Automatically generated by  wizard",
                 "target": {
                     "@id": "b7a578b8-cc48-481a-b17d-eaf65cb394df",
                     "trash": "0",
-                    "name": "Target for New Quick Task - 2022-03-19 07:36:54",
+                    "name": "Selva's Cafe Targets",
                     "comment": "Automatically generated by wizard"
                 },
                 "progress": "100"
@@ -297,7 +651,7 @@
         "in_use": "0",
         "task": {
             "@id": "d3046e7a-1577-45f6-b47f-0bcd13a44372",
-            "name": "SP2-Abby's house"
+            "name": "Abby's house"
         },
         "report": {
             "@id": "9cc3359e-cec8-4559-a03f-d7d5cf834dfc",
@@ -370,12 +724,12 @@
             },
             "task": {
                 "@id": "d3046e7a-1577-45f6-b47f-0bcd13a44372",
-                "name": "SP2-Abby's house",
+                "name": "Abby's house",
                 "comment": null,
                 "target": {
                     "@id": "96e2be69-2d3f-4b64-8f20-c8874ed6eb37",
                     "trash": "0",
-                    "name": "Target for immediate scan of IP 192.168.100.1-254 - 2022-04-04 14:10:54",
+                    "name": "Abby's House Targets",
                     "comment": null
                 },
                 "progress": "100"
@@ -456,7 +810,7 @@
         "in_use": "0",
         "task": {
             "@id": "7b184f8f-13d7-4d36-b9ea-c4222c9aa9aa",
-            "name": "SP2-My House 2"
+            "name": "My House 2"
         },
         "report": {
             "@id": "4c7718ec-339f-44ce-ac66-74d99d04554b",
@@ -529,12 +883,12 @@
             },
             "task": {
                 "@id": "7b184f8f-13d7-4d36-b9ea-c4222c9aa9aa",
-                "name": "SP2-My House 2",
+                "name": "My House 2",
                 "comment": null,
                 "target": {
                     "@id": "a3ed1b4d-9f99-44ce-bd9e-3a9a2af8fa0b",
                     "trash": "0",
-                    "name": "testTarget",
+                    "name": "My House 2 Targets",
                     "comment": "Target for current SP2 scan"
                 },
                 "progress": "100"

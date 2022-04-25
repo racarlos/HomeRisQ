@@ -102,7 +102,7 @@ def startScan(scanName):
 
 		#Create Target for the new Scan
 		createTargetResponse = gmp.create_target(
-			name="SP2 Target-" + str(scanName),
+			name=str(scanName) + " Targets",
 			hosts=addresses,    
 			port_list_id=tcpPorts
 		)
@@ -110,7 +110,7 @@ def startScan(scanName):
 
 		# Create Task with indicated target and configuration
 		createTaskResponse =  gmp.create_task(
-			name="SP2 Task-"+ str(scanName),
+			name=str(scanName),
 			config_id= emptyScanConfigID,
 			target_id=targetID,
 			scanner_id=openVasScannerID,

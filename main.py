@@ -31,6 +31,7 @@ transform = EtreeTransform()								# Element Tree transform for storing XML
 
 # Main Global Variables
 version = getVersion()
+scanNameList = []
 reportsList = []
 
 # Get Reports and Store them reports in reportsList
@@ -176,6 +177,7 @@ class MainApp(MDApp):
 	# For Generating History Entries in History Screen
 	def generateHistoryEntries(self):
 
+		global scanNameList
 		self.root.ids.historyGrid.clear_widgets()		# clear previous entries in UI
 		reportsList = []								# clear previous entries in memory
 		reportsListJSON = getReports()					# get new entries 
@@ -191,7 +193,9 @@ class MainApp(MDApp):
 				'progress' : int(report['report']['task']['progress']),
 				'severity' : float(report['report']['severity']['full']),
 			}
-			if entry['name'] != 'Discovery': reportsList.append(entry)
+			if entry['name'] != 'Discovery': 
+				scanNameList.append(entry['name'])					# Append to list of scan Names for avoiding name duplicates
+				reportsList.append(entry)							# Append to actual list 
 
 		for i in range(len(reportsList)):
 			historyEntry = HistoryEntry(data=reportsList[i])		# Generate New Entry
@@ -200,15 +204,19 @@ class MainApp(MDApp):
 
 	def startScan(self):
 
+		global scanNameList
 		scanName = self.root.ids.scanName.text					# Get the text from text input
 		scanName = scanName.strip()								# Remove leading and trailing whitespace
 		reportString = ""
 
 		if(len(scanName) == 0 ):								# if scan name is empty give prompt
-			reportString = "[b]Warning[/b]: Please Input a Scan Name"
+			reportString = "[b]Warning[/b]: [color=#ffffff]Please Input a Scan Name[color=#ffffff]"
+		elif scanName in scanNameList:
+			reportString = "[b]Warning[/b]: [color=#ffffff]That scan name is already taken. Please choose another[color=#ffffff]"
 		else:													# if not proceed with scan
-			self.root.ids.scanName.text = ""
-			reportString = startScan(scanName)	
+			self.root.ids.scanName.text = ""					# clear input text field
+			scanNameList.append(scanName)						# add to temporary list of scan name's
+			reportString = startScan(scanName)					# proceeed with scan
 
 		# Clear Widgets
 		self.root.ids.labelContainer.clear_widgets()
