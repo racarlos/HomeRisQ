@@ -12,11 +12,14 @@
 #:set black get_color_from_hex("#000000")
 
 # Set Variables
-#: set card_elevation 20
-#: set topMetrics 50
-#: set subtext_height 0.2
-#: set topIconSize 30
-#: set supportTextHeight 0.20
+#:set card_elevation 20
+#:set topMetrics 50
+#:set subtext_height 0.2
+#:set topIconSize 30
+#:set supportTextHeight 0.20
+#:set buttonSizeHint (0.7,0.7)
+#:set metricButtonColor get_color_from_hex("#718089")
+
 
 # Load other KV Files
 #: include frames/historyEntry.kv
@@ -204,6 +207,7 @@ MDBoxLayout:
                     MDBoxLayout:
                         orientation:'vertical'
 
+                        # Metric Display Portion
                         MDBoxLayout:
                             md_bg_color: darkGray
                             size_hint_y: 0.15
@@ -212,10 +216,13 @@ MDBoxLayout:
                                 halign: 'center'
                                 text: 'Vector Here'
 
+
+                        # Metric Selection Portion
                         MDBoxLayout:
                             size_hint_y: 0.7
+                            spacing: 60
 
-                            # Box for Probability Metrics
+                            # Left Box for Probability Metrics
                             MDBoxLayout:
                                 orientation: 'vertical'
 
@@ -231,26 +238,127 @@ MDBoxLayout:
                                 # Metrics
                                 MDBoxLayout:
                                     orientation: 'vertical'
-                                    md_bg_color: lightBlue
 
-
+                                    # Container for Access Vector Metric
                                     MDBoxLayout:
-                                        MDLabel:
-                                            halign: 'center'
-                                            text: 'Access Vector Metric'
+                                        orientation: 'vertical'
+                                        
+                                        MDBoxLayout:
+                                            size_hint_y: 0.4
+                                            MDLabel:
+                                                halign: 'center'
+                                                text: 'Access Vector Metric'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.6
+                                            spacing: 20
+                                            padding: 10
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Local"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Adjacent Network"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Network"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
                                     
+                                    # Container for Access Complexity Metric
                                     MDBoxLayout:
-                                        MDLabel:
-                                            halign: 'center'
-                                            text: 'Access Complexity Metric'
+                                        orientation: 'vertical'
 
+                                        MDBoxLayout:
+                                            size_hint_y: 0.4
+                                            MDLabel:
+                                                halign: 'center'
+                                                text: 'Access Complexity Metric'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.6
+                                            spacing: 20
+                                            padding: 10
+
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "High Complexity"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Medium Complexity"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+                                                Button:
+                                                    text: "Low Complexity"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                    # Container for Authentication Metrics
                                     MDBoxLayout:
-                                        MDLabel:
-                                            halign: 'center'
-                                            text: 'Authentication Metric'
+                                        orientation: 'vertical'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.4
+                                            MDLabel:
+                                                halign: 'center'
+                                                text: 'Authentication Metric'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.6
+                                            spacing: 20
+                                            padding: 10
+
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Multiple"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Single"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "None"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
                                         
 
-                            # Box for Impact Metrics
+                            # Right Box for Impact Metrics
                             MDBoxLayout:
                                 orientation: 'vertical'
 
@@ -266,24 +374,130 @@ MDBoxLayout:
                                 # Metrics
                                 MDBoxLayout:
                                     orientation: 'vertical'
-                                    md_bg_color: lightBlue
 
+                                   # Container for Confidentiality Impact Metrics
                                     MDBoxLayout:
-                                        MDLabel:
-                                            halign: 'center'
-                                            text: 'Confidentiality Impact Metric'
+                                        orientation: 'vertical'
+                                        
+                                        MDBoxLayout:
+                                            size_hint_y: 0.4
+                                            MDLabel:
+                                                halign: 'center'
+                                                text: 'Confidentiality Impact Metric'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.6
+                                            spacing: 20
+                                            padding: 10
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "None"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Partial"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Complete"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
                                     
+                                    # Container for Integrity Impact Metric
                                     MDBoxLayout:
-                                        MDLabel:
-                                            halign: 'center'
-                                            text: 'Integrity Impact Metric'
+                                        orientation: 'vertical'
 
+                                        MDBoxLayout:
+                                            size_hint_y: 0.4
+                                            MDLabel:
+                                                halign: 'center'
+                                                text: 'Integrity Impact  Metric'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.6
+                                            spacing: 20
+                                            padding: 10
+
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "None"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Partial"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Complete"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+
+                                    # Container for Availability Impact Metric
                                     MDBoxLayout:
-                                        MDLabel:
-                                            halign: 'center'
-                                            text: 'Accessibility Impact Metric'
-  
+                                        orientation: 'vertical'
 
+                                        MDBoxLayout:
+                                            size_hint_y: 0.4
+                                            MDLabel:
+                                                halign: 'center'
+                                                text: 'Authentication Metric'
+
+                                        MDBoxLayout:
+                                            size_hint_y: 0.6
+                                            spacing: 20
+                                            padding: 10
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "None"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Partial"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+
+                                            MDBoxLayout:
+
+                                                Button:
+                                                    text: "Complete"
+                                                    size_hint: buttonSizeHint
+                                                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                                                    background_color: metricButtonColor
+
+
+                        # Risk Display Portion
                         MDBoxLayout:
                             md_bg_color: lightGray
                             size_hint_y: 0.15

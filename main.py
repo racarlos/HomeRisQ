@@ -24,7 +24,7 @@ from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLin
 from kivy.properties import DictProperty
 from kivy.core.window import Window
 from kivymd.uix.list import IconLeftWidget
-
+from kivy.clock import Clock
 
 connection = UnixSocketConnection()
 transform = EtreeTransform()								# Element Tree transform for storing XML 
