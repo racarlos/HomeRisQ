@@ -232,10 +232,19 @@ MDBoxLayout:
 
                             MDBoxLayout:
                                 md_bg_color: darkGray
-                                MDLabel:
-                                    halign: 'center'
-                                    markup: True
+                                spacing: 30
+                                MDIcon:
+                                    size_hint_x: 0.3
+                                    icon: 'transit-connection-variant'
+                                    halign: 'right'
                                     theme_text_color: "Custom"
+                                    text_color: white
+
+                                MDLabel:
+                                    size_hint_x: 0.7
+                                    halign: 'left'
+                                    markup: True
+                                    theme_text_color: "Custom"fa
                                     text: '[b]Probability Metrics[b]'
                                     font_style: 'H5'
                                     theme_text_color: "Custom"  
@@ -243,8 +252,19 @@ MDBoxLayout:
 
                             MDBoxLayout:
                                 md_bg_color: darkGray
+                                spacing: 30
+
+                                MDIcon:
+                                    size_hint_x: 0.3
+                                    icon: 'close-network'
+                                    halign: 'right'
+                                    theme_text_color: "Custom"
+                                    text_color: white
+
+
                                 MDLabel:
-                                    halign: 'center'
+                                    size_hint_x: 0.7
+                                    halign: 'left'
                                     markup: True
                                     theme_text_color: "Custsom"
                                     text: '[b]Impact Metrics[/b]'
@@ -274,9 +294,19 @@ MDBoxLayout:
 
                                         MDBoxLayout:
                                             size_hint_y: 0.3
+                                            md_bg_color: metricLabelBackground
+                                            spacing: 10
+                                            
+                                            MDIcon:
+                                                size_hint_x: 0.40
+                                                icon: 'lan-connect'
+                                                halign: 'right'
+                                                theme_text_color: "Custom"
+                                                text_color: white
 
                                             MDLabel:
-                                                halign: 'center'
+                                                size_hint_x: 0.6
+                                                halign: 'left'
                                                 markup: True
                                                 text: '[b]Access Vector Metric[/b]'
                                                 theme_text_color: "Custom"
@@ -327,11 +357,21 @@ MDBoxLayout:
 
                                         MDBoxLayout:
                                             size_hint_y: 0.3
+                                            md_bg_color: metricLabelBackground
+                                            spacing: 10
+
+                                            MDIcon:
+                                                size_hint_x: 0.40
+                                                icon: 'security-network'
+                                                halign: 'right'
+                                                theme_text_color: "Custom"
+                                                text_color: white
 
                                             MDLabel:
-                                                halign: 'center'
+                                                size_hint_x: 0.6
+                                                halign: 'left'
                                                 markup: True
-                                                text: '[b]Access Complexity Metric[/b]'
+                                                text: '[b]Access Complexity  Metric[/b]'
                                                 theme_text_color: "Custom"
                                                 text_color: metricLabelTextColor
                                                 md_bg_color: metricLabelBackground
@@ -380,14 +420,25 @@ MDBoxLayout:
 
                                         MDBoxLayout:
                                             size_hint_y: 0.3
+                                            md_bg_color: metricLabelBackground
+                                            spacing: 10
+                                            
+                                            MDIcon:
+                                                size_hint_x: 0.40
+                                                icon: 'lock-question'
+                                                halign: 'right'
+                                                theme_text_color: "Custom"
+                                                text_color: white
 
                                             MDLabel:
-                                                halign: 'center'
+                                                size_hint_x: 0.6
+                                                halign: 'left'
                                                 markup: True
                                                 text: '[b]Authentication Metric[/b]'
                                                 theme_text_color: "Custom"
                                                 text_color: metricLabelTextColor
                                                 md_bg_color: metricLabelBackground
+
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -439,11 +490,21 @@ MDBoxLayout:
                                         
                                         MDBoxLayout:
                                             size_hint_y: 0.3
+                                            md_bg_color: metricLabelBackground
+                                            spacing: 10
+                                            
+                                            MDIcon:
+                                                size_hint_x: 0.40
+                                                icon: 'shield-account'
+                                                halign: 'right'
+                                                theme_text_color: "Custom"
+                                                text_color: white
 
                                             MDLabel:
-                                                halign: 'center'
+                                                size_hint_x: 0.6
+                                                halign: 'left'
                                                 markup: True
-                                                text: '[b]Confidentiality Impact Metric[/b]'
+                                                text: '[b]Confidentiality Metric[/b]'
                                                 theme_text_color: "Custom"
                                                 text_color: metricLabelTextColor
                                                 md_bg_color: metricLabelBackground
@@ -489,11 +550,21 @@ MDBoxLayout:
 
                                         MDBoxLayout:
                                             size_hint_y: 0.3
+                                            md_bg_color: metricLabelBackground
+                                            spacing: 10
+                                            
+                                            MDIcon:
+                                                size_hint_x: 0.40
+                                                icon: 'briefcase-check'
+                                                halign: 'right'
+                                                theme_text_color: "Custom"
+                                                text_color: white
 
                                             MDLabel:
-                                                halign: 'center'
+                                                size_hint_x: 0.6
+                                                halign: 'left'
                                                 markup: True
-                                                text: '[b]Integrity Impact  Metric[/b]'
+                                                text: '[b]Integrity Metric[/b]'
                                                 theme_text_color: "Custom"
                                                 text_color: metricLabelTextColor
                                                 md_bg_color: metricLabelBackground
@@ -542,11 +613,22 @@ MDBoxLayout:
                                         padding: containerPadding
 
                                         MDBoxLayout:
-                                            size_hint_y: 0.25
+                                            size_hint_y: 0.3
+                                            md_bg_color: metricLabelBackground
+                                            spacing: 10
+                                            
+                                            MDIcon:
+                                                size_hint_x: 0.40
+                                                icon: 'database-arrow-up'
+                                                halign: 'right'
+                                                theme_text_color: "Custom"
+                                                text_color: white
+
                                             MDLabel:
-                                                halign: 'center'
+                                                size_hint_x: 0.6
+                                                halign: 'left'
                                                 markup: True
-                                                text: '[b]Availability Impact Metric[b]'
+                                                text: '[b]Availability Metric[/b]'
                                                 theme_text_color: "Custom"
                                                 text_color: metricLabelTextColor
                                                 md_bg_color: metricLabelBackground
