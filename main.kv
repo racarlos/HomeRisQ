@@ -2,7 +2,6 @@
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 # Set colors
-#:set metricBackground get_color_from_hex("#0D1117")
 #:set darkGray get_color_from_hex("#212121")
 #:set lightGray get_color_from_hex("#718089")
 #:set darkBlue get_color_from_hex("#155075") 
@@ -18,10 +17,11 @@
 #:set topIconSize 30
 #:set supportTextHeight 0.20
 #:set buttonSizeHint (0.7,0.7)
+#:set containerPadding 10
 #:set metricButtonColor get_color_from_hex("#718089")
-#:set metricLabelColor get_color_from_hex("#2b96d4")
-
-
+#:set metricLabelTextColor get_color_from_hex("#FFFFFF")
+#:set metricContainerBackground get_color_from_hex("#212121")
+#:set metricLabelBackground get_color_from_hex("#155075") 
 
 # Load other KV Files
 #: include frames/historyEntry.kv
@@ -171,7 +171,7 @@ MDBoxLayout:
                                         markup: True
                                         pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                         md_bg_color: orange
-                                        text: '[color=#000000][b]Scan my Network[/b][/color]'
+                                        text: '[color=#212121][b]Scan my Network[/b][/color]'
                                         font_size: 20
                                         on_release: app.startScan()
                             
@@ -212,33 +212,57 @@ MDBoxLayout:
 
                         # Vector Display Portion
                         MDBoxLayout:
-                            md_bg_color: darkGray
                             size_hint_y: 0.15
 
                             MDLabel:
                                 id: calcRisk
+                                theme_text_color: "Custom"
+                                text_color: orange
+                                markup: True
+                                font_size: 30
                                 halign: 'center'
-                                text: '0'
+                                text: '[b]Risk Score: 0.0[/b]'
+
+                        # Header's Portions
+                        MDBoxLayout:
+                            size_hint_y: 0.15
+                            orientation: 'horizontal'
+                            spacing: 80
+                            padding: 25
+
+                            MDBoxLayout:
+                                md_bg_color: darkGray
+                                MDLabel:
+                                    halign: 'center'
+                                    markup: True
+                                    theme_text_color: "Custom"
+                                    text: '[b]Probability Metrics[b]'
+                                    font_style: 'H5'
+                                    theme_text_color: "Custom"  
+                                    text_color: white
+
+                            MDBoxLayout:
+                                md_bg_color: darkGray
+                                MDLabel:
+                                    halign: 'center'
+                                    markup: True
+                                    theme_text_color: "Custsom"
+                                    text: '[b]Impact Metrics[/b]'
+                                    font_style: 'H5'
+                                    theme_text_color: "Custom"  
+                                    text_color: white
 
 
                         # Metric Selection Portion
                         MDBoxLayout:
                             size_hint_y: 0.7
-                            spacing: 60
+                            spacing: 30
 
                             # Left Box for Probability Metrics
                             MDBoxLayout:
                                 orientation: 'vertical'
+                                padding: 15
 
-                                # Label
-                                MDBoxLayout:
-                                    size_hint_y: 0.25
-                                    md_bg_color: orange
-
-                                    MDLabel:
-                                        halign: 'center'
-                                        text: 'Probability Metrics'
-                                
                                 # Metrics
                                 MDBoxLayout:
                                     orientation: 'vertical'
@@ -246,21 +270,25 @@ MDBoxLayout:
                                     # Container for Access Vector Metric
                                     MDBoxLayout:
                                         orientation: 'vertical'
-                                        
+                                        padding: containerPadding
+
                                         MDBoxLayout:
-                                            size_hint_y: 0.4
+                                            size_hint_y: 0.3
 
                                             MDLabel:
                                                 halign: 'center'
                                                 markup: True
                                                 text: '[b]Access Vector Metric[/b]'
                                                 theme_text_color: "Custom"
-                                                text_color: metricLabelColor
+                                                text_color: metricLabelTextColor
+                                                md_bg_color: metricLabelBackground
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
                                             spacing: 20
                                             padding: 10
+                                            md_bg_color: metricContainerBackground
+
 
                                             MDBoxLayout:
 
@@ -295,21 +323,25 @@ MDBoxLayout:
                                     # Container for Access Complexity Metric
                                     MDBoxLayout:
                                         orientation: 'vertical'
+                                        padding: containerPadding
 
                                         MDBoxLayout:
-                                            size_hint_y: 0.4
+                                            size_hint_y: 0.3
 
                                             MDLabel:
                                                 halign: 'center'
                                                 markup: True
                                                 text: '[b]Access Complexity Metric[/b]'
                                                 theme_text_color: "Custom"
-                                                text_color: metricLabelColor
+                                                text_color: metricLabelTextColor
+                                                md_bg_color: metricLabelBackground
+
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
                                             spacing: 20
                                             padding: 10
+                                            md_bg_color: metricContainerBackground
 
 
                                             MDBoxLayout:
@@ -344,21 +376,24 @@ MDBoxLayout:
                                     # Container for Authentication Metrics
                                     MDBoxLayout:
                                         orientation: 'vertical'
+                                        padding: containerPadding
 
                                         MDBoxLayout:
-                                            size_hint_y: 0.4
+                                            size_hint_y: 0.3
 
                                             MDLabel:
                                                 halign: 'center'
                                                 markup: True
                                                 text: '[b]Authentication Metric[/b]'
                                                 theme_text_color: "Custom"
-                                                text_color: metricLabelColor
+                                                text_color: metricLabelTextColor
+                                                md_bg_color: metricLabelBackground
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
                                             spacing: 20
                                             padding: 10
+                                            md_bg_color: metricContainerBackground
 
 
                                             MDBoxLayout:
@@ -391,16 +426,8 @@ MDBoxLayout:
                             # Right Box for Impact Metrics
                             MDBoxLayout:
                                 orientation: 'vertical'
+                                padding: 15
 
-                                # Label
-                                MDBoxLayout:
-                                    size_hint_y: 0.25
-                                    md_bg_color: orange
-
-                                    MDLabel:
-                                        halign: 'center'
-                                        text: 'Impact Metrics'
-                                
                                 # Metrics
                                 MDBoxLayout:
                                     orientation: 'vertical'
@@ -408,21 +435,24 @@ MDBoxLayout:
                                    # Container for Confidentiality Impact Metrics
                                     MDBoxLayout:
                                         orientation: 'vertical'
+                                        padding: containerPadding
                                         
                                         MDBoxLayout:
-                                            size_hint_y: 0.4
+                                            size_hint_y: 0.3
 
                                             MDLabel:
                                                 halign: 'center'
                                                 markup: True
                                                 text: '[b]Confidentiality Impact Metric[/b]'
                                                 theme_text_color: "Custom"
-                                                text_color: metricLabelColor
+                                                text_color: metricLabelTextColor
+                                                md_bg_color: metricLabelBackground
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
                                             spacing: 20
                                             padding: 10
+                                            md_bg_color: metricContainerBackground
 
                                             MDBoxLayout:
 
@@ -455,21 +485,24 @@ MDBoxLayout:
                                     # Container for Integrity Impact Metric
                                     MDBoxLayout:
                                         orientation: 'vertical'
+                                        padding: containerPadding
 
                                         MDBoxLayout:
-                                            size_hint_y: 0.4
+                                            size_hint_y: 0.3
 
                                             MDLabel:
                                                 halign: 'center'
                                                 markup: True
                                                 text: '[b]Integrity Impact  Metric[/b]'
                                                 theme_text_color: "Custom"
-                                                text_color: metricLabelColor
+                                                text_color: metricLabelTextColor
+                                                md_bg_color: metricLabelBackground
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
                                             spacing: 20
                                             padding: 10
+                                            md_bg_color: metricContainerBackground
 
 
                                             MDBoxLayout:
@@ -506,20 +539,23 @@ MDBoxLayout:
                                     # Container for Availability Impact Metric
                                     MDBoxLayout:
                                         orientation: 'vertical'
+                                        padding: containerPadding
 
                                         MDBoxLayout:
-                                            size_hint_y: 0.4
+                                            size_hint_y: 0.25
                                             MDLabel:
                                                 halign: 'center'
                                                 markup: True
                                                 text: '[b]Availability Impact Metric[b]'
                                                 theme_text_color: "Custom"
-                                                text_color: metricLabelColor
+                                                text_color: metricLabelTextColor
+                                                md_bg_color: metricLabelBackground
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
                                             spacing: 20
                                             padding: 10
+                                            md_bg_color: metricContainerBackground
 
                                             MDBoxLayout:
 
@@ -551,10 +587,13 @@ MDBoxLayout:
 
                         # Vector Display Portion
                         MDBoxLayout:
-                            md_bg_color: lightGray
                             size_hint_y: 0.15
 
                             MDLabel:
                                 id: calcVector
                                 halign: 'center'
-                                text: 'AV:L/AC:H/Au:M/C:N/I:N/A:N'
+                                markup: True
+                                font_size: 25
+                                theme_text_color: "Custom"
+                                text_color: lightBlue
+                                text: 'CVSS Vector: AV:L/AC:H/Au:M/C:N/I:N/A:N'

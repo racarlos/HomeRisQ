@@ -112,7 +112,7 @@ def startScan(scanName):
 		createTaskResponse =  gmp.create_task(
 			name=str(scanName),
 			config_id= emptyScanConfigID,
-			target_id=targetID,c
+			target_id=targetID,
 			scanner_id=openVasScannerID,
 			preferences={
 				"max_checks": 8                         # 8 Concurrent Threads Running

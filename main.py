@@ -56,7 +56,7 @@ hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
 
 # Calculator Vectors
-calcRisk = 0
+calcRisk = 0.0
 calcVector = [['AV','L'],['AC', 'H'],['Au', 'M'],['C', 'N'],['I', 'N'],['A','N']]
 
 
@@ -245,8 +245,8 @@ class MainApp(MDApp):
 		global calcRisk
 
 		calcVector[0] = ['AV',param]
-		calcRisk = str(getVulnerabilityRisk(calcVector,100))
-		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
+		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -256,8 +256,9 @@ class MainApp(MDApp):
 		global calcRisk
 
 		calcVector[1] = ['AC',param]
-		calcRisk = str(getVulnerabilityRisk(calcVector,100))
-		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
+		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -267,8 +268,9 @@ class MainApp(MDApp):
 		global calcRisk
 
 		calcVector[2] = ['Au',param]
-		calcRisk = str(getVulnerabilityRisk(calcVector,100))
-		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
+		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -278,8 +280,9 @@ class MainApp(MDApp):
 		global calcRisk
 
 		calcVector[3] = ['C',param]
-		calcRisk = str(getVulnerabilityRisk(calcVector,100))
-		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
+		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -289,8 +292,9 @@ class MainApp(MDApp):
 		global calcRisk
 
 		calcVector[4] = ['I',param]
-		calcRisk = str(getVulnerabilityRisk(calcVector,100))
-		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
+		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -300,8 +304,9 @@ class MainApp(MDApp):
 		global calcRisk
 
 		calcVector[5] = ['A',param]
-		calcRisk = str(getVulnerabilityRisk(calcVector,100))
-		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
+		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
