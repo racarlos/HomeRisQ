@@ -55,6 +55,10 @@ hasGeneratedEntries = False
 hasGeneratedReport = False
 Window.size = (1280,720)							# Set Window size to 1280x720
 
+# Calculator Vectors
+calcRisk = 0
+calcVector = [['AV','L'],['AC', 'H'],['Au', 'M'],['C', 'N'],['I', 'N'],['A','N']]
+
 
 # Class for content of safe Hosts
 class SafePanel(MDBoxLayout):
@@ -160,6 +164,8 @@ class HistoryEntry(MDBoxLayout):
 # Main Application Class
 class MainApp(MDApp):
 
+	#calcData = DictProperty({'calcRisk':calcRisk, calcVector: 'calcVector'})
+
 	# Builder Method
 	def build(self):
 
@@ -233,6 +239,74 @@ class MainApp(MDApp):
 
 		# Display Report ID on a label
 		self.root.ids.labelContainer.add_widget(reportLabel)
+
+	def setAccessVector(self, param):
+		global calcVector
+		global calcRisk
+
+		calcVector[0] = ['AV',param]
+		calcRisk = str(getVulnerabilityRisk(calcVector,100))
+		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+
+		self.root.ids.calcVector.text = vectorString
+		self.root.ids.calcRisk.text = calcRisk
+
+	def setAccessComplexity(self, param):
+		global calcVector
+		global calcRisk
+
+		calcVector[1] = ['AC',param]
+		calcRisk = str(getVulnerabilityRisk(calcVector,100))
+		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+
+		self.root.ids.calcVector.text = vectorString
+		self.root.ids.calcRisk.text = calcRisk
+	
+	def setAuthentication(self, param):
+		global calcVector
+		global calcRisk
+
+		calcVector[2] = ['Au',param]
+		calcRisk = str(getVulnerabilityRisk(calcVector,100))
+		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+
+		self.root.ids.calcVector.text = vectorString
+		self.root.ids.calcRisk.text = calcRisk
+
+	def setConfidentialityImpact(self,param):
+		global calcVector
+		global calcRisk
+
+		calcVector[3] = ['C',param]
+		calcRisk = str(getVulnerabilityRisk(calcVector,100))
+		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+
+		self.root.ids.calcVector.text = vectorString
+		self.root.ids.calcRisk.text = calcRisk
+
+	def setIntegrityImpact(self,param):
+		global calcVector
+		global calcRisk
+
+		calcVector[4] = ['I',param]
+		calcRisk = str(getVulnerabilityRisk(calcVector,100))
+		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+
+		self.root.ids.calcVector.text = vectorString
+		self.root.ids.calcRisk.text = calcRisk
+
+	def setAvailabilityImpact(self,param):
+		global calcVector
+		global calcRisk
+
+		calcVector[5] = ['A',param]
+		calcRisk = str(getVulnerabilityRisk(calcVector,100))
+		vectorString = convertVector(calcVector)				# Convert vectorList to vectorString
+
+		self.root.ids.calcVector.text = vectorString
+		self.root.ids.calcRisk.text = calcRisk
+
+
 
 # Run the App
 MainApp().run()

@@ -19,6 +19,8 @@
 #:set supportTextHeight 0.20
 #:set buttonSizeHint (0.7,0.7)
 #:set metricButtonColor get_color_from_hex("#718089")
+#:set metricLabelColor get_color_from_hex("#2b96d4")
+
 
 
 # Load other KV Files
@@ -87,7 +89,8 @@ MDBoxLayout:
             ScreenManager:
                 id: screenManager
 
-                # Screen for Dashboard
+
+                # Screen for Dashboard              ===============================================
                 MDScreen:
                     name: "dashboardScreen"
                     md_bg_color: black
@@ -117,7 +120,7 @@ MDBoxLayout:
                                     theme_text_color: 'Custom'
                                     text_color: orange
 
-                # Screen for Scan
+                # Screen for Scan               ================================================
                 MDScreen:
                     id: scanScreen
                     name: "scanScreen"
@@ -179,7 +182,7 @@ MDBoxLayout:
                                 pos_hint: {'center_x': 0.5}
                                 size_hint_x: 0.7
 
-                # Screen for History
+                # Screen for History             ================================================
                 MDScreen:
                     name: "historyScreen"
                     md_bg_color: black
@@ -199,7 +202,7 @@ MDBoxLayout:
                             spacing: 30
                             
 
-                # Screen for CVE Risk Calculator 
+                # Screen for CVE Risk Calculator ================================================
                 MDScreen:
                     name: "calculatorScreen"
                     md_bg_color: black
@@ -207,14 +210,15 @@ MDBoxLayout:
                     MDBoxLayout:
                         orientation:'vertical'
 
-                        # Metric Display Portion
+                        # Vector Display Portion
                         MDBoxLayout:
                             md_bg_color: darkGray
                             size_hint_y: 0.15
 
                             MDLabel:
+                                id: calcRisk
                                 halign: 'center'
-                                text: 'Vector Here'
+                                text: '0'
 
 
                         # Metric Selection Portion
@@ -245,9 +249,13 @@ MDBoxLayout:
                                         
                                         MDBoxLayout:
                                             size_hint_y: 0.4
+
                                             MDLabel:
                                                 halign: 'center'
-                                                text: 'Access Vector Metric'
+                                                markup: True
+                                                text: '[b]Access Vector Metric[/b]'
+                                                theme_text_color: "Custom"
+                                                text_color: metricLabelColor
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -261,6 +269,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAccessVector('L')
+
 
                                             MDBoxLayout:
 
@@ -269,6 +279,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAccessVector('A')
+
 
                                             MDBoxLayout:
 
@@ -277,6 +289,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAccessVector('N')
+
                                     
                                     # Container for Access Complexity Metric
                                     MDBoxLayout:
@@ -284,9 +298,13 @@ MDBoxLayout:
 
                                         MDBoxLayout:
                                             size_hint_y: 0.4
+
                                             MDLabel:
                                                 halign: 'center'
-                                                text: 'Access Complexity Metric'
+                                                markup: True
+                                                text: '[b]Access Complexity Metric[/b]'
+                                                theme_text_color: "Custom"
+                                                text_color: metricLabelColor
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -301,6 +319,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAccessComplexity('H')
+
 
                                             MDBoxLayout:
 
@@ -309,6 +329,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAccessComplexity('M')
+
 
                                             MDBoxLayout:
                                                 Button:
@@ -316,6 +338,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAccessComplexity('L')
+
 
                                     # Container for Authentication Metrics
                                     MDBoxLayout:
@@ -323,9 +347,13 @@ MDBoxLayout:
 
                                         MDBoxLayout:
                                             size_hint_y: 0.4
+
                                             MDLabel:
                                                 halign: 'center'
-                                                text: 'Authentication Metric'
+                                                markup: True
+                                                text: '[b]Authentication Metric[/b]'
+                                                theme_text_color: "Custom"
+                                                text_color: metricLabelColor
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -340,6 +368,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAuthentication('M')
 
                                             MDBoxLayout:
 
@@ -348,6 +377,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAuthentication('S')
 
                                             MDBoxLayout:
 
@@ -356,7 +386,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
-                                        
+                                                    on_release: app.setAuthentication('N')
 
                             # Right Box for Impact Metrics
                             MDBoxLayout:
@@ -381,9 +411,13 @@ MDBoxLayout:
                                         
                                         MDBoxLayout:
                                             size_hint_y: 0.4
+
                                             MDLabel:
                                                 halign: 'center'
-                                                text: 'Confidentiality Impact Metric'
+                                                markup: True
+                                                text: '[b]Confidentiality Impact Metric[/b]'
+                                                theme_text_color: "Custom"
+                                                text_color: metricLabelColor
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -397,6 +431,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setConfidentialityImpact('N')
 
                                             MDBoxLayout:
 
@@ -405,6 +440,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setConfidentialityImpact('P')
 
                                             MDBoxLayout:
 
@@ -413,16 +449,22 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
-                                    
+                                                    on_release: app.setConfidentialityImpact('C')
+
+
                                     # Container for Integrity Impact Metric
                                     MDBoxLayout:
                                         orientation: 'vertical'
 
                                         MDBoxLayout:
                                             size_hint_y: 0.4
+
                                             MDLabel:
                                                 halign: 'center'
-                                                text: 'Integrity Impact  Metric'
+                                                markup: True
+                                                text: '[b]Integrity Impact  Metric[/b]'
+                                                theme_text_color: "Custom"
+                                                text_color: metricLabelColor
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -437,6 +479,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setIntegrityImpact('N')
+
 
                                             MDBoxLayout:
 
@@ -445,6 +489,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setIntegrityImpact('P')
+
 
                                             MDBoxLayout:
 
@@ -453,6 +499,8 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setIntegrityImpact('C')
+
 
 
                                     # Container for Availability Impact Metric
@@ -463,7 +511,10 @@ MDBoxLayout:
                                             size_hint_y: 0.4
                                             MDLabel:
                                                 halign: 'center'
-                                                text: 'Authentication Metric'
+                                                markup: True
+                                                text: '[b]Availability Impact Metric[b]'
+                                                theme_text_color: "Custom"
+                                                text_color: metricLabelColor
 
                                         MDBoxLayout:
                                             size_hint_y: 0.6
@@ -477,7 +528,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
-
+                                                    on_release: app.setAvailabilityImpact('N')
 
                                             MDBoxLayout:
 
@@ -486,7 +537,7 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
-
+                                                    on_release: app.setAvailabilityImpact('P')
 
                                             MDBoxLayout:
 
@@ -495,13 +546,15 @@ MDBoxLayout:
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
+                                                    on_release: app.setAvailabilityImpact('C')
 
 
-                        # Risk Display Portion
+                        # Vector Display Portion
                         MDBoxLayout:
                             md_bg_color: lightGray
                             size_hint_y: 0.15
 
                             MDLabel:
+                                id: calcVector
                                 halign: 'center'
-                                text: 'CVE Risk Score Here'
+                                text: 'AV:L/AC:H/Au:M/C:N/I:N/A:N'

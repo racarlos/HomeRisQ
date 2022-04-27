@@ -12,6 +12,21 @@ def splitVector(vector):
 
     return vectorList
 
+def convertVector(vectorList):
+
+    vectorString = ""
+
+    for vector in vectorList:
+        
+        metric = f"{vector[0]}:{vector[1]}/"
+        vectorString += metric
+    
+    vectorString = vectorString[:-1]
+
+    return vectorString
+
+
+
 def transformVector(vector):
     vectorList = splitVector(vector)
     newVector = ""
@@ -135,7 +150,13 @@ def getImpact(vectorList):
 # Given a CVSS Vector and QOD, calculate and return the CVE's risk factor
 def getVulnerabilityRisk(vector,qod):
 
-    vectorList = splitVector(vector) 
+    if isinstance(vector,list):
+        vectorList = vector
+    elif isinstance(vector, str):
+        vectorList = splitVector(vector) 
+    else: 
+        raise Exception('getVulnerabilityRisk() vector is neither string nor list')
+
     probability = getProbability(vectorList,qod)
     impact = getImpact(vectorList)
 
