@@ -248,6 +248,20 @@ class MainApp(MDApp):
 		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
 		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
 
+		if(param == 'L'):
+			self.root.ids.avl.color = "#F7C14C"
+			self.root.ids.ava.color = "#FFFFFF"
+			self.root.ids.avn.color = "#FFFFFF"
+		elif(param == 'A'):
+			self.root.ids.avl.color = "#FFFFFF"
+			self.root.ids.ava.color = "#F7C14C"
+			self.root.ids.avn.color = "#FFFFFF"
+		elif(param == 'N'):
+			self.root.ids.avl.color = "#FFFFFF"
+			self.root.ids.ava.color = "#FFFFFF"
+			self.root.ids.avn.color = "#F7C14C"
+		
+
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
 
@@ -258,6 +272,19 @@ class MainApp(MDApp):
 		calcVector[1] = ['AC',param]
 		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
 		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
+		if(param == 'H'):
+			self.root.ids.ach.color = "#F7C14C"
+			self.root.ids.acm.color = "#FFFFFF"
+			self.root.ids.acl.color = "#FFFFFF"
+		elif(param == 'M'):
+			self.root.ids.ach.color = "#FFFFFF"
+			self.root.ids.acm.color = "#F7C14C"
+			self.root.ids.acl.color = "#FFFFFF"
+		elif(param == 'L'):
+			self.root.ids.ach.color = "#FFFFFF"
+			self.root.ids.acm.color = "#FFFFFF"
+			self.root.ids.acl.color = "#F7C14C"
 
 
 		self.root.ids.calcVector.text = vectorString
@@ -271,6 +298,18 @@ class MainApp(MDApp):
 		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
 		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
 
+		if(param == 'M'):
+			self.root.ids.aum.color = "#F7C14C"
+			self.root.ids.aus.color = "#FFFFFF"
+			self.root.ids.aun.color = "#FFFFFF"
+		elif(param == 'S'):
+			self.root.ids.aum.color = "#FFFFFF"
+			self.root.ids.aus.color = "#F7C14C"
+			self.root.ids.aun.color = "#FFFFFF"
+		elif(param == 'N'):
+			self.root.ids.aum.color = "#FFFFFF"
+			self.root.ids.aus.color = "#FFFFFF"
+			self.root.ids.aun.color = "#F7C14C"
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -282,6 +321,19 @@ class MainApp(MDApp):
 		calcVector[3] = ['C',param]
 		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
 		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
+
+		if(param == 'N'):
+			self.root.ids.cin.color = "#F7C14C"
+			self.root.ids.cip.color = "#FFFFFF"
+			self.root.ids.cic.color = "#FFFFFF"
+		elif(param == 'P'):
+			self.root.ids.cin.color = "#FFFFFF"
+			self.root.ids.cip.color = "#F7C14C"
+			self.root.ids.cic.color = "#FFFFFF"
+		elif(param == 'C'):
+			self.root.ids.cin.color = "#FFFFFF"
+			self.root.ids.cip.color = "#FFFFFF"
+			self.root.ids.cic.color = "#F7C14C"
 
 
 		self.root.ids.calcVector.text = vectorString
@@ -295,6 +347,18 @@ class MainApp(MDApp):
 		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'
 		vectorString = 'CVSS Vector: ' + convertVector(calcVector)				# Convert vectorList to vectorString
 
+		if(param == 'N'):
+			self.root.ids.iin.color = "#F7C14C"
+			self.root.ids.iip.color = "#FFFFFF"
+			self.root.ids.iic.color = "#FFFFFF"
+		elif(param == 'P'):
+			self.root.ids.iin.color = "#FFFFFF"
+			self.root.ids.iip.color = "#F7C14C"
+			self.root.ids.iic.color = "#FFFFFF"
+		elif(param == 'C'):
+			self.root.ids.iin.color = "#FFFFFF"
+			self.root.ids.iip.color = "#FFFFFF"
+			self.root.ids.iic.color = "#F7C14C"
 
 		self.root.ids.calcVector.text = vectorString
 		self.root.ids.calcRisk.text = calcRisk
@@ -302,6 +366,19 @@ class MainApp(MDApp):
 	def setAvailabilityImpact(self,param):
 		global calcVector
 		global calcRisk
+
+		if(param == 'N'):
+			self.root.ids.ain.color = "#F7C14C"
+			self.root.ids.aip.color = "#FFFFFF"
+			self.root.ids.aic.color = "#FFFFFF"
+		elif(param == 'P'):
+			self.root.ids.ain.color = "#FFFFFF"
+			self.root.ids.aip.color = "#F7C14C"
+			self.root.ids.aic.color = "#FFFFFF"
+		elif(param == 'C'):
+			self.root.ids.ain.color = "#FFFFFF"
+			self.root.ids.aip.color = "#FFFFFF"
+			self.root.ids.aic.color = "#F7C14C"
 
 		calcVector[5] = ['A',param]
 		calcRisk = '[b]Risk Score: ' + str(getVulnerabilityRisk(calcVector,100)) + '[/b]'

@@ -321,19 +321,23 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Local"
+                                                    id: avl
+                                                    color: orange
+                                                    markup: True
+                                                    text: "[b]Local[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
-                                                    on_release: app.setAccessVector('L')
+                                                    on_release: 
+                                                        app.setAccessVector('L')
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Adjacent Network"
+                                                    id: ava
+                                                    markup: True
+                                                    text: "[b]Adjacent Network[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -341,9 +345,10 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Network"
+                                                    id: avn
+                                                    markup: True
+                                                    text: "[b]Network[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -385,9 +390,11 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "High Complexity"
+                                                    id: ach
+                                                    color: orange
+                                                    markup: True
+                                                    text: "[b]High Complexity[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -395,9 +402,10 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Medium Complexity"
+                                                    id: acm
+                                                    markup: True
+                                                    text: "[b]Medium Complexity[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -406,7 +414,9 @@ MDBoxLayout:
 
                                             MDBoxLayout:
                                                 Button:
-                                                    text: "Low Complexity"
+                                                    id: acl
+                                                    markup: True
+                                                    text: "[b]Low Complexity[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -450,7 +460,10 @@ MDBoxLayout:
                                             MDBoxLayout:
 
                                                 Button:
-                                                    text: "Multiple"
+                                                    id: aum
+                                                    color: orange
+                                                    markup: True
+                                                    text: "[b]Multiple[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -459,7 +472,9 @@ MDBoxLayout:
                                             MDBoxLayout:
 
                                                 Button:
-                                                    text: "Single"
+                                                    id: aus
+                                                    markup: True
+                                                    text: "[b]Single[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -468,7 +483,9 @@ MDBoxLayout:
                                             MDBoxLayout:
 
                                                 Button:
-                                                    text: "None"
+                                                    id: aun
+                                                    markup: True
+                                                    text: "[b]None[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -495,7 +512,7 @@ MDBoxLayout:
                                             
                                             MDIcon:
                                                 size_hint_x: 0.40
-                                                icon: 'shield-account'
+                                                icon: 'database-lock'
                                                 halign: 'right'
                                                 theme_text_color: "Custom"
                                                 text_color: white
@@ -516,27 +533,31 @@ MDBoxLayout:
                                             md_bg_color: metricContainerBackground
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "None"
+                                                    id: cin
+                                                    color: orange
+                                                    markup: True
+                                                    text: "[b]None[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
                                                     on_release: app.setConfidentialityImpact('N')
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Partial"
+                                                    id: cip
+                                                    markup: True
+                                                    text: "[b]Partial[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
                                                     on_release: app.setConfidentialityImpact('P')
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Complete"
+                                                    id: cic
+                                                    markup: True
+                                                    text: "[b]Complete[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -555,7 +576,7 @@ MDBoxLayout:
                                             
                                             MDIcon:
                                                 size_hint_x: 0.40
-                                                icon: 'briefcase-check'
+                                                icon: 'database-check'
                                                 halign: 'right'
                                                 theme_text_color: "Custom"
                                                 text_color: white
@@ -577,9 +598,11 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "None"
+                                                    id: iin
+                                                    color: orange
+                                                    markup: True
+                                                    text: "[b]None[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -587,9 +610,10 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Partial"
+                                                    id: iip
+                                                    markup: True
+                                                    text: "[b]Partial[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -597,9 +621,10 @@ MDBoxLayout:
 
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Complete"
+                                                    id: iic
+                                                    markup: True
+                                                    text: "[b]Complete[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
@@ -640,27 +665,31 @@ MDBoxLayout:
                                             md_bg_color: metricContainerBackground
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "None"
+                                                    id: ain
+                                                    color: orange
+                                                    markup: True
+                                                    text: "[b]None[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
                                                     on_release: app.setAvailabilityImpact('N')
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Partial"
+                                                    id: aip
+                                                    markup: True
+                                                    text: "[b]Partial[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
                                                     on_release: app.setAvailabilityImpact('P')
 
                                             MDBoxLayout:
-
                                                 Button:
-                                                    text: "Complete"
+                                                    id: aic
+                                                    markup: True
+                                                    text: "[b]Complete[/b]"
                                                     size_hint: buttonSizeHint
                                                     pos_hint: {'center_x': 0.5,'center_y': 0.5}
                                                     background_color: metricButtonColor
