@@ -365,10 +365,13 @@ def getMostVulnerableHost(consolidatedRiskPerHost):
 
     # In case the network is very safe
     if len(consolidatedRiskPerHost) == 0:
-        return None
+        return "None"
+
+    print(consolidatedRiskPerHost)
 
     for hostData in consolidatedRiskPerHost:
         if hostData['consolidatedRisk'] > maxRisk:
+            maxRisk = hostData['consolidatedRisk']
             ipAddress = hostData['ipAddress']
 
     return ipAddress
@@ -449,10 +452,7 @@ def startCalculation(reportID):
     highRiskVulnCount = getHighRiskVulnCount(vulnList)
     mostVulnerableHost = getMostVulnerableHost(consolidatedRiskPerHost)
 
-    # print("++++++++++++++++")
-    # print(consolidatedRiskPerHost)
-    # print("++++++++++++++++")
-
+    # Data to be passed for UI dashboard
     data = {
         'hostCount': len(hostNames),
         'totalVulnerabilities': totalVulnerabilities,

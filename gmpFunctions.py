@@ -115,7 +115,7 @@ def startScan(scanName):
 			target_id=targetID,
 			scanner_id=openVasScannerID,
 			preferences={
-				"max_checks": 8                         # 8 Concurrent Threads Running
+				"max_checks": 4                         # 8 Concurrent Threads Running
 			}
 		)
 		taskID = json.dumps(XMLtoJSON(createTaskResponse)['create_task_response']['@id'])[1:-1]
@@ -128,5 +128,5 @@ def startScan(scanName):
 		print(f"Task ID: {taskID}")
 		print(f"Report ID: {reportId}")
 
-		answerString = f"Scan: [b]{scanName}[/b] will start shortly. Report ID: [b]{reportId}[/b]"
+		answerString = f"Scan: [b]{scanName}[/b] will start shortly. [b]{len(addresses)}[/b] hosts have been found.\n Report ID: [b]{reportId}[/b]" 
 		return answerString

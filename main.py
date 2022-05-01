@@ -189,6 +189,13 @@ class MainApp(MDApp):
 		reportsListJSON = getReports()					# get new entries 
 
 		for report in reportsListJSON:
+			
+			progress = ''
+
+			if int(report['report']['task']['progress']) == 100:
+				progress = 'Finished'
+			else :
+				progress = int(report['report']['task']['progress'])
 
 			entry = {
 				'id': report['report']['@id'],
@@ -196,7 +203,7 @@ class MainApp(MDApp):
 				'date': report['report']['scan_start'],
 				'hostCount': int(report['report']['hosts']['count']),
 				'vulnCount': int(report['report']['vulns']['count']),
-				'progress' : int(report['report']['task']['progress']),
+				'progress' : progress,
 				'severity' : float(report['report']['severity']['full']),
 			}
 			if entry['name'] != 'Discovery': 
