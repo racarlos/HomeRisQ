@@ -1,4 +1,5 @@
 import json,xmltodict
+from responses import target
 import re
 import os
 
@@ -96,6 +97,7 @@ def startScan(scanName):
 	addresses = os.popen(f"sudo nmap -sn {networkAddress}").read()      # run nmap to get list of hosts
 	addresses = re.findall(addressPattern,addresses)                    # get all valid IP addrs
 	addresses = list(dict.fromkeys(addresses))                          # remove duplicates
+	addresses.remove('192.168.1.1')
 
 	with Gmp(connection) as gmp:
 		gmp.authenticate(username,password)
@@ -111,7 +113,7 @@ def startScan(scanName):
 		# Create Task with indicated target and configuration
 		createTaskResponse =  gmp.create_task(
 			name=str(scanName),
-			config_id= emptyScanConfigID,
+			config_id= spScanConfigID,
 			target_id=targetID,
 			scanner_id=openVasScannerID,
 			preferences={
@@ -124,9 +126,10 @@ def startScan(scanName):
 		startTaskResponse = gmp.start_task(taskID)
 		reportId = json.dumps(XMLtoJSON(startTaskResponse)['start_task_response']['report_id'])[1:-1]
 		
-		print(f"Target ID: {targetID}")
-		print(f"Task ID: {taskID}")
-		print(f"Report ID: {reportId}")
+		print("==================================")
+		print(f"Targets: {addresses}")
+		print("==================================")
+
 
 		answerString = f"Scan: [b]{scanName}[/b] will start shortly. [b]{len(addresses)}[/b] hosts have been found.\n Report ID: [b]{reportId}[/b]" 
 		return answerString

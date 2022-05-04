@@ -1,21 +1,21 @@
 [
     {
-        "@id": "f6fdea87-0277-43f2-b30a-0004987d0f2f",
+        "@id": "ba4335e0-2c4c-44e1-9ba0-5f19ca699f04",
         "name": "CGI Scanning Consolidation",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:37:49Z",
+        "modification_time": "2022-05-04T14:53:41Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:37:49Z",
+        "creation_time": "2022-05-04T14:53:41Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "80/tcp",
+        "port": "9080/tcp",
         "nvt": {
             "@oid": "1.3.6.1.4.1.25623.1.0.111038",
             "type": "nvt",
@@ -50,25 +50,25 @@
             "value": "80",
             "type": null
         },
-        "description": "The Hostname/IP \"csp3.zte.com.cn\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://csp3.zte.com.cn/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards\n\nThe following directories were excluded from CGI scanning because the \"Regex pattern to exclude directories from CGI scanning\" setting of the NVT \"Global variable settings\" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: \"/(index\\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)\"\n\nhttp://csp3.zte.com.cn/css\nhttp://csp3.zte.com.cn/js\nhttp://csp3.zte.com.cn/skin/priorgreen/css",
+        "description": "The Hostname/IP \"192.168.1.102\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://192.168.1.102:9080/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "553f07e5-9f8b-413e-b313-60fa258ec285",
+        "@id": "5310906a-939a-4acc-b2f0-dc8b98690971",
         "name": "CGI Scanning Consolidation",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:28:58Z",
+        "modification_time": "2022-05-04T15:10:46Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:28:58Z",
+        "creation_time": "2022-05-04T15:10:46Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "5357/tcp",
         "nvt": {
@@ -105,27 +105,27 @@
             "value": "80",
             "type": null
         },
-        "description": "The Hostname/IP \"192.168.1.109\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://192.168.1.109:5357/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
+        "description": "The Hostname/IP \"192.168.1.107\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://192.168.1.107:5357/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "8d474a72-0185-4e68-8e12-d5bb4fbf3091",
+        "@id": "bc1c18ad-82f3-41a0-97da-bdc3dc6c6be6",
         "name": "CGI Scanning Consolidation",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:37:49Z",
+        "modification_time": "2022-05-04T15:10:46Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:37:49Z",
+        "creation_time": "2022-05-04T15:10:46Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
-        "port": "443/tcp",
+        "port": "2869/tcp",
         "nvt": {
             "@oid": "1.3.6.1.4.1.25623.1.0.111038",
             "type": "nvt",
@@ -160,91 +160,80 @@
             "value": "80",
             "type": null
         },
-        "description": "The Hostname/IP \"csp3.zte.com.cn\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttps://csp3.zte.com.cn/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards\n\nThe following directories were excluded from CGI scanning because the \"Regex pattern to exclude directories from CGI scanning\" setting of the NVT \"Global variable settings\" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: \"/(index\\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)\"\n\nhttps://csp3.zte.com.cn/css\nhttps://csp3.zte.com.cn/js\nhttps://csp3.zte.com.cn/skin/priorgreen/css",
+        "description": "The Hostname/IP \"192.168.1.107\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThis service seems to be NOT able to host PHP scripts.\n\nThis service seems to be NOT able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://192.168.1.107:2869/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "d4a53b69-5b04-4ddb-939a-5ebdf360cb96",
-        "name": "Cleartext Transmission of Sensitive Information via HTTP",
+        "@id": "75cf4b17-03cf-4283-ad3a-98c98a3d5344",
+        "name": "CGI Scanning Consolidation",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:37:54Z",
+        "modification_time": "2022-05-04T14:53:41Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:37:54Z",
+        "creation_time": "2022-05-04T14:53:41Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "80/tcp",
+        "port": "2870/tcp",
         "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.108440",
+            "@oid": "1.3.6.1.4.1.25623.1.0.111038",
             "type": "nvt",
-            "name": "Cleartext Transmission of Sensitive Information via HTTP",
+            "name": "CGI Scanning Consolidation",
             "family": "Web application abuses",
-            "cvss_base": "4.8",
+            "cvss_base": "0.0",
             "severities": {
-                "@score": "4.8",
+                "@score": "0.0",
                 "severity": {
                     "@type": "cvss_base_v2",
                     "origin": null,
-                    "date": "2018-04-16T13:31:23Z",
-                    "score": "4.8",
-                    "value": "AV:A/AC:L/Au:N/C:P/I:P/A:N"
+                    "date": "2015-09-14T05:00:00Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
                 }
             },
-            "tags": "cvss_base_vector=AV:A/AC:L/Au:N/C:P/I:P/A:N|summary=The host / application transmits sensitive information (username, passwords) in\n  cleartext via HTTP.|insight=|affected=Hosts / applications which doesn't enforce the transmission of sensitive data via an\n  encrypted SSL/TLS connection.|impact=An attacker could use this situation to compromise or eavesdrop on the\n  HTTP communication between the client and the server using a man-in-the-middle attack to get access to\n  sensitive data like usernames or passwords.|solution=Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.\n  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before\n  allowing to input sensitive data into the mentioned functions.|vuldetect=Evaluate previous collected information and check if the host / application is not\n  enforcing the transmission of sensitive data via an encrypted SSL/TLS connection.\n\n  The script is currently checking the following:\n\n  - HTTP Basic Authentication (Basic Auth)\n\n  - HTTP Forms (e.g. Login) with input field of type 'password'|solution_type=Workaround",
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The script consolidates various information for CGI scanning.\n\n  This information is based on the following scripts / settings:\n\n  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)\n\n  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)\n\n  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)\n\n  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)\n\n  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use\n\n  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and\n    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the\n    'Global variable settings' of the scan config in use\n\n  If you think any of this information is wrong please report it to the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
             "solution": {
-                "@type": "Workaround",
-                "#text": "Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.\n  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before\n  allowing to input sensitive data into the mentioned functions."
+                "@type": ""
             },
             "refs": {
-                "ref": [
-                    {
-                        "@type": "url",
-                        "@id": "https://www.owasp.org/index.php/Top_10_2013-A2-Broken_Authentication_and_Session_Management"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://cwe.mitre.org/data/definitions/319.html"
-                    }
-                ]
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
             }
         },
-        "scan_nvt_version": "2020-08-24T15:18:35Z",
-        "threat": "Medium",
-        "severity": "4.8",
+        "scan_nvt_version": "2021-06-30T05:18:54Z",
+        "threat": "Log",
+        "severity": "0.0",
         "qod": {
             "value": "80",
             "type": null
         },
-        "description": "The following input fields where identified (URL:input name):\n\nhttp://csp3.zte.com.cn/:Password",
-        "original_threat": "Medium",
-        "original_severity": "4.8"
+        "description": "The Hostname/IP \"192.168.1.102\" was used to access the remote host.\n\nGeneric web application scanning is disabled for this host via the \"Enable generic web application scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nRequests to this service are done via HTTP/1.1.\n\nThis service seems to be able to host PHP scripts.\n\nThis service seems to be able to host ASP scripts.\n\nThe User-Agent \"Mozilla/5.0 [en] (X11, U; OpenVAS-VT 21.4.4)\" was used to access the remote host.\n\nHistoric /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the \"Add historic /scripts and /cgi-bin to directories for CGI scanning\" option within the \"Global variable settings\" of the scan config in use.\n\nThe following directories were used for CGI scanning:\n\nhttp://192.168.1.102:2870/\n\nWhile this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",
+        "original_threat": "Log",
+        "original_severity": "0"
     },
     {
-        "@id": "a45c3c8d-a78e-4d0f-b6b1-74a6740898a7",
+        "@id": "90f5db43-72ad-4041-bd59-a4d073d064cc",
         "name": "CPE Inventory",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:35:57Z",
+        "modification_time": "2022-05-04T15:21:25Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:35:57Z",
+        "creation_time": "2022-05-04T15:21:25Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "general/CPE-T",
         "nvt": {
@@ -281,25 +270,25 @@
             "value": "80",
             "type": null
         },
-        "description": "192.168.1.109|cpe:/o:microsoft:windows_7:-:sp1",
+        "description": "192.168.1.107|cpe:/o:microsoft:windows_7:-:sp1",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "4ffafb83-86a0-46f6-9629-656da1272ff0",
+        "@id": "b0ce72a7-79d8-40c3-8352-41f7ae7ad088",
         "name": "CPE Inventory",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:54:18Z",
+        "modification_time": "2022-05-04T14:51:27Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:54:18Z",
+        "creation_time": "2022-05-04T14:51:27Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "89b1f971-400d-4b31-8124-aefee839f81d"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.245",
+            "#text": "192.168.1.245"
         },
         "port": "general/CPE-T",
         "nvt": {
@@ -336,25 +325,25 @@
             "value": "80",
             "type": null
         },
-        "description": "192.168.1.1|cpe:/o:linux:kernel",
+        "description": "192.168.1.245|cpe:/o:linux:kernel",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "ae16242c-0042-41d1-8600-3f1c8c690055",
+        "@id": "d163cfa5-4c8e-4cd5-a23a-6b0388af0d47",
         "name": "CPE Inventory",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:18:02Z",
+        "modification_time": "2022-05-04T14:58:50Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:18:02Z",
+        "creation_time": "2022-05-04T14:58:50Z",
         "host": {
             "asset": {
-                "@asset_id": "6d041c50-0433-4b2c-84b5-12a8a593ab63"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "192.168.1.110",
-            "#text": "192.168.1.110"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
         "port": "general/CPE-T",
         "nvt": {
@@ -391,25 +380,25 @@
             "value": "80",
             "type": null
         },
-        "description": "192.168.1.110|cpe:/o:linux:kernel",
+        "description": "192.168.1.102|cpe:/o:linux:kernel",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "10fede7d-c012-4f6b-9036-88e3ea2614e8",
+        "@id": "30557434-7b1c-4363-b994-6ed4e5a37c3c",
         "name": "DCE/RPC and MSRPC Services Enumeration",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:22:50Z",
+        "modification_time": "2022-05-04T14:54:57Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:22:50Z",
+        "creation_time": "2022-05-04T14:54:57Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "135/tcp",
         "nvt": {
@@ -446,20 +435,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "a92fb2c6-5337-4cc8-bd82-cf41a71259bf",
+        "@id": "ed17ddb3-7cd5-4144-bbc0-f4c713b10cdc",
         "name": "DCE/RPC and MSRPC Services Enumeration Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:29:18Z",
+        "modification_time": "2022-05-04T15:16:48Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:29:18Z",
+        "creation_time": "2022-05-04T15:16:48Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "135/tcp",
         "nvt": {
@@ -491,25 +480,74 @@
             "value": "80",
             "type": null
         },
-        "description": "Here is the list of DCE/RPC or MSRPC services running on this host via the TCP protocol:\n\nPort: 49152/tcp\n\n     UUID: d95afe70-a6d5-4259-822e-2c84da1ddb0d, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49152]\n\nPort: 49153/tcp\n\n     UUID: 12345778-1234-abcd-ef00-0123456789ac, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49153]\n     Named pipe : lsass\n     Win32 service or process : lsass.exe\n     Description : SAM access\n\n     UUID: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49153]\n     Annotation: KeyIso\n\nPort: 49154/tcp\n\n     UUID: 06bba54a-be05-49f9-b0a0-30f790261023, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49154]\n     Annotation: Security Center\n\n     UUID: 30adc50c-5cbc-46ce-9a0e-91914789e23c, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49154]\n     Annotation: NRP server endpoint\n\n     UUID: 3c4728c5-f0ab-448b-bda1-6ce01eb0a6d5, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49154]\n     Annotation: DHCP Client LRPC Endpoint\n\n     UUID: 3c4728c5-f0ab-448b-bda1-6ce01eb0a6d6, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49154]\n     Annotation: DHCPv6 Client LRPC Endpoint\n\n     UUID: f6beaff7-1e19-4fbb-9f8f-b89e2018337c, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49154]\n     Annotation: Event log TCPIP\n\nPort: 49155/tcp\n\n     UUID: 201ef99a-7fa0-444c-9399-19ba84f12a1a, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: AppInfo\n\n     UUID: 2eb08e3e-639f-4fba-97b1-14f878961076, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n\n     UUID: 552d076a-cb29-4e44-8b6a-d15e59e2c0af, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: IP Transition Configuration endpoint\n\n     UUID: 58e604e8-9adb-4d2e-a464-3b0683fb1480, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: AppInfo\n\n     UUID: 5f54ce7d-5b79-4175-8584-cb65313a0e98, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: AppInfo\n\n     UUID: 86d35949-83c9-4044-b424-db363231fd0c, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n\n     UUID: 98716d03-89ac-44c7-bb8c-285824e51c4a, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: XactSrv service\n\n     UUID: c9ac6db5-82b7-4e55-ae8a-e464ed7b4277, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: Impl friendly name\n\n     UUID: fd7a0523-dc70-43dd-9b2e-9c5ed48225b1, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49155]\n     Annotation: AppInfo\n\nPort: 49156/tcp\n\n     UUID: 367abb81-9844-35f1-ad32-98f038001003, version 2\n     Endpoint: ncacn_ip_tcp:192.168.1.109[49156]\n\nNote: DCE/RPC or MSRPC services running on this host locally were identified. Reporting this list is not enabled by default due to the possible large size of this list. See the script preferences to enable this reporting.",
+        "description": "Here is the list of DCE/RPC or MSRPC services running on this host via the TCP protocol:\n\nPort: 49152/tcp\n\n     UUID: d95afe70-a6d5-4259-822e-2c84da1ddb0d, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49152]\n\nPort: 49153/tcp\n\n     UUID: 06bba54a-be05-49f9-b0a0-30f790261023, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49153]\n     Annotation: Security Center\n\n     UUID: 30adc50c-5cbc-46ce-9a0e-91914789e23c, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49153]\n     Annotation: NRP server endpoint\n\n     UUID: 3c4728c5-f0ab-448b-bda1-6ce01eb0a6d5, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49153]\n     Annotation: DHCP Client LRPC Endpoint\n\n     UUID: 3c4728c5-f0ab-448b-bda1-6ce01eb0a6d6, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49153]\n     Annotation: DHCPv6 Client LRPC Endpoint\n\n     UUID: f6beaff7-1e19-4fbb-9f8f-b89e2018337c, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49153]\n     Annotation: Event log TCPIP\n\nPort: 49154/tcp\n\n     UUID: 552d076a-cb29-4e44-8b6a-d15e59e2c0af, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49154]\n     Annotation: IP Transition Configuration endpoint\n\n     UUID: 86d35949-83c9-4044-b424-db363231fd0c, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49154]\n\n     UUID: 98716d03-89ac-44c7-bb8c-285824e51c4a, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49154]\n     Annotation: XactSrv service\n\nPort: 49155/tcp\n\n     UUID: 367abb81-9844-35f1-ad32-98f038001003, version 2\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49155]\n\nPort: 49156/tcp\n\n     UUID: 12345778-1234-abcd-ef00-0123456789ac, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49156]\n     Named pipe : lsass\n     Win32 service or process : lsass.exe\n     Description : SAM access\n\n     UUID: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86, version 1\n     Endpoint: ncacn_ip_tcp:192.168.1.107[49156]\n     Annotation: KeyIso\n\nNote: DCE/RPC or MSRPC services running on this host locally were identified. Reporting this list is not enabled by default due to the possible large size of this list. See the script preferences to enable this reporting.",
         "original_threat": "Medium",
         "original_severity": "5"
     },
     {
-        "@id": "4ac0ba3c-ada7-44b2-bff2-a230a86aae79",
+        "@id": "1461ce65-ab2c-4338-8640-b2b7e4dc39b7",
+        "name": "Hidden WWW server name",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T15:08:15Z",
+        "comment": null,
+        "creation_time": "2022-05-04T15:08:15Z",
+        "host": {
+            "asset": {
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
+            },
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
+        },
+        "port": "2869/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.11239",
+            "type": "nvt",
+            "name": "Hidden WWW server name",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2005-11-03T13:08:04Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=It seems that the remote web server tries to hide its\n  version or name.\n\n  However, using a special crafted request, the scanner was able to discover it.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-18T13:55:00Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "70",
+            "type": null
+        },
+        "description": "It seems that the remote server tries to hide its version\nor name.\nHowever, using a special crafted request, the scanner was able\nto determine that it is running :\n Microsoft-HTTPAPI/2.0\n\nSolution: Fix your configuration.",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "e002b45d-ce27-4924-b733-c6a47a3668a6",
         "name": "Hostname Determination Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:35:57Z",
+        "modification_time": "2022-05-04T14:58:50Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:35:57Z",
+        "creation_time": "2022-05-04T14:58:50Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
         "port": "general/tcp",
         "nvt": {
@@ -540,25 +578,25 @@
             "value": "80",
             "type": null
         },
-        "description": "Hostname determination for IP 192.168.1.109:\n\nHostname|Source\n192.168.1.109|Reverse-DNS",
+        "description": "Hostname determination for IP 192.168.1.102:\n\nHostname|Source\n192.168.1.102|Reverse-DNS",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "70428333-114d-4da9-b6cf-17e282be1c07",
+        "@id": "2805ad40-a866-4526-9c11-dabd777ef56a",
         "name": "Hostname Determination Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:18:02Z",
+        "modification_time": "2022-05-04T14:51:27Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:18:02Z",
+        "creation_time": "2022-05-04T14:51:27Z",
         "host": {
             "asset": {
-                "@asset_id": "6d041c50-0433-4b2c-84b5-12a8a593ab63"
+                "@asset_id": "89b1f971-400d-4b31-8124-aefee839f81d"
             },
-            "hostname": "192.168.1.110",
-            "#text": "192.168.1.110"
+            "hostname": "192.168.1.245",
+            "#text": "192.168.1.245"
         },
         "port": "general/tcp",
         "nvt": {
@@ -589,25 +627,25 @@
             "value": "80",
             "type": null
         },
-        "description": "Hostname determination for IP 192.168.1.110:\n\nHostname|Source\n192.168.1.110|Reverse-DNS",
+        "description": "Hostname determination for IP 192.168.1.245:\n\nHostname|Source\n192.168.1.245|Reverse-DNS",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "7d1733c7-eb65-445e-84df-13a295408e5c",
+        "@id": "bd310e44-9417-41ed-b235-0bf66c80f536",
         "name": "Hostname Determination Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:54:18Z",
+        "modification_time": "2022-05-04T15:21:25Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:54:18Z",
+        "creation_time": "2022-05-04T15:21:25Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "general/tcp",
         "nvt": {
@@ -638,25 +676,25 @@
             "value": "80",
             "type": null
         },
-        "description": "Hostname determination for IP 192.168.1.1:\n\nHostname|Source\ncsp3.zte.com.cn|Reverse-DNS",
+        "description": "Hostname determination for IP 192.168.1.107:\n\nHostname|Source\n192.168.1.107|Reverse-DNS",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "94157738-4aa8-4250-a9f8-48ce2f314da0",
+        "@id": "1b624d50-93f6-4b1a-ab8f-70a7d4ece750",
         "name": "Host Summary",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:18:02Z",
+        "modification_time": "2022-05-04T15:21:25Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:18:02Z",
+        "creation_time": "2022-05-04T15:21:25Z",
         "host": {
             "asset": {
-                "@asset_id": "6d041c50-0433-4b2c-84b5-12a8a593ab63"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.110",
-            "#text": "192.168.1.110"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "general/HOST-T",
         "nvt": {
@@ -687,25 +725,25 @@
             "value": "80",
             "type": null
         },
-        "description": "traceroute:192.168.1.110\nTCP ports:\nUDP ports:",
+        "description": "traceroute:192.168.1.245,192.168.1.107\nTCP ports:135,139,2869,445,5357,554\nUDP ports:",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "b4c9c35d-f131-4307-9760-d07af49ba25a",
+        "@id": "91232242-d94d-499b-98f9-4c490fb3d6b5",
         "name": "Host Summary",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:54:18Z",
+        "modification_time": "2022-05-04T14:51:27Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:54:18Z",
+        "creation_time": "2022-05-04T14:51:27Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "89b1f971-400d-4b31-8124-aefee839f81d"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.245",
+            "#text": "192.168.1.245"
         },
         "port": "general/HOST-T",
         "nvt": {
@@ -736,25 +774,25 @@
             "value": "80",
             "type": null
         },
-        "description": "traceroute:192.168.1.110,192.168.1.1\nTCP ports:443,53,80\nUDP ports:",
+        "description": "traceroute:192.168.1.245\nTCP ports:\nUDP ports:",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "d994cd9c-4f72-4496-a326-d4a5f4eaa66a",
+        "@id": "864b0e86-da7e-418d-a427-29463c86799e",
         "name": "Host Summary",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:35:57Z",
+        "modification_time": "2022-05-04T14:58:50Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:35:57Z",
+        "creation_time": "2022-05-04T14:58:50Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
         "port": "general/HOST-T",
         "nvt": {
@@ -785,27 +823,27 @@
             "value": "80",
             "type": null
         },
-        "description": "traceroute:192.168.1.110,192.168.1.109\nTCP ports:135,139,445,5357\nUDP ports:",
+        "description": "traceroute:192.168.1.245,192.168.1.102\nTCP ports:2870,9080\nUDP ports:",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "7a9e91bc-f2e5-4383-9d2f-b4a3f6f1f929",
+        "@id": "a92cbce2-a158-4851-9e35-6d4fa90380c9",
         "name": "HTTP Security Headers Detection",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:35:37Z",
+        "modification_time": "2022-05-04T14:53:46Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:35:37Z",
+        "creation_time": "2022-05-04T14:53:46Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "443/tcp",
+        "port": "9080/tcp",
         "nvt": {
             "@oid": "1.3.6.1.4.1.25623.1.0.112081",
             "type": "nvt",
@@ -850,25 +888,90 @@
             "value": "80",
             "type": null
         },
-        "description": "Header Name             | Header Value\n-------------------------------------------------------------------------------\nContent-Security-Policy | default-src 'self' 'unsafe-inline' 'unsafe-eval' data\nX-Content-Type-Options  | nosniff\nX-Frame-Options         | DENY\nX-XSS-Protection        | 1; mode=block\n\nMissing Headers                   | More Information\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nCross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nDocument-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header\nExpect-CT                         | https://owasp.org/www-project-secure-headers/#expect-ct, Note: This is an upcoming header\nFeature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy\nPermissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field\nPublic-Key-Pins                   | Please check the output of the VTs including 'SSL/TLS:' and 'HPKP' in their name for more information and configuration help. Note: Most major browsers have dropped / deprecated support for this header in 2020.\nReferrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy\nSec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nStrict-Transport-Security         | Please check the output of the VTs including 'SSL/TLS:' and 'HSTS' in their name for more information and configuration help.\nX-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies",
+        "description": "Missing Headers                   | More Information\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nContent-Security-Policy           | https://owasp.org/www-project-secure-headers/#content-security-policy\nCross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nDocument-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header\nFeature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy\nPermissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field\nReferrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy\nSec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nX-Content-Type-Options            | https://owasp.org/www-project-secure-headers/#x-content-type-options\nX-Frame-Options                   | https://owasp.org/www-project-secure-headers/#x-frame-options\nX-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies\nX-XSS-Protection                  | https://owasp.org/www-project-secure-headers/#x-xss-protection, Note: Most major browsers have dropped / deprecated support for this header in 2020.",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "da57e0f3-e636-4319-85b4-196c90f04b40",
+        "@id": "4e25faf6-d7ef-4824-968b-ef5ed2205cf7",
         "name": "HTTP Security Headers Detection",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:29:03Z",
+        "modification_time": "2022-05-04T14:53:46Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:29:03Z",
+        "creation_time": "2022-05-04T14:53:46Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
+        },
+        "port": "2870/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.112081",
+            "type": "nvt",
+            "name": "HTTP Security Headers Detection",
+            "family": "Web application abuses",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2017-10-13T11:12:41Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=All known security headers are being checked on the remote web\n  server.\n\n  On completion a report will hand back whether a specific security header has been implemented\n  (including its value and if it is deprecated) or is missing on the target.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": [
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://owasp.org/www-project-secure-headers/#div-headers"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "https://securityheaders.com/"
+                    }
+                ]
+            }
+        },
+        "scan_nvt_version": "2021-07-14T06:19:43Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Missing Headers                   | More Information\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nContent-Security-Policy           | https://owasp.org/www-project-secure-headers/#content-security-policy\nCross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nDocument-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header\nFeature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy\nPermissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field\nReferrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy\nSec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nX-Content-Type-Options            | https://owasp.org/www-project-secure-headers/#x-content-type-options\nX-Frame-Options                   | https://owasp.org/www-project-secure-headers/#x-frame-options\nX-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies\nX-XSS-Protection                  | https://owasp.org/www-project-secure-headers/#x-xss-protection, Note: Most major browsers have dropped / deprecated support for this header in 2020.",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "cf27a669-b6c0-4769-972b-ff65ba7453cc",
+        "name": "HTTP Security Headers Detection",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T15:11:47Z",
+        "comment": null,
+        "creation_time": "2022-05-04T15:11:47Z",
+        "host": {
+            "asset": {
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
+            },
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "5357/tcp",
         "nvt": {
@@ -920,85 +1023,69 @@
         "original_severity": "0"
     },
     {
-        "@id": "822a390a-a985-4038-961a-06eeb158c5a2",
-        "name": "HTTP Security Headers Detection",
+        "@id": "96554643-bdfe-4d1d-81dc-189cf5841cc7",
+        "name": "HTTP Server Banner Enumeration",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:35:37Z",
+        "modification_time": "2022-05-04T15:08:04Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:35:37Z",
+        "creation_time": "2022-05-04T15:08:04Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
-        "port": "80/tcp",
+        "port": "2869/tcp",
         "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.112081",
+            "@oid": "1.3.6.1.4.1.25623.1.0.108708",
             "type": "nvt",
-            "name": "HTTP Security Headers Detection",
-            "family": "Web application abuses",
+            "name": "HTTP Server Banner Enumeration",
+            "family": "Service detection",
             "cvss_base": "0.0",
             "severities": {
                 "@score": "0.0",
                 "severity": {
                     "@type": "cvss_base_v2",
                     "origin": null,
-                    "date": "2017-10-13T11:12:41Z",
+                    "date": "2020-02-04T08:19:51Z",
                     "score": "0.0",
                     "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
                 }
             },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=All known security headers are being checked on the remote web\n  server.\n\n  On completion a report will hand back whether a specific security header has been implemented\n  (including its value and if it is deprecated) or is missing on the target.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script tries to detect / enumerate different HTTP server banner (e.g. from a\n  frontend, backend or proxy server) by sending various different HTTP requests (valid and invalid ones).|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
             "solution": {
                 "@type": ""
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-secure-headers/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-secure-headers/#div-headers"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://securityheaders.com/"
-                    }
-                ]
             }
         },
-        "scan_nvt_version": "2021-07-14T06:19:43Z",
+        "scan_nvt_version": "2021-01-11T11:29:35Z",
         "threat": "Log",
         "severity": "0.0",
         "qod": {
             "value": "80",
             "type": null
         },
-        "description": "Header Name             | Header Value\n-------------------------------------------------------------------------------\nContent-Security-Policy | default-src 'self' 'unsafe-inline' 'unsafe-eval' data\nX-Content-Type-Options  | nosniff\nX-Frame-Options         | DENY\nX-XSS-Protection        | 1; mode=block\n\nMissing Headers                   | More Information\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nCross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nCross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header\nDocument-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header\nFeature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy\nPermissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field\nReferrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy\nSec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nSec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90\nX-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies",
+        "description": "It was possible to enumerate the following HTTP server banner(s):\n\nServer banner                                                                        | Enumeration technique\n----------------------------------------------------------------------------------------------------------------------------------\nServer: Microsoft-HTTPAPI/2.0                                                        | Valid HTTP 0.9 GET request to '/index.html'\nServer: Microsoft-Windows-NT/5.1 UPnP/1.0 UPnP-Device-Host/1.0 Microsoft-HTTPAPI/2.0 | Valid HTTP 1.0 GET request to '/index.htm'",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "73c9e1c2-6e4c-402c-848b-31400ed8656c",
+        "@id": "ed555b4b-a8d6-49db-83d0-affb3a18ed99",
         "name": "HTTP Server Banner Enumeration",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:24:41Z",
+        "modification_time": "2022-05-04T15:08:04Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:24:41Z",
+        "creation_time": "2022-05-04T15:08:04Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "5357/tcp",
         "nvt": {
@@ -1034,20 +1121,118 @@
         "original_severity": "0"
     },
     {
-        "@id": "acc3fd8f-6b59-490a-8749-e8bbd29cbe92",
+        "@id": "4a64545b-7825-4bab-a5f3-d96ece41362f",
+        "name": "HTTP Server Banner Enumeration",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T14:53:31Z",
+        "comment": null,
+        "creation_time": "2022-05-04T14:53:31Z",
+        "host": {
+            "asset": {
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
+            },
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
+        },
+        "port": "2870/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108708",
+            "type": "nvt",
+            "name": "HTTP Server Banner Enumeration",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2020-02-04T08:19:51Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script tries to detect / enumerate different HTTP server banner (e.g. from a\n  frontend, backend or proxy server) by sending various different HTTP requests (valid and invalid ones).|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-01-11T11:29:35Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "It was possible to enumerate the following HTTP server banner(s):\n\nServer banner                         | Enumeration technique\n-----------------------------------------------------------------------------------\nSERVER: IPI/1.0 UPnP/1.0 DLNADOC/1.50 | Valid HTTP 0.9 GET request to '/index.html'",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "9acf3af3-b7c0-4917-9173-3fb2b2852c30",
         "name": "HTTP Server type and version",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:24:36Z",
+        "modification_time": "2022-05-04T14:53:26Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:24:36Z",
+        "creation_time": "2022-05-04T14:53:26Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
+        },
+        "port": "2870/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.10107",
+            "type": "nvt",
+            "name": "HTTP Server type and version",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2005-11-03T13:08:04Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script detects and reports the HTTP Server's banner\n  which might provide the type and version of it.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2020-08-24T15:18:35Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The remote HTTP Server banner is:\n\nSERVER: IPI/1.0 UPnP/1.0 DLNADOC/1.50",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "1ef19986-3ff5-413a-942f-2cd563ecdb73",
+        "name": "HTTP Server type and version",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T15:08:20Z",
+        "comment": null,
+        "creation_time": "2022-05-04T15:08:20Z",
+        "host": {
+            "asset": {
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
+            },
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "5357/tcp",
         "nvt": {
@@ -1083,26 +1268,26 @@
         "original_severity": "0"
     },
     {
-        "@id": "cae8e152-23bb-4255-929e-0502e094e314",
-        "name": "HTTP Server type and version",
+        "@id": "1dd47155-cd24-494e-8b42-1ea7d2786faf",
+        "name": "ICMP Timestamp Detection",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:24:41Z",
+        "modification_time": "2022-05-04T14:53:31Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:24:41Z",
+        "creation_time": "2022-05-04T14:53:31Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "80/tcp",
+        "port": "general/icmp",
         "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.10107",
+            "@oid": "1.3.6.1.4.1.25623.1.0.103190",
             "type": "nvt",
-            "name": "HTTP Server type and version",
+            "name": "ICMP Timestamp Detection",
             "family": "Service detection",
             "cvss_base": "0.0",
             "severities": {
@@ -1110,146 +1295,66 @@
                 "severity": {
                     "@type": "cvss_base_v2",
                     "origin": null,
-                    "date": "2005-11-03T13:08:04Z",
+                    "date": "2011-07-15T11:32:07Z",
                     "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                    "value": "AV:L/AC:L/Au:N/C:N/I:N/A:N"
                 }
             },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script detects and reports the HTTP Server's banner\n  which might provide the type and version of it.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2020-08-24T15:18:35Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "80",
-            "type": null
-        },
-        "description": "The remote HTTP Server banner is:\n\nServer:",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "3b553337-6514-459e-8998-fa250753ab3a",
-        "name": "HTTP Server type and version",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:24:41Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:24:41Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.10107",
-            "type": "nvt",
-            "name": "HTTP Server type and version",
-            "family": "Service detection",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2005-11-03T13:08:04Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script detects and reports the HTTP Server's banner\n  which might provide the type and version of it.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2020-08-24T15:18:35Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "80",
-            "type": null
-        },
-        "description": "The remote HTTP Server banner is:\n\nServer:",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "73861bea-3d47-4b82-8f51-d35fa22b214d",
-        "name": "OS Detection Consolidation and Reporting",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:17:42Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:17:42Z",
-        "host": {
-            "asset": {
-                "@asset_id": "6d041c50-0433-4b2c-84b5-12a8a593ab63"
-            },
-            "hostname": "192.168.1.110",
-            "#text": "192.168.1.110"
-        },
-        "port": "general/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
-            "type": "nvt",
-            "name": "OS Detection Consolidation and Reporting",
-            "family": "Product detection",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2016-02-19T10:19:54Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "tags": "cvss_base_vector=AV:L/AC:L/Au:N/C:N/I:N/A:N|summary=The remote host responded to an ICMP timestamp request.\n  The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists\n  of the originating timestamp sent by the sender of the Timestamp as well as a receive\n  timestamp and a transmit timestamp. This information could theoretically be used to\n  exploit weak time-based random number generators in other services.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
             "solution": {
                 "@type": ""
             },
             "refs": {
-                "ref": {
-                    "@type": "url",
-                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
-                }
+                "ref": [
+                    {
+                        "@type": "cve",
+                        "@id": "CVE-1999-0524"
+                    },
+                    {
+                        "@type": "url",
+                        "@id": "http://www.ietf.org/rfc/rfc0792.txt"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K15/1514"
+                    },
+                    {
+                        "@type": "cert-bund",
+                        "@id": "CB-K14/0632"
+                    },
+                    {
+                        "@type": "dfn-cert",
+                        "@id": "DFN-CERT-2014-0658"
+                    }
+                ]
             }
         },
-        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "scan_nvt_version": "2021-03-23T06:51:29Z",
         "threat": "Log",
         "severity": "0.0",
         "qod": {
             "value": "80",
             "type": null
         },
-        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "description": null,
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "a49d7bfb-d54e-468b-bd06-781b4fd23c4c",
+        "@id": "2f8ebf18-4d63-4366-bfc3-65f4f22e408e",
         "name": "OS Detection Consolidation and Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:23:43Z",
+        "modification_time": "2022-05-04T15:00:01Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:23:43Z",
+        "creation_time": "2022-05-04T15:00:01Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "general/tcp",
         "nvt": {
@@ -1291,20 +1396,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "73857d07-fb2a-466c-b9cf-4e4d038c7b9f",
+        "@id": "ee64a08c-19b6-4100-802e-db9568acd882",
         "name": "OS Detection Consolidation and Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:36:13Z",
+        "modification_time": "2022-05-04T14:51:07Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:36:13Z",
+        "creation_time": "2022-05-04T14:51:07Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "89b1f971-400d-4b31-8124-aefee839f81d"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.245",
+            "#text": "192.168.1.245"
         },
         "port": "general/tcp",
         "nvt": {
@@ -1346,26 +1451,130 @@
         "original_severity": "0"
     },
     {
-        "@id": "531b40fb-f808-4b11-a1ab-f1ca1d131cbe",
-        "name": "Services",
+        "@id": "852c0921-4859-4d85-ac9b-2eb76bff6a92",
+        "name": "OS Detection Consolidation and Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:18:17Z",
+        "modification_time": "2022-05-04T14:53:21Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:18:17Z",
+        "creation_time": "2022-05-04T14:53:21Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "443/tcp",
+        "port": "general/tcp",
         "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.10330",
+            "@oid": "1.3.6.1.4.1.25623.1.0.105937",
             "type": "nvt",
-            "name": "Services",
+            "name": "OS Detection Consolidation and Reporting",
+            "family": "Product detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2016-02-19T10:19:54Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script consolidates the OS information detected by several\n  VTs and tries to find the best matching OS.\n\n  Furthermore it reports all previously collected information leading to this best matching OS. It\n  also reports possible additional information which might help to improve the OS detection.\n\n  If any of this information is wrong or could be improved please consider to report these to the\n  referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2021-11-12T13:29:16Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Best matching OS:\n\nOS:           Linux Kernel\nCPE:          cpe:/o:linux:kernel\nFound by NVT: 1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))\nConcluded from ICMP based OS fingerprint\nSetting key \"Host/runs_unixoide\" based on this information",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "ab51994f-dc51-4f14-920e-3337f10fa062",
+        "name": "Response Time / No 404 Error Code Check",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T14:52:46Z",
+        "comment": null,
+        "creation_time": "2022-05-04T14:52:46Z",
+        "host": {
+            "asset": {
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
+            },
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
+        },
+        "port": "9080/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.10386",
+            "type": "nvt",
+            "name": "Response Time / No 404 Error Code Check",
+            "family": "Web Servers",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2006-03-26T15:55:15Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This VT tests if the remote web server does not reply with a 404\n  error code and checks if it is replying to the scanners requests in a reasonable amount of time.|insight=This web server might show the following issues:\n\n  - it is [mis]configured in that it does not return '404 Not Found' error codes when a non-existent\n  file is requested, perhaps returning a site map, search page, authentication page or redirect instead.\n\n  The Scanner might enabled some counter measures for that, however they might be insufficient. If a\n  great number of security issues are reported for this port, they might not all be accurate.\n\n  - it doesn't response in a reasonable amount of time to various HTTP requests sent by this VT.\n\n  In order to keep the scan total time to a reasonable amount, the remote web server might not be\n  tested. If the remote server should be tested it has to be fixed to have it reply to the scanners\n  requests in a reasonable amount of time.\n\n  Alternatively the 'Maximum response time (in seconds)' preference could be raised to a higher\n  value if longer scan times are accepted.|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2020-11-27T13:32:50Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "The host does not return '404 Not Found' error codes when a non-existent file is requested and it wasn't possible to find a common error message interpreted as a 404. Some HTTP-related checks have been disabled.",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "5969867f-95d6-44f9-9f1b-99dce9cf3d0e",
+        "name": "Service Detection with 'HELP' Request'",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T14:55:33Z",
+        "comment": null,
+        "creation_time": "2022-05-04T14:55:33Z",
+        "host": {
+            "asset": {
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
+            },
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
+        },
+        "port": "2869/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.11153",
+            "type": "nvt",
+            "name": "Service Detection with 'HELP' Request'",
             "family": "Service detection",
             "cvss_base": "0.0",
             "severities": {
@@ -1373,91 +1582,42 @@
                 "severity": {
                     "@type": "cvss_base_v2",
                     "origin": null,
-                    "date": "2011-01-14T09:12:23Z",
+                    "date": "2005-11-03T13:08:04Z",
                     "score": "0.0",
                     "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
                 }
             },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine attempts to guess which service is running on the\n  remote ports. For instance, it searches for a web server which could listen on another port than\n  80 or 443 and makes this information available for other check routines.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This plugin performs service detection.\n\n  This plugin is a complement of find_service.nasl. It sends a 'HELP'\n  request to the remaining unknown services and tries to identify them.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
             "solution": {
                 "@type": ""
             }
         },
-        "scan_nvt_version": "2021-03-15T10:42:03Z",
+        "scan_nvt_version": "2021-08-09T06:49:35Z",
         "threat": "Log",
         "severity": "0.0",
         "qod": {
             "value": "80",
             "type": null
         },
-        "description": "A web server is running on this port through SSL",
+        "description": "A (non-RFC compliant) web server seems to be running on this port",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "8c998c32-3920-4a49-af1d-d0e7d61e9c85",
+        "@id": "3fe026c3-fbd8-46e2-8000-7173cfe3a138",
         "name": "Services",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:18:17Z",
+        "modification_time": "2022-05-04T14:53:46Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:18:17Z",
+        "creation_time": "2022-05-04T14:53:46Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.10330",
-            "type": "nvt",
-            "name": "Services",
-            "family": "Service detection",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2011-01-14T09:12:23Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine attempts to guess which service is running on the\n  remote ports. For instance, it searches for a web server which could listen on another port than\n  80 or 443 and makes this information available for other check routines.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2021-03-15T10:42:03Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "80",
-            "type": null
-        },
-        "description": "A TLScustom server answered on this port",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "e16dc644-5c46-42e1-9531-133cba79a489",
-        "name": "Services",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:21:50Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:21:50Z",
-        "host": {
-            "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
-            },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "5357/tcp",
         "nvt": {
@@ -1493,22 +1653,22 @@
         "original_severity": "0"
     },
     {
-        "@id": "d11c7b20-d4c5-439b-9ee4-eb0549122d9a",
+        "@id": "75c153e5-7cfb-4034-b5e2-d904518a3584",
         "name": "Services",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:18:17Z",
+        "modification_time": "2022-05-04T14:51:49Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:18:17Z",
+        "creation_time": "2022-05-04T14:51:49Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "80/tcp",
+        "port": "9080/tcp",
         "nvt": {
             "@oid": "1.3.6.1.4.1.25623.1.0.10330",
             "type": "nvt",
@@ -1542,20 +1702,69 @@
         "original_severity": "0"
     },
     {
-        "@id": "99a7fd98-8f34-493a-adcb-aa57b1616c2f",
+        "@id": "543a9f23-864e-44fc-a6f4-96ad7db41906",
+        "name": "Services",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T14:52:21Z",
+        "comment": null,
+        "creation_time": "2022-05-04T14:52:21Z",
+        "host": {
+            "asset": {
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
+            },
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
+        },
+        "port": "2870/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.10330",
+            "type": "nvt",
+            "name": "Services",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2011-01-14T09:12:23Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine attempts to guess which service is running on the\n  remote ports. For instance, it searches for a web server which could listen on another port than\n  80 or 443 and makes this information available for other check routines.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            }
+        },
+        "scan_nvt_version": "2021-03-15T10:42:03Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "A web server is running on this port",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "ffd929e9-7d7f-4778-8b42-cf9778cb8f5d",
         "name": "SMB/CIFS Server Detection",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:22:50Z",
+        "modification_time": "2022-05-04T14:54:57Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:22:50Z",
+        "creation_time": "2022-05-04T14:54:57Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "445/tcp",
         "nvt": {
@@ -1591,20 +1800,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "0be8eaf3-f96a-4485-84dc-b87b443d87c4",
+        "@id": "141b832b-9e2d-4932-a221-1f82ae7bda9f",
         "name": "SMB/CIFS Server Detection",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:22:50Z",
+        "modification_time": "2022-05-04T14:54:57Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:22:50Z",
+        "creation_time": "2022-05-04T14:54:57Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "139/tcp",
         "nvt": {
@@ -1640,20 +1849,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "1fc984bb-da5e-4b15-9fd6-5eb399444cae",
+        "@id": "85799ebc-94fc-4b9d-aed2-b2006915dbfd",
         "name": "SMB NativeLanMan",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:22:50Z",
+        "modification_time": "2022-05-04T14:54:57Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:22:50Z",
+        "creation_time": "2022-05-04T14:54:57Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "445/tcp",
         "nvt": {
@@ -1689,20 +1898,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "dc8da946-db64-4f2c-bb4b-1ee8f2dcf59a",
+        "@id": "db78d283-e16d-4932-bbd5-d56c694d0192",
         "name": "SMB Remote Version Detection",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:23:48Z",
+        "modification_time": "2022-05-04T15:02:43Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:23:48Z",
+        "creation_time": "2022-05-04T15:02:43Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "445/tcp",
         "nvt": {
@@ -1738,20 +1947,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "4443c776-726e-49c0-bf6a-1d392bb7c31c",
+        "@id": "0ed97381-f59e-429c-9c63-851206c0891f",
         "name": "SMBv1 enabled (Remote Check)",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:24:41Z",
+        "modification_time": "2022-05-04T15:08:20Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:24:41Z",
+        "creation_time": "2022-05-04T15:08:20Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "445/tcp",
         "nvt": {
@@ -1803,1662 +2012,20 @@
         "original_severity": "0"
     },
     {
-        "@id": "51cad9da-244e-4e84-a4fd-2082ce813a37",
-        "name": "SSL/TLS: Certificate - Subject Common Name Does Not Match Server FQDN",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:03Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:03Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.103141",
-            "type": "nvt",
-            "name": "SSL/TLS: Certificate - Subject Common Name Does Not Match Server FQDN",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2011-04-27T13:13:59Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The SSL/TLS certificate contains a common name (CN) that does not match the hostname.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2020-08-24T15:47:14Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "The certificate of the remote service contains a common name (CN) that does not match the hostname \"csp3.zte.com.cn\".\n\nCertificate details:\nalgorithm                       | sha512WithRSAEncryption\nfingerprint (SHA-1)             | DB2CF636B2091612BDDF1E591706D472B6400CBD\nfingerprint (SHA-256)           | 4CAA880F5DB7A65CB4554B8A07D7D178F4BC8076FA18A83A980E805E18998532\nissued by                       | 1.2.840.113549.1.9.1=#7A616E65407A74652E636F6D2E636E,CN=ZTE-ROOT-CA,OU=Wireline Product R&D Institute,O=ZTE,L=Shenzhen,ST=GuangDong,C=CN\nserial                          | 009737AB9446AED3DE\nsubject                         | 1.2.840.113549.1.9.1=#7A616E65407A74652E636F6D2E636E,CN=192.168.1.1,OU=FN Nanjing Software Development Dept III,O=ZTE,L=Nanjing,ST=JiangSu,C=CN\nsubject alternative names (SAN) | None\nvalid from                      | 2016-07-13 01:32:15 UTC\nvalid until                     | 2031-07-10 01:32:15 UTC",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "a315c096-408e-4325-b010-fc8ee378492b",
-        "name": "SSL/TLS: Collect and Report Certificate Details",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:20:29Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:20:29Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.103692",
-            "type": "nvt",
-            "name": "SSL/TLS: Collect and Report Certificate Details",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2013-04-09T12:14:14Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This script collects and reports the details of all SSL/TLS\n  certificates.\n\n  This data will be used by other tests to verify server certificates.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2021-10-01T07:04:12Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "The following certificate details of the remote service were collected.\n\nCertificate details:\nalgorithm                       | sha512WithRSAEncryption\nfingerprint (SHA-1)             | DB2CF636B2091612BDDF1E591706D472B6400CBD\nfingerprint (SHA-256)           | 4CAA880F5DB7A65CB4554B8A07D7D178F4BC8076FA18A83A980E805E18998532\nissued by                       | 1.2.840.113549.1.9.1=#7A616E65407A74652E636F6D2E636E,CN=ZTE-ROOT-CA,OU=Wireline Product R&D Institute,O=ZTE,L=Shenzhen,ST=GuangDong,C=CN\nserial                          | 009737AB9446AED3DE\nsubject                         | 1.2.840.113549.1.9.1=#7A616E65407A74652E636F6D2E636E,CN=192.168.1.1,OU=FN Nanjing Software Development Dept III,O=ZTE,L=Nanjing,ST=JiangSu,C=CN\nsubject alternative names (SAN) | None\nvalid from                      | 2016-07-13 01:32:15 UTC\nvalid until                     | 2031-07-10 01:32:15 UTC",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "55f5f447-bc00-4c8c-81a9-f850efbc3d77",
-        "name": "SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:03Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:03Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.117274",
-            "type": "nvt",
-            "name": "SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection",
-            "family": "SSL and TLS",
-            "cvss_base": "4.3",
-            "severities": {
-                "@score": "4.3",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2021-03-25T10:41:42Z",
-                    "score": "4.3",
-                    "value": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:M/Au:N/C:P/I:N/A:N|summary=It was possible to detect the usage of the deprecated TLSv1.0\n  and/or TLSv1.1 protocol on this system.|insight=The TLSv1.0 and TLSv1.1 protocols contain known cryptographic\n  flaws like:\n\n  - CVE-2011-3389: Browser Exploit Against SSL/TLS (BEAST)\n\n  - CVE-2015-0204: Factoring Attack on RSA-EXPORT Keys Padding Oracle On Downgraded Legacy\n  Encryption (FREAK)|affected=All services providing an encrypted communication using the\n  TLSv1.0 and/or TLSv1.1 protocols.|impact=An attacker might be able to use the known cryptographic flaws\n  to eavesdrop the connection between clients and the service to get access to sensitive data\n  transferred within the secured connection.\n\n  Furthermore newly uncovered vulnerabilities in this protocols won't receive security updates\n  anymore.|solution=It is recommended to disable the deprecated TLSv1.0 and/or\n  TLSv1.1 protocols in favor of the TLSv1.2+ protocols. Please see the references for more\n  information.|vuldetect=Check the used TLS protocols of the services provided by this\n  system.|solution_type=Mitigation",
-            "solution": {
-                "@type": "Mitigation",
-                "#text": "It is recommended to disable the deprecated TLSv1.0 and/or\n  TLSv1.1 protocols in favor of the TLSv1.2+ protocols. Please see the references for more\n  information."
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2011-3389"
-                    },
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2015-0204"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://ssl-config.mozilla.org/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://bettercrypto.org/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://datatracker.ietf.org/doc/rfc8996/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://vnhacker.blogspot.com/2011/09/beast.html"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://web.archive.org/web/20201108095603/https://censys.io/blog/freak"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://www.enisa.europa.eu/publications/algorithms-key-size-and-parameters-report-2014"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K18/0799"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1289"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1096"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/1751"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/1266"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0850"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0764"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0720"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0548"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0526"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0509"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0493"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0384"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0365"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0364"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0302"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0192"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0079"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K15/0016"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K14/1342"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K14/0231"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K13/0845"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K13/0796"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K13/0790"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2020-0177"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2020-0111"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2019-0068"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2018-1441"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2018-1408"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1372"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1164"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-0388"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-1853"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-1332"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0884"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0800"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0758"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0567"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0544"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0530"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0396"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0375"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0374"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0305"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0199"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0079"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2015-0021"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2014-1414"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2013-1847"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2013-1792"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1979"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1829"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1530"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1380"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1377"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1292"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1214"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1213"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1180"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1156"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1155"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1039"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0956"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0908"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0868"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0867"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0848"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0838"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0776"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0722"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0638"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0627"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0451"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0418"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0354"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0234"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0221"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0177"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0170"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0146"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0142"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0126"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0123"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0095"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0051"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0047"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-0021"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1953"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1946"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1844"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1826"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1774"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1743"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1738"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1706"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1628"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1627"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1619"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2011-1482"
-                    }
-                ]
-            }
-        },
-        "scan_nvt_version": "2021-07-19T08:11:48Z",
-        "threat": "Medium",
-        "severity": "4.3",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "In addition to TLSv1.2+ the service is also providing the deprecated TLSv1.0 and TLSv1.1 protocols and supports one or more ciphers. Those supported ciphers can be found in the 'SSL/TLS: Report Supported Cipher Suites' (OID: 1.3.6.1.4.1.25623.1.0.802067) VT.",
-        "original_threat": "Medium",
-        "original_severity": "4.3"
-    },
-    {
-        "@id": "cd7f2005-3e13-4689-b93b-47363af1614b",
-        "name": "SSL/TLS: HTTP Public Key Pinning (HPKP) Missing",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:03Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:03Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.108247",
-            "type": "nvt",
-            "name": "SSL/TLS: HTTP Public Key Pinning (HPKP) Missing",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2017-10-09T06:07:41Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The remote web server is not enforcing HPKP.\n\n  Note: Most major browsers have dropped / deprecated support for this header in 2020.|insight=|affected=|impact=|solution=Enable HPKP or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility.|vuldetect=|solution_type=Workaround",
-            "solution": {
-                "@type": "Workaround",
-                "#text": "Enable HPKP or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility."
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-secure-headers/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-secure-headers/#public-key-pinning-extension-for-http-hpkp"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://tools.ietf.org/html/rfc7469"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://securityheaders.io/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://httpd.apache.org/docs/current/mod/mod_headers.html#header"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header"
-                    }
-                ]
-            }
-        },
-        "scan_nvt_version": "2021-01-26T13:20:44Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "80",
-            "type": null
-        },
-        "description": "The remote web server is not enforcing HPKP.\n\nHTTP-Banner:\n\nHTTP/1.1 200 OK\nServer: \nAccept-Ranges: bytes\nConnection: close\nContent-Type: text/html; charset=utf-8\nX-Content-Type-Options: nosniff\nX-XSS-Protection: 1; mode=block\nContent-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data:\nCache-Control: no-cache,no-store\nPragma: no-cache\nContent-Length: ***replaced***\nSet-Cookie: _TESTCOOKIESUPPORT=1; PATH=/; HttpOnly; Secure\nX-Frame-Options:DENY",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "846a7e2f-3766-4069-a3bb-cc31f785ad8e",
-        "name": "SSL/TLS: HTTP Strict Transport Security (HSTS) Missing",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:03Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:03Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.105879",
-            "type": "nvt",
-            "name": "SSL/TLS: HTTP Strict Transport Security (HSTS) Missing",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2016-08-22T11:07:41Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The remote web server is not enforcing HSTS.|insight=|affected=|impact=|solution=Enable HSTS or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility.|vuldetect=|solution_type=Workaround",
-            "solution": {
-                "@type": "Workaround",
-                "#text": "Enable HSTS or add / configure the required directives correctly following the\n  guides linked in the references.\n\n  Note: Some web servers are not sending headers on specific status codes by default. Please review your web server\n  or application configuration to always send these headers on every response independently from the status code.\n\n  - Apache: Use 'Header always set' instead of 'Header set'.\n\n  - nginx: Append the 'always' keyword to each 'add_header' directive.\n\n  For different applications or web severs please refer to the related documentation for a similar configuration possibility."
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-secure-headers/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-cheat-sheets/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://owasp.org/www-project-secure-headers/#http-strict-transport-security-hsts"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://tools.ietf.org/html/rfc6797"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://securityheaders.io/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://httpd.apache.org/docs/current/mod/mod_headers.html#header"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header"
-                    }
-                ]
-            }
-        },
-        "scan_nvt_version": "2021-01-26T13:20:44Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "80",
-            "type": null
-        },
-        "description": "The remote web server is not enforcing HSTS.\n\nHTTP-Banner:\n\nHTTP/1.1 200 OK\nServer: \nAccept-Ranges: bytes\nConnection: close\nContent-Type: text/html; charset=utf-8\nX-Content-Type-Options: nosniff\nX-XSS-Protection: 1; mode=block\nContent-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' data:\nCache-Control: no-cache,no-store\nPragma: no-cache\nContent-Length: ***replaced***\nSet-Cookie: _TESTCOOKIESUPPORT=1; PATH=/; HttpOnly; Secure\nX-Frame-Options:DENY",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "23109e88-6270-46ec-a862-6f3584a5c712",
-        "name": "SSL/TLS: Perfect Forward Secrecy Cipher Suites Missing",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:08Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:08Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.105092",
-            "type": "nvt",
-            "name": "SSL/TLS: Perfect Forward Secrecy Cipher Suites Missing",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2014-09-23T13:16:10Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=The remote service is missing support for SSL/TLS cipher suites supporting Perfect Forward Secrecy.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2016-12-10T11:17:19Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "The remote service does not support perfect forward secrecy cipher suites.",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "f9e669da-cdf2-401c-8fd3-2366b2ee7920",
-        "name": "SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:42:22Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:42:22Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.117761",
-            "type": "nvt",
-            "name": "SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)",
-            "family": "SSL and TLS",
-            "cvss_base": "5.0",
-            "severities": {
-                "@score": "5.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2021-10-29T08:24:03Z",
-                    "score": "5.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:P|summary=The remote SSL/TLS service is prone to a denial of service (DoS)\n  vulnerability.|insight=The flaw exists because the remote SSL/TLS service does not\n  properly restrict client-initiated renegotiation within the SSL and TLS protocols.\n\n  Note: The referenced CVEs are affecting OpenSSL and Mozilla Network Security Services (NSS) but\n  both are in a DISPUTED state with the following rationale:\n\n  > It can also be argued that it is the responsibility of server deployments, not a security\n  library, to prevent or limit renegotiation when it is inappropriate within a specific environment.\n\n  Both CVEs are still kept in this VT as a reference to the origin of this flaw.|affected=Every SSL/TLS service which does not properly restrict\n  client-initiated renegotiation.|impact=The flaw might make it easier for remote attackers to cause a\n  DoS (CPU consumption) by performing many renegotiations within a single connection.|solution=Users should contact their vendors for specific patch information.\n\n  A general solution is to remove/disable renegotiation capabilities altogether from/in the affected\n  SSL/TLS service.|vuldetect=Checks if the remote service allows to re-do the same SSL/TLS\n  handshake (Renegotiation) over an existing / already established SSL/TLS connection.|solution_type=VendorFix",
-            "solution": {
-                "@type": "VendorFix",
-                "#text": "Users should contact their vendors for specific patch information.\n\n  A general solution is to remove/disable renegotiation capabilities altogether from/in the affected\n  SSL/TLS service."
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2011-1473"
-                    },
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2011-5094"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://orchilles.com/ssl-renegotiation-dos/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://mailarchive.ietf.org/arch/msg/tls/wdg46VE_jkYBbgJ5yE4P9nQ-8IU/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://vincent.bernat.ch/en/blog/2011-ssl-dos-mitigation"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://www.openwall.com/lists/oss-security/2011/07/08/2"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://vincent.bernat.ch/en/blog/2011-ssl-dos-mitigation"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0980"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0979"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K14/0772"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K13/0915"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K13/0462"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1013"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1012"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2014-0809"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2013-1928"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2012-1112"
-                    }
-                ]
-            }
-        },
-        "scan_nvt_version": "2021-11-15T10:28:20Z",
-        "threat": "Medium",
-        "severity": "5.0",
-        "qod": {
-            "value": "70",
-            "type": null
-        },
-        "description": "The following indicates that the remote SSL/TLS service is affected:\n\nProtocol Version | Successful re-done SSL/TLS handshakes (Renegotiation) over an existing / already established SSL/TLS connection\n----------------------------------------------------------------------------------------------------------------------------------\nTLSv1.0          | 10\nTLSv1.1          | 10\nTLSv1.2          | 10",
-        "original_threat": "Medium",
-        "original_severity": "5"
-    },
-    {
-        "@id": "0cfb1483-46f0-455e-bb01-b170a5f8eb66",
-        "name": "SSL/TLS: Report Medium Cipher Suites",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:08Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:08Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.902816",
-            "type": "nvt",
-            "name": "SSL/TLS: Report Medium Cipher Suites",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2012-03-07T08:44:14Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all Medium SSL/TLS cipher suites accepted by a service.|insight=Any cipher suite considered to be secure for only the next 10 years is considered as medium|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2021-08-06T11:34:45Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "'Medium' cipher suites accepted by this service via the TLSv1.0 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA\n\n'Medium' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA\n\n'Medium' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA256\nTLS_RSA_WITH_AES_128_GCM_SHA256\nTLS_RSA_WITH_AES_256_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA256\nTLS_RSA_WITH_AES_256_GCM_SHA384",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "2025028e-3ca9-4859-b97a-0d584eca2c86",
-        "name": "SSL/TLS: Report Non Weak Cipher Suites",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:08Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:08Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.103441",
-            "type": "nvt",
-            "name": "SSL/TLS: Report Non Weak Cipher Suites",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2012-03-01T16:16:10Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all Non Weak SSL/TLS cipher suites accepted by a service.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2020-03-31T06:57:15Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "'Non Weak' cipher suites accepted by this service via the TLSv1.0 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA\n\n'Non Weak' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA\n\n'Non Weak' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA256\nTLS_RSA_WITH_AES_128_GCM_SHA256\nTLS_RSA_WITH_AES_256_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA256\nTLS_RSA_WITH_AES_256_GCM_SHA384",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "adbccaf8-635f-4d58-805a-a3fe0954230c",
-        "name": "SSL/TLS: Report Supported Cipher Suites",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:08Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:08Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.802067",
-            "type": "nvt",
-            "name": "SSL/TLS: Report Supported Cipher Suites",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2014-03-06T11:50:28Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This routine reports all SSL/TLS cipher suites accepted by a service.\n\n  As the VT 'SSL/TLS: Check Supported Cipher Suites' (OID: 1.3.6.1.4.1.25623.1.0.900234) might run into a\n  timeout the actual reporting of all accepted cipher suites takes place in this VT instead.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2021-01-21T10:06:42Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "No 'Strong' cipher suites accepted by this service via the TLSv1.0 protocol.\n\n'Medium' cipher suites accepted by this service via the TLSv1.0 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA\n\nNo 'Weak' cipher suites accepted by this service via the TLSv1.0 protocol.\n\nNo 'Null' cipher suites accepted by this service via the TLSv1.0 protocol.\n\nNo 'Anonymous' cipher suites accepted by this service via the TLSv1.0 protocol.\n\nNo 'Strong' cipher suites accepted by this service via the TLSv1.1 protocol.\n\n'Medium' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA\n\nNo 'Weak' cipher suites accepted by this service via the TLSv1.1 protocol.\n\nNo 'Null' cipher suites accepted by this service via the TLSv1.1 protocol.\n\nNo 'Anonymous' cipher suites accepted by this service via the TLSv1.1 protocol.\n\nNo 'Strong' cipher suites accepted by this service via the TLSv1.2 protocol.\n\n'Medium' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_RSA_WITH_AES_128_CBC_SHA256\nTLS_RSA_WITH_AES_128_GCM_SHA256\nTLS_RSA_WITH_AES_256_CBC_SHA\nTLS_RSA_WITH_AES_256_CBC_SHA256\nTLS_RSA_WITH_AES_256_GCM_SHA384\n\nNo 'Weak' cipher suites accepted by this service via the TLSv1.2 protocol.\n\nNo 'Null' cipher suites accepted by this service via the TLSv1.2 protocol.\n\nNo 'Anonymous' cipher suites accepted by this service via the TLSv1.2 protocol.",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "7a3f0478-4f33-47d0-9ad1-798928530cca",
-        "name": "SSL/TLS: Report Vulnerable Cipher Suites for HTTPS",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:08Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:08Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.108031",
-            "type": "nvt",
-            "name": "SSL/TLS: Report Vulnerable Cipher Suites for HTTPS",
-            "family": "SSL and TLS",
-            "cvss_base": "7.5",
-            "severities": {
-                "@score": "7.5",
-                "severity": {
-                    "@type": "cvss_base_v3",
-                    "origin": "NVD",
-                    "date": "2021-01-06T16:11:00Z",
-                    "score": "7.5",
-                    "value": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N|summary=This routine reports all SSL/TLS cipher suites accepted by a service\n  where attack vectors exists only on HTTPS services.|insight=These rules are applied for the evaluation of the vulnerable cipher suites:\n\n  - 64-bit block cipher 3DES vulnerable to the SWEET32 attack (CVE-2016-2183).|affected=Services accepting vulnerable SSL/TLS cipher suites via HTTPS.|impact=|solution=The configuration of this services should be changed so\n  that it does not accept the listed cipher suites anymore.\n\n  Please see the references for more resources supporting you with this task.|vuldetect=|solution_type=Mitigation",
-            "solution": {
-                "@type": "Mitigation",
-                "#text": "The configuration of this services should be changed so\n  that it does not accept the listed cipher suites anymore.\n\n  Please see the references for more resources supporting you with this task."
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2016-2183"
-                    },
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2016-6329"
-                    },
-                    {
-                        "@type": "cve",
-                        "@id": "CVE-2020-12872"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://bettercrypto.org/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://mozilla.github.io/server-side-tls/ssl-config-generator/"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://sweet32.info/"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K21/1094"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K20/1023"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K20/0321"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K20/0314"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K20/0157"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K19/0618"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K19/0615"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K18/0296"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1980"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1871"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1803"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1753"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1750"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1709"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1558"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1273"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1202"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1196"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1055"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/1026"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0939"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0917"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0915"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0877"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0796"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0724"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0661"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0657"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0582"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0581"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0506"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0504"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0467"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0345"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0098"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0089"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0086"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K17/0082"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1837"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1830"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1635"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1630"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1624"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1622"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1500"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1465"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1307"
-                    },
-                    {
-                        "@type": "cert-bund",
-                        "@id": "CB-K16/1296"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2021-1618"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2021-0775"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2021-0770"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2021-0274"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2020-2141"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2020-0368"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2019-1455"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2019-0068"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2018-1296"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2018-0323"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-2070"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1954"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1885"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1831"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1821"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1785"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1626"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1326"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1239"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1238"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1090"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-1060"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0968"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0947"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0946"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0904"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0816"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0746"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0677"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0675"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0611"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0609"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0522"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0519"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0482"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0351"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0090"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0089"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0088"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2017-0086"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1943"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1937"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1732"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1726"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1715"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1714"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1588"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1555"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1391"
-                    },
-                    {
-                        "@type": "dfn-cert",
-                        "@id": "DFN-CERT-2016-1378"
-                    }
-                ]
-            }
-        },
-        "scan_nvt_version": "2021-09-20T09:01:50Z",
-        "threat": "High",
-        "severity": "7.5",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "'Vulnerable' cipher suites accepted by this service via the TLSv1.0 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA (SWEET32)\n\n'Vulnerable' cipher suites accepted by this service via the TLSv1.1 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA (SWEET32)\n\n'Vulnerable' cipher suites accepted by this service via the TLSv1.2 protocol:\n\nTLS_RSA_WITH_3DES_EDE_CBC_SHA (SWEET32)",
-        "original_threat": "High",
-        "original_severity": "7.5"
-    },
-    {
-        "@id": "a9e7ff7b-054b-4589-8ba2-5e5d654510d6",
-        "name": "SSL/TLS: Safe/Secure Renegotiation Support Status",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:08Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:08Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.117757",
-            "type": "nvt",
-            "name": "SSL/TLS: Safe/Secure Renegotiation Support Status",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2021-10-27T11:26:49Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Checks and reports if a remote SSL/TLS service supports\n  safe/secure renegotiation.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            },
-            "refs": {
-                "ref": [
-                    {
-                        "@type": "url",
-                        "@id": "https://www.gnutls.org/manual/html_node/Safe-renegotiation.html"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://wiki.openssl.org/index.php/TLS1.3#Renegotiation"
-                    },
-                    {
-                        "@type": "url",
-                        "@id": "https://datatracker.ietf.org/doc/html/rfc5746"
-                    }
-                ]
-            }
-        },
-        "scan_nvt_version": "2021-11-12T09:42:39Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "Protocol Version | Safe/Secure Renegotiation Support Status\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nSSLv3            | Unknown, Reason: Scanner failed to negotiate an SSL/TLS connection (Either the scanner or the remote host is probably not supporting / accepting this SSL/TLS protocol version).\nTLSv1.0          | Enabled, Note: While the remote service announces the support of safe/secure renegotiation it still might not support / accept renegotiation at all.\nTLSv1.1          | Enabled, Note: While the remote service announces the support of safe/secure renegotiation it still might not support / accept renegotiation at all.\nTLSv1.2          | Enabled, Note: While the remote service announces the support of safe/secure renegotiation it still might not support / accept renegotiation at all.\nTLSv1.3          | Unknown, Reason: Scanner failed to negotiate an SSL/TLS connection (Either the scanner or the remote host is probably not supporting / accepting this SSL/TLS protocol version).",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "09269546-38ca-43a9-a1e2-29c68457a94e",
-        "name": "SSL/TLS: Untrusted Certificate Detection",
-        "owner": {
-            "name": "admin"
-        },
-        "modification_time": "2022-05-01T11:29:13Z",
-        "comment": null,
-        "creation_time": "2022-05-01T11:29:13Z",
-        "host": {
-            "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
-            },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
-        },
-        "port": "443/tcp",
-        "nvt": {
-            "@oid": "1.3.6.1.4.1.25623.1.0.117764",
-            "type": "nvt",
-            "name": "SSL/TLS: Untrusted Certificate Detection",
-            "family": "SSL and TLS",
-            "cvss_base": "0.0",
-            "severities": {
-                "@score": "0.0",
-                "severity": {
-                    "@type": "cvss_base_v2",
-                    "origin": null,
-                    "date": "2021-11-09T10:22:58Z",
-                    "score": "0.0",
-                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
-                }
-            },
-            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=Checks and reports if a remote SSL/TLS service is using a\n  certificate which is untrusted / the verification against the system wide trust store has failed.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
-            "solution": {
-                "@type": ""
-            }
-        },
-        "scan_nvt_version": "2021-11-12T09:42:39Z",
-        "threat": "Log",
-        "severity": "0.0",
-        "qod": {
-            "value": "98",
-            "type": null
-        },
-        "description": "The remote SSL/TLS server is using the following certificate(s) which failed the verification against the system wide trust store (serial:issuer):\n\n009737AB9446AED3DE:1.2.840.113549.1.9.1=#7A616E65407A74652E636F6D2E636E,CN=ZTE-ROOT-CA,OU=Wireline Product R&D Institute,O=ZTE,L=Shenzhen,ST=GuangDong,C=CN (Server certificate)",
-        "original_threat": "Log",
-        "original_severity": "0"
-    },
-    {
-        "@id": "bc139d83-7721-4c99-8588-f2eb467613e1",
+        "@id": "fa9ab6bd-c3b1-450c-b422-da2c968ee87a",
         "name": "TCP timestamps",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:22:20Z",
+        "modification_time": "2022-05-04T14:54:52Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:22:20Z",
+        "creation_time": "2022-05-04T14:54:52Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "general/tcp",
         "nvt": {
@@ -3506,25 +2073,25 @@
             "value": "80",
             "type": null
         },
-        "description": "It was detected that the host implements RFC1323/RFC7323.\n\nThe following timestamps were retrieved with a delay of 1 seconds in-between:\nPacket 1: 16100293\nPacket 2: 16100430",
+        "description": "It was detected that the host implements RFC1323/RFC7323.\n\nThe following timestamps were retrieved with a delay of 1 seconds in-between:\nPacket 1: 134095\nPacket 2: 134310",
         "original_threat": "Low",
         "original_severity": "2.6"
     },
     {
-        "@id": "fc8caa62-fa52-42bb-9e60-ba86d8cf7969",
+        "@id": "590a1110-240e-471a-b06c-dd5d1e08c08c",
         "name": "TCP timestamps",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:23:48Z",
+        "modification_time": "2022-05-04T14:53:21Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:23:48Z",
+        "creation_time": "2022-05-04T14:53:21Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
         "port": "general/tcp",
         "nvt": {
@@ -3572,25 +2139,25 @@
             "value": "80",
             "type": null
         },
-        "description": "It was detected that the host implements RFC1323/RFC7323.\n\nThe following timestamps were retrieved with a delay of 1 seconds in-between:\nPacket 1: 146573\nPacket 2: 146691",
+        "description": "It was detected that the host implements RFC1323/RFC7323.\n\nThe following timestamps were retrieved with a delay of 1 seconds in-between:\nPacket 1: 7633083\nPacket 2: 7633308",
         "original_threat": "Low",
         "original_severity": "2.6"
     },
     {
-        "@id": "68d64525-13c4-4e82-a871-da8476faf50c",
+        "@id": "3599f059-798a-4d71-a54c-983ebf0444b6",
         "name": "Traceroute",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:23:48Z",
+        "modification_time": "2022-05-04T14:54:52Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:23:48Z",
+        "creation_time": "2022-05-04T14:54:52Z",
         "host": {
             "asset": {
-                "@asset_id": "3112903a-3adf-41aa-9a5a-40be1cf9df1e"
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
             },
-            "hostname": "192.168.1.109",
-            "#text": "192.168.1.109"
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
         },
         "port": "general/tcp",
         "nvt": {
@@ -3621,25 +2188,25 @@
             "value": "80",
             "type": null
         },
-        "description": "Network route from scanner (192.168.1.110) to target (192.168.1.109):\n\n192.168.1.110\n192.168.1.109\n\nNetwork distance between scanner and target: 2",
+        "description": "Network route from scanner (192.168.1.245) to target (192.168.1.107):\n\n192.168.1.245\n192.168.1.107\n\nNetwork distance between scanner and target: 2",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "84253b92-cf5d-4f55-a6af-a19f417d5e61",
+        "@id": "6bf8e31b-19bd-405f-b83e-a76ada643b31",
         "name": "Traceroute",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:17:42Z",
+        "modification_time": "2022-05-04T14:51:07Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:17:42Z",
+        "creation_time": "2022-05-04T14:51:07Z",
         "host": {
             "asset": {
-                "@asset_id": "6d041c50-0433-4b2c-84b5-12a8a593ab63"
+                "@asset_id": "89b1f971-400d-4b31-8124-aefee839f81d"
             },
-            "hostname": "192.168.1.110",
-            "#text": "192.168.1.110"
+            "hostname": "192.168.1.245",
+            "#text": "192.168.1.245"
         },
         "port": "general/tcp",
         "nvt": {
@@ -3670,25 +2237,25 @@
             "value": "80",
             "type": null
         },
-        "description": "Network route from scanner (192.168.1.110) to target (192.168.1.110):\n\n192.168.1.110\n\nNetwork distance between scanner and target: 1",
+        "description": "Network route from scanner (192.168.1.245) to target (192.168.1.245):\n\n192.168.1.245\n\nNetwork distance between scanner and target: 1",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "2c475df5-71d7-4c5c-ab18-d800af467963",
+        "@id": "8676b78c-fe55-4bc3-9edc-7793bc147cd2",
         "name": "Traceroute",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:22:20Z",
+        "modification_time": "2022-05-04T14:53:21Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:22:20Z",
+        "creation_time": "2022-05-04T14:53:21Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
         "port": "general/tcp",
         "nvt": {
@@ -3719,27 +2286,27 @@
             "value": "80",
             "type": null
         },
-        "description": "Network route from scanner (192.168.1.110) to target (192.168.1.1):\n\n192.168.1.110\n192.168.1.1\n\nNetwork distance between scanner and target: 2",
+        "description": "Network route from scanner (192.168.1.245) to target (192.168.1.102):\n\n192.168.1.245\n192.168.1.102\n\nNetwork distance between scanner and target: 2",
         "original_threat": "Log",
         "original_severity": "0"
     },
     {
-        "@id": "668e46ce-29b3-4b54-abe0-364aaf6326b5",
+        "@id": "b17cac35-a800-41c6-b4cc-e91131489df1",
         "name": "Unknown OS and Service Banner Reporting",
         "owner": {
             "name": "admin"
         },
-        "modification_time": "2022-05-01T11:39:20Z",
+        "modification_time": "2022-05-04T14:53:31Z",
         "comment": null,
-        "creation_time": "2022-05-01T11:39:20Z",
+        "creation_time": "2022-05-04T14:53:31Z",
         "host": {
             "asset": {
-                "@asset_id": "97778243-2fbe-4b74-b168-69b9601bb2bb"
+                "@asset_id": "7a794d4e-084b-47de-a319-345c84470744"
             },
-            "hostname": "csp3.zte.com.cn",
-            "#text": "192.168.1.1"
+            "hostname": "192.168.1.102",
+            "#text": "192.168.1.102"
         },
-        "port": "53/tcp",
+        "port": "general/tcp",
         "nvt": {
             "@oid": "1.3.6.1.4.1.25623.1.0.108441",
             "type": "nvt",
@@ -3774,7 +2341,62 @@
             "value": "80",
             "type": null
         },
-        "description": "Nmap service detection (unknown) result for this port: domain\n\nThis is a guess. A confident identification of the service was not possible.\n\nHint: If you're running a recent nmap version try to run nmap with the following command: 'nmap -sV -Pn -p 53 192.168.1.1' and submit a possible collected fingerprint to the nmap database.",
+        "description": "Unknown banners have been collected which might help to identify the OS running on this host. If these banners containing information about the host OS please report the following information to https://community.greenbone.net/c/vulnerability-tests:\n\nBanner: SERVER: IPI/1.0 UPnP/1.0 DLNADOC/1.50\nIdentified from: HTTP Server banner on port 2870/tcp",
+        "original_threat": "Log",
+        "original_severity": "0"
+    },
+    {
+        "@id": "cb68c7a6-b322-4730-9d0e-e5fbfbb15aca",
+        "name": "Unknown OS and Service Banner Reporting",
+        "owner": {
+            "name": "admin"
+        },
+        "modification_time": "2022-05-04T15:08:25Z",
+        "comment": null,
+        "creation_time": "2022-05-04T15:08:25Z",
+        "host": {
+            "asset": {
+                "@asset_id": "504acaa3-ad7e-4876-85d3-3665b0eb4857"
+            },
+            "hostname": "192.168.1.107",
+            "#text": "192.168.1.107"
+        },
+        "port": "554/tcp",
+        "nvt": {
+            "@oid": "1.3.6.1.4.1.25623.1.0.108441",
+            "type": "nvt",
+            "name": "Unknown OS and Service Banner Reporting",
+            "family": "Service detection",
+            "cvss_base": "0.0",
+            "severities": {
+                "@score": "0.0",
+                "severity": {
+                    "@type": "cvss_base_v2",
+                    "origin": null,
+                    "date": "2018-05-02T08:53:41Z",
+                    "score": "0.0",
+                    "value": "AV:N/AC:L/Au:N/C:N/I:N/A:N"
+                }
+            },
+            "tags": "cvss_base_vector=AV:N/AC:L/Au:N/C:N/I:N/A:N|summary=This NVT consolidates and reports the information collected by\n  the following NVTs:\n\n  - Collect banner of unknown services (OID: 1.3.6.1.4.1.25623.1.0.11154)\n\n  - Service Detection (unknown) with nmap (OID: 1.3.6.1.4.1.25623.1.0.66286)\n\n  - Service Detection (wrapped) with nmap (OID: 1.3.6.1.4.1.25623.1.0.108525)\n\n  - OS Detection Consolidation and Reporting (OID: 1.3.6.1.4.1.25623.1.0.105937)\n\n  If you know any of the information reported here, please send the full output to\n  the referenced community portal.|insight=|affected=|impact=|solution=|vuldetect=|solution_type=",
+            "solution": {
+                "@type": ""
+            },
+            "refs": {
+                "ref": {
+                    "@type": "url",
+                    "@id": "https://community.greenbone.net/c/vulnerability-tests"
+                }
+            }
+        },
+        "scan_nvt_version": "2019-01-03T20:41:17Z",
+        "threat": "Log",
+        "severity": "0.0",
+        "qod": {
+            "value": "80",
+            "type": null
+        },
+        "description": "Nmap service detection (unknown) result for this port: rtsp\n\nThis is a guess. A confident identification of the service was not possible.\n\nHint: If you're running a recent nmap version try to run nmap with the following command: 'nmap -sV -Pn -p 554 192.168.1.107' and submit a possible collected fingerprint to the nmap database.",
         "original_threat": "Log",
         "original_severity": "0"
     }
