@@ -97,7 +97,6 @@ def startScan(scanName):
 	addresses = os.popen(f"sudo nmap -sn {networkAddress}").read()      # run nmap to get list of hosts
 	addresses = re.findall(addressPattern,addresses)                    # get all valid IP addrs
 	addresses = list(dict.fromkeys(addresses))                          # remove duplicates
-	addresses.remove('192.168.1.1')
 
 	with Gmp(connection) as gmp:
 		gmp.authenticate(username,password)
