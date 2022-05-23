@@ -55,9 +55,6 @@ def getReports():
 		# Convert XML to JSON String
 		reportsListString = json.dumps(XMLtoJSON(reportsListResponse)['get_reports_response']['report'],indent=4)
 
-		# Print reports list to a file
-		print(reportsListString,file=open("reports.txt","w"))
-
 		# Extract
 		reportsListJSON = json.loads(reportsListString)
 	
@@ -73,9 +70,6 @@ def getSingleReport(reportID):
 		
 		# Get Single Report for testing
 		reportString = json.dumps(XMLtoJSON(reportResponse)['get_reports_response']['report']['report']['results']['result'],indent=4)
-
-		# Print report contents to a file 
-		print(reportString,file=open("output.txt","w"))
 
 		# Convert report to List of Dictionaries, each dictionary contains vulnerability details
 		reportJSON = json.loads(reportString)	
@@ -116,7 +110,7 @@ def startScan(scanName):
 			target_id=targetID,
 			scanner_id=openVasScannerID,
 			preferences={
-				"max_checks": 4                         # 8 Concurrent Threads Running
+				"max_checks": 4                         # 4 Concurrent Threads Running
 			}
 		)
 		taskID = json.dumps(XMLtoJSON(createTaskResponse)['create_task_response']['@id'])[1:-1]
