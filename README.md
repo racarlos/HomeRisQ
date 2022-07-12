@@ -7,20 +7,19 @@ Keywords: Network Security, Risk Aggregation, CVSS, Home Network, CVE
 
 ## Screenhots:
 
-1. Scan Screen
-![image1](screenshots/scan-after.png)
+1. Scan Screen  
+[image1](screenshots/scan-after.png)
 
+2. History Screen  
+[image2](screenshots/history.png)
 
+3. Dashboard  
+[image3](screenshots/dashboard-medium.png)
 
+4. Solutions  
+[image4](screenshots/solutions.png)
 
-2. History Screen
-
-3. Dashboard
-
-
-4. Solutions
-
-5. Calculator
-
+5. Calculator Screen  
+[image5](screenshots/calculator-medium.png)
 
 To setup the project, kindly follow the instructions in `setup.md`
