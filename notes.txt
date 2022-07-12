@@ -1,0 +1,7 @@
+# Commands for Updating GVM Feeds, SCAP, and CERT Data
+# - should be done in quarterly intervals
+# - done individually and do not pipeline the commands
+
+greenbone-feed-sync --type GVMD_DATA
+greenbone-feed-sync --type SCAP
+greenbone-feed-sync --type CERT
