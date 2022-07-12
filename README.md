@@ -5,4 +5,22 @@ With the number of network vulnerabilities and exploits being discovered at a ra
 
 Keywords: Network Security, Risk Aggregation, CVSS, Home Network, CVE
 
+## Screenhots:
+
+1. Scan Screen
+![image1](screenshots/scan-after.png)
+
+
+
+
+2. History Screen
+
+3. Dashboard
+
+
+4. Solutions
+
+5. Calculator
+
+
 To setup the project, kindly follow the instructions in `setup.md`
